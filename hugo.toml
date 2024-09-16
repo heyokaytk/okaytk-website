@@ -1,0 +1,4 @@
+baseURL = 'https://okaytk.com/'
+languageCode = 'en-us'
+title = 'HOME - OKAY TK'
+theme = 'okay-tk'
