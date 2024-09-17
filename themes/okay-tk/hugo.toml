@@ -3,29 +3,29 @@ languageCode = 'en-US'
 title = 'My New Hugo Site'
 
 [[menus.main]]
-name = 'Home'
+name = 'HOME'
 pageRef = '/'
-class = 'text-white hover:text-gray-300'
+class = 'text-white hover:text-gray-300 font-bold'
 
 [[menus.main]]
-name = 'About'
+name = 'ABOUT'
 pageRef = '/about'
-class = 'text-white hover:text-gray-300'
+class = 'text-white hover:text-gray-300 font-bold'
 
 [[menus.main]]
-name = 'Mixes & Edits'
+name = 'MIXES & EDITS'
 pageRef = '/mixes'
-class = 'text-white hover:text-gray-300'
+class = 'text-white hover:text-gray-300 font-bold'
 
 [[menus.main]]
-name = 'Press Kit'
+name = 'PRESS KIT'
 pageRef = '/presskit'
-class = 'text-white hover:text-gray-300'
+class = 'text-white hover:text-gray-300 font-bold'
 
 [[menus.main]]
-name = 'Contact'
+name = 'CONTACT'
 pageRef = '/contact'
-class = 'text-white hover:text-gray-300'
+class = 'text-white hover:text-gray-300 font-bold'
 
 [module]
   [module.hugoVersion]

@@ -5,9 +5,11 @@ module.exports = {
     "layouts/**/*.{html,js}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Jost', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
-
-
