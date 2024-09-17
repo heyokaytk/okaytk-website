@@ -8,18 +8,23 @@ pageRef = '/'
 class = 'text-white hover:text-gray-300'
 
 [[menus.main]]
-name = 'Posts'
-pageRef = '/posts'
+name = 'About'
+pageRef = '/about'
 class = 'text-white hover:text-gray-300'
 
 [[menus.main]]
-name = 'Tags'
-pageRef = '/tags'
+name = 'Mixes & Edits'
+pageRef = '/mixes'
 class = 'text-white hover:text-gray-300'
 
 [[menus.main]]
-name = 'Media'
-pageRef = '/media'
+name = 'Press Kit'
+pageRef = '/presskit'
+class = 'text-white hover:text-gray-300'
+
+[[menus.main]]
+name = 'Contact'
+pageRef = '/contact'
 class = 'text-white hover:text-gray-300'
 
 [module]
