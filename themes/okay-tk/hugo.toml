@@ -5,20 +5,24 @@ title = 'My New Hugo Site'
 [[menus.main]]
 name = 'Home'
 pageRef = '/'
-weight = 10
+class = 'text-white hover:text-gray-300'
 
 [[menus.main]]
 name = 'Posts'
 pageRef = '/posts'
-weight = 20
+class = 'text-white hover:text-gray-300'
 
 [[menus.main]]
 name = 'Tags'
 pageRef = '/tags'
-weight = 30
+class = 'text-white hover:text-gray-300'
+
+[[menus.main]]
+name = 'Media'
+pageRef = '/media'
+class = 'text-white hover:text-gray-300'
 
 [module]
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
-
