@@ -2,7 +2,7 @@ baseURL = 'https://okay.tk/'
 languageCode = 'en-us'
 title = 'OKAY TK'
 sectionPagesMenu = 'main'
-enableRobotsTXT: true
+enableRobotsTXT = true
 
 [[build.cachebusters]]
     source = 'layouts/.*'
