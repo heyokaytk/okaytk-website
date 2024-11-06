@@ -44,7 +44,7 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Install Tailwind CSS v4aplha
-        run: npm install --save-dev tailwindcss@next @tailwindcss/cli@next  
+        run: npm install tailwindcss@next @tailwindcss/cli@next  
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -73,8 +73,8 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::123456789012:role/MyHugoProject_S3Deployer
-          role-session-name: GithubActions-MyHugoProject
+          role-to-assume: arn:aws:iam::733855677767:role/OkayTKSiteDeployer
+          role-session-name: GithubActions-OkayTKSiteDeployer
           mask-aws-account-id: true
       - name: Sync to S3
         id: deployment
