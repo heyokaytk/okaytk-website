@@ -1,7 +1,8 @@
 {{ define "main" }}    
 
-    {{ $image := resources.Get "images/tk-hero.jpg" }}
-    <section class="h-[75vh] bg-cover bg-center saturate-200 hue-rotate-5" style="background-image: url('{{ $image.RelPermalink }}'); "></section>    
+    {{ $imageHero := resources.Get "images/tk-hero.jpg" }}
+    {{ $pngHero := $imageHero.Process "webp" }}
+    <section class="h-[75vh] bg-cover bg-center saturate-200 hue-rotate-5" style="background-image: url('{{ $pngHero.RelPermalink }}'); "></section>    
     
 
     {{/*  horizontal black divider  */}}
@@ -9,8 +10,10 @@
 
     {{/*  About Section  */}}
 
+    
     {{ $imageThumbs := resources.Get "images/tk-thumbs-up.png" }}
-    <div class="mx-auto" style="background-image: url('{{ $imageThumbs.RelPermalink }}'); background-position: 20px 10px; background-repeat: no-repeat">
+    {{ $pngThumb := $imageThumbs.Process "webp" }}
+    <div class="mx-auto" style="background-image: url('{{ $pngThumb.RelPermalink }}'); background-position: 20px 10px; background-repeat: no-repeat">
 
     <section class="max-w-lg mx-auto px-8 py-8">
         <h1 class="text-4xl font-bold text-center">Welcome to OKAY TK</h1>
