@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+{{/*  if is home title, else IsHome  */}}
+{{ if .IsHome }}
+  <title>OKAY TK</title>
+{{ else }}
+  <title>OKAY TK | {{ .Title }} </title>
+{{ end }}
+
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+{{ $t := debug.Timer "tailwindcss" }}
+{{ with resources.Get "css/main.css" }}
+  {{ $opts := dict
+    "inlineImports" true
+    "optimize" (not hugo.IsDevelopment)
+  }}
+  {{ with . | css.TailwindCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
+    {{ else }}
+      {{ with . | minify | fingerprint }}
+        <link
+          rel="stylesheet"
+          href="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous" />
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }} 
+{{ $t.Stop }}
+
+{{- with resources.Get "js/main.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}

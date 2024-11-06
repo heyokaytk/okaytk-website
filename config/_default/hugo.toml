@@ -1,0 +1,8 @@
+baseURL = 'https://okay.tk/'
+languageCode = 'en-us'
+title = 'OKAY TK'
+sectionPagesMenu = 'main'
+
+[[build.cachebusters]]
+    source = 'layouts/.*'
+    target = 'css'

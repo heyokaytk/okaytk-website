@@ -1,0 +1,28 @@
+- platform: YouTube
+  url: "https://youtube.com/channel/UCOkobPSOkyot7vvQ6_oRr0Q"
+  color: "text-red-600 hover:text-red-500"
+  icon: "logos:youtube-icon"
+- platform: Twitter
+  url: "https://x.com/heyokaytk"
+  color: "text-white-300 hover:text-white-400"
+  icon: "prime:twitter"
+- platform: Instagram
+  url: "https://instagram.com/heyokaytk"
+  color: "text-pink-500 hover:text-pink-400"
+  icon: "mdi:instagram"
+- platform: Twitch
+  url: "https://twitch.tv/heyokaytk"
+  color: "text-purple-500 hover:text-purple-400"
+  icon: "mdi:twitch"
+- platform: MixCloud
+  url: "https://www.mixcloud.com/heyokaytk/"
+  color: "text-indigo-600 hover:text-indigo-500"
+  icon: "mdi:mixcloud"
+- platform: Facebook
+  url: "https://facebook.com/okaytk"
+  color: "text-blue-600 hover:text-blue-500"
+  icon: "mdi:facebook"
+- platform: SoundCloud
+  url: "https://soundcloud.com/heyokaytk"
+  color: "text-orange-500 hover:text-orange-400"
+  icon: "mdi:soundcloud"

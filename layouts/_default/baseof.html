@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    {{ partial "meta.html" . }}
+</head>
+
+<body class="flex flex-col min-h-screen">
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}  
+  {{/*  {{ partial "nav.html" }}  */}}
+    
+    <div id="content" class="flex-1">
+    {{ block "main" . }}
+    {{ end }}
+    </div>
+    
+    {{ partial "footer.html" .Page }}
+  
+</body>
+</html>
