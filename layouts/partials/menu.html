@@ -12,7 +12,7 @@ Renders a menu for the given menu ID.
 
 {{- with index site.Menus $menuID }}
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-colors duration-400">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="container mx-auto px-12 py-4 flex justify-between items-center">
     <div>
       <img src="../okaytk-logo.png" alt="OKAY TK Logo" class="max-h-28 w-auto" />
     </div>
@@ -59,7 +59,7 @@ Renders a menu for the given menu ID.
       {{- end }}
     {{- end }}
     <li>
-      <a class="text-white hover:text-gray-300" 
+      <a class="text-white hover:text-gray-300 anton-regular text-2xl" 
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
