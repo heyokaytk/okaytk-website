@@ -5,6 +5,50 @@ weight: 10
 ---
 <div class="bg-black h-[var(--nav-height)]"></div>
 
-<h1>Mixes</h1>
+<div class="container mx-auto p-24">
+    <div id="cloudcast-list" class="space-y-6">
+        <!-- JavaScript will populate entries here -->
+    </div>
+</div>
 
+<script>
+    // Fetch data and build the list dynamically
+    async function fetchCloudcasts() {
+        try {
+            const response = await fetch('https://api.mixcloud.com/heyokaytk/cloudcasts/');
+            const data = await response.json();
+            const cloudcasts = data.data;
+            const listContainer = document.getElementById('cloudcast-list');
+            
+            cloudcasts.forEach(entry => {
+                const tags = entry.tags.map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`).join(' ');
+                
+                const html = `
+                    <div class="bg-white p-4 rounded-lg shadow-lg flex space-x-4">
+                        <img src="${entry.pictures.medium}" alt="Mix Cover" class="w-24 h-24 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <a href="${entry.url}" target="_blank" class="text-xl font-semibold text-blue-600 hover:underline">${entry.name}</a>
+                            <p class="text-gray-500">by <a href="${entry.user.url}" target="_blank" class="text-blue-500 hover:underline">${entry.user.name}</a></p>
+                            <div class="flex flex-wrap mt-2 space-x-2">${tags}</div>
+                            <div class="mt-4 text-sm text-gray-600">
+                                <span>Plays: ${entry.play_count}</span> &middot; 
+                                <span>Favorites: ${entry.favorite_count}</span> &middot; 
+                                <span>Comments: ${entry.comment_count}</span> &middot; 
+                                <span>Listeners: ${entry.listener_count}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
 
+                listContainer.insertAdjacentHTML('beforeend', html);
+            });
+        } catch (error) {
+            console.error('Error fetching cloudcasts:', error);
+        }
+    }
+
+    // Load cloudcasts on page load
+    document.addEventListener('DOMContentLoaded', fetchCloudcasts);
+</script>
+
+https://api.mixcloud.com/heyokaytk/cloudcasts/
