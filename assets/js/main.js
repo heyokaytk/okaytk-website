@@ -1,12 +1,12 @@
 // Mobile Menu Toggle
-// window.onload = function() {
-//     var menuButton = document.getElementById('mobile-menu-button');
-//     var mobileMenu = document.getElementById('mobile-menu');
+window.onload = function() {
+    var menuButton = document.getElementById('mobile-menu-button');
+    var mobileMenu = document.getElementById('mobile-menu');
 
-//     menuButton.addEventListener('click', () => {
-//         mobileMenu.classList.toggle('hidden');
-//     });
-// };
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+};
 
 // // Navbar Background Change on Scroll
 // window.addEventListener('scroll', () => {
@@ -110,4 +110,23 @@ async function fetchCloudcasts() {
 }
 
     // Load cloudcasts on page load
-    document.addEventListener('DOMContentLoaded', fetchCloudcasts);
+document.addEventListener('DOMContentLoaded', fetchCloudcasts);
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split("T")[0];
+  
+  // Select all event cards
+  document.querySelectorAll(".event-card").forEach(card => {
+    const eventDate = card.getAttribute("data-date");
+
+    // Hide events with a date before today
+    if (eventDate < today) {
+      card.style.display = "none";
+    }
+  });
+});
+
+

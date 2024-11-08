@@ -1,0 +1,52 @@
+<section class="container mx-auto my-8" id="events-section">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range $index, $event := site.Data.events.events }}
+      <div class="event-card bg-white shadow-lg p-6 rounded-lg" data-date="{{ $event.date }}">
+        <h3 class="text-xl font-bold mb-2">{{ $event.name }}</h3>
+        <p class="text-sm text-gray-600 mb-1"><strong>Date:</strong> {{ $event.date }}</p>
+        <p class="text-sm text-gray-600 mb-1"><strong>Time:</strong> {{ $event.time }}</p>
+        
+        {{/* Google Maps link using address */}}
+        <p class="text-sm text-gray-600 mb-2">
+          
+          {{ if $event.location.address }}
+          <strong>Location:</strong> 
+          <a href="{{$event.location.address }}" 
+             class="text-blue-500 hover:underline" target="_blank" rel="noopener">
+             {{ $event.location.venue }}
+          </a>
+          {{ end }}
+        </p>
+        
+    
+        <p class="text-gray-700 mb-4">{{ $event.description }}</p>
+        
+        <div class="space-y-2 mx-auto flex flex-row content-center gap-2">
+            {{ if $event.website_url }}
+            <a href="{{ $event.website_url }}" class=" text-black hover:underline text-6xl" target="_blank" rel="noopener">
+              <span class="iconify height-auto" data-icon="mdi:web" data-inline="false"></span>
+            </a>
+            {{ end }}
+            
+            {{ if $event.ticket_url }}
+            <a href="{{ $event.ticket_url }}" class="text-black hover:underline text-6xl" target="_blank" rel="noopener">
+              <span class="iconify" data-icon="mdi:ticket" data-inline="false"></span>              
+            </a>
+            {{ end }}
+            
+            {{ if $event.location.venue_url }}
+            <a href="{{ $event.location.venue_url }}" class=" text-black hover:underline text-6xl" target="_blank" rel="noopener">
+              <span class="iconify" data-icon="mdi:map-marker" data-inline="false"></span>
+            </a>
+            
+            {{ end }}
+          </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  
+  <script>
+
+  </script>
+  
