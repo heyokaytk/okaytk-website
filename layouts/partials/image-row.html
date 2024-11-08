@@ -1,4 +1,5 @@
-<div class="flex items-center">
+
+<div class="flex items-center gap-x-4 overflow-hidden">
     
     {{ $imageLeft := resources.Get .left }}
     {{ $webpLeft := $imageLeft.Process "webp" }}
@@ -6,7 +7,7 @@
     
     {{ $imageMiddle := resources.Get .middle }}
     {{ $webpMiddle := $imageMiddle.Process "webp" }}
-    <img src="{{ $webpMiddle.RelPermalink }}" class="w-full md:w-1/3 mx-4">
+    <img src="{{ $webpMiddle.RelPermalink }}" class="w-full md:w-1/3">
     
     {{ $imageRight := resources.Get .right }}
     {{ $webpRight := $imageRight.Process "webp" }}
