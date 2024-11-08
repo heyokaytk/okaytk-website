@@ -76,3 +76,40 @@ vinyl.addEventListener('touchstart', startDrag);  */
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: 'smooth' });
   }  */
+
+
+    
+    // Fetch data and build the list dynamically
+async function fetchCloudcasts() {
+    try {
+        const response = await fetch('https://api.mixcloud.com/heyokaytk/cloudcasts/');
+        const data = await response.json();
+        const cloudcasts = data.data.slice(0, 6);
+        const listContainer = document.getElementById('cloudcast-list');
+        
+        // Clear the container before adding new content
+        listContainer.innerHTML = '';
+
+        cloudcasts.forEach(entry => {
+            const tags = entry.tags.slice(0, 3).map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`).join(' ');
+            
+            const html = `
+              <div class="bg-gray-600 p-1 rounded-lg min-w-sm">
+              <div class="bg-white p-6 rounded-md shadow-2xl flex flex-col items-center text-center space-y-4">
+                  <img src="${entry.pictures.medium}" alt="Mix Cover" class="w-32 h-32 object-cover rounded-lg shadow-md">
+                  <div>
+                      <a href="${entry.url}" target="_blank" class="text-lg font-semibold text-blue-600 hover:underline">${entry.name}</a>
+                      <p class="text-gray-500 mt-1">by <a href="${entry.user.url}" target="_blank" class="text-blue-500 hover:underline">${entry.user.name}</a></p>
+                  </div>
+                  <div class="flex flex-wrap justify-center gap-2 mt-2">${tags}</div>
+                </div>
+              </div>`;
+            listContainer.insertAdjacentHTML('beforeend', html);
+        });
+    } catch (error) {
+        console.error('Error fetching cloudcasts:', error);
+    }
+}
+
+    // Load cloudcasts on page load
+    document.addEventListener('DOMContentLoaded', fetchCloudcasts);

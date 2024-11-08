@@ -7,8 +7,8 @@
 
 <span class="block h-4 bg-black"></span>
 
-
-<div class="max-w-7xl mx-auto py-12">
+{{/*  WELCOME  */}}
+<section class="max-w-7xl mx-auto py-12">
     
     {{ partial "image-row" (dict "left" "images/OKAY-LEFT.png" "middle" "images/OKAY-MIDDLE.png" "right" "images/OKAY-RIGHT.png") }}
 
@@ -20,10 +20,10 @@
         <p class="max-w-xl mx-auto text-center">Welcome to my official website. I go by <span class="font-bold">OKAY TK</span>. Maybe you don’t know me yet, and that’s alright—this space is all about connecting. Here, you’ll find my music, videos, mixes, and event dates, all kept simple and to the point. Thanks for stopping by, and I hope you’ll get to know a bit more about me.</p>
     </div>
 
-</div>
+</section>
 
 
-
+{{/*  ABOUT  */}}
 <section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
     {{ partial "image-row" (dict "left" "images/OKAY-WINDOW-LEFT.png" "middle" "images/OKAY-WINDOW-MIDDLE.png" "right" "images/OKAY-TK-WINDOW-RIGHT.png") }}
 
@@ -36,5 +36,36 @@
     </div>
 
 </section>
- 
+
+{{/*  Events  */}}
+<section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
+    {{ partial "image-row" (dict "left" "images/okay-dj-new-left.png" "middle" "images/okay-tk-djing-new-middle.png" "right" "images/okay-tk-djing-right-side.png") }}
+
+    <span class="block h-8"></span>
+
+    <div class="mx-auto">
+        <h1 class="text-left text-6xl">Events.</h1>
+        <span class="block h-8"></span>
+        <p class="max-w-xl mx-auto text-center">Comming soon</p>
+    </div>
+
+</section>
+
+{{/*  Mixes  */}}
+
+<section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
+    {{ partial "image-row" (dict "left" "images/AUSTINLEFT.png" "middle" "images/AUSTINMIDDLE.png" "right" "images/AUSTINRIGHT.png") }}
+
+    <span class="block h-8"></span>
+
+    <div class="mx-auto">
+        <h1 class="text-left text-6xl">Mixes.</h1>
+        <span class="block h-8"></span>
+            <div id="cloudcast-list" class="space-y-6 flex flex-wrap gap-x-4 items-center">
+                <!-- JavaScript will populate entries here -->
+            </div>
+    </div>
+
+</section>
+
 {{ end }}
