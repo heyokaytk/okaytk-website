@@ -1,0 +1,15 @@
+<div class="flex items-center">
+    
+    {{ $imageLeft := resources.Get .left }}
+    {{ $webpLeft := $imageLeft.Process "webp" }}
+    <img src="{{ $webpLeft.RelPermalink }}" class="hidden md:block w-1/3">    
+    
+    {{ $imageMiddle := resources.Get .middle }}
+    {{ $webpMiddle := $imageMiddle.Process "webp" }}
+    <img src="{{ $webpMiddle.RelPermalink }}" class="w-full md:w-1/3 mx-4">
+    
+    {{ $imageRight := resources.Get .right }}
+    {{ $webpRight := $imageRight.Process "webp" }}
+    <img src="{{ $webpRight.RelPermalink }}" class="hidden md:block w-1/3">
+
+</div>

@@ -1,0 +1,30 @@
+{{/* 
+Shortcode: image-row
+Usage: 
+{{< image-row 
+    left="images/OKAY-LEFT.png" 
+    middle="images/OKAY-MIDDLE.png" 
+    right="images/OKAY-RIGHT.png" 
+    altLeft="Left Image" 
+    altMiddle="Middle Image" 
+    altRight="Right Image" 
+>}}
+*/}}
+
+<div class="flex justify-center">
+    {{ if .Get "left" }}
+    {{ $imageLeft := resources.Get (.Get "left") }}
+        <img src="{{ $imageLeft.RelPermalink }}" class="hidden md:block w-1/3">
+    {{ end }}
+
+    {{ if .Get "middle" }}
+    {{ $imageMiddle := resources.Get (.Get "middle") }}
+    <img src="{{ $imageMiddle.RelPermalink }}" class="w-full md:w-1/3">
+    {{ end }}
+
+    {{ if .Get "right" }}
+    {{ $imageRight := resources.Get (.Get "right") }}
+    <img src="{{ $imageRight.RelPermalink }}" class="hidden md:block w-1/3">
+    {{ end }}
+    
+</div>

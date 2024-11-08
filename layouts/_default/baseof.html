@@ -5,8 +5,7 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
-  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}  
-  {{/*  {{ partial "nav.html" }}  */}}
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     
     <div id="content" class="flex-1">
     {{ block "main" . }}
