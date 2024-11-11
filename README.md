@@ -10,7 +10,8 @@ This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io
 
 # TODOs:
 - [ ] Add more content to the website
-- [ ] update fonts
+- [ ] Add "Press Kit" link to main navigation menu. Link will instantly download Press Kit file (.zip)
+- [ ] update fonts - Fonts Used - (Header/Footer: Helvetica) - (Body: Georgia)
 - [ ] update the format of the Nav Bar
 - [ ] fix the mixes layout
 - [ ] update the Events layout
