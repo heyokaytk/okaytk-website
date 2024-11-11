@@ -21,9 +21,10 @@ This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io
 ## Getting Started
 
 ### Prerequisites
+- Install [Homebrew](https://www.youtube.com/watch?v=IWJKRmFLn-g)
+- Install Go: `brew install go`
 - Install [Hugo](https://gohugo.io/getting-started/installing/)
 - Install [Node.js and npm](https://nodejs.org/) for Tailwind CSS
-
 
 ### Development Setup
 

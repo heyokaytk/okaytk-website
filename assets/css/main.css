@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
+/* TODO: remove this var. This was used to handle the transition of the color change of the nav bar. still being used but should be removed */
 :root {
-    --nav-height: 0rem; /* Default value if JavaScript is disabled */
-  }
-  
+  --nav-height: 0rem; /* Default value if JavaScript is disabled */
+}
+
+@theme {
+  --font-family-sans: 'Helvetica', 'Arial', sans-serif;
+}
+
+p {
+  @apply text-lg px-2 my-4;
+  font-family: 'George', sans-serif;
+
+}
+
 #content {
     height: var(--nav-height);
 }
@@ -89,13 +100,6 @@
     pointer-events: none; /* So the text doesn't interfere with drag functionality */
   }
 
-
-  .anton-regular {
-    font-family: "Anton SC", sans-serif;
-    font-weight: 400;
-    font-style: normal;    
-  }
-  
 /* .ismorphic-background {
   background-color: #e6eaf7;
   opacity: 1;
@@ -103,3 +107,5 @@
   background-size: 8px 14px;
   background-position: 0 0, 0 0, 4px 7px, 4px 7px, 0 0, 4px 7px;
 } */
+
+
