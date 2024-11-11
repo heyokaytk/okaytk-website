@@ -11,9 +11,9 @@ This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io
 # TODOs:
 - [ ] Add more content to the website
 - [ ] Add "Press Kit" link to main navigation menu. Link will instantly download Press Kit file (.zip)
-- [ ] update fonts - Fonts Used - (Header/Footer: Helvetica) - (Body: Georgia)
+- [x] update fonts - Fonts Used - (Header/Footer: Helvetica) - (Body: Georgia)
 - [ ] update the format of the Nav Bar
-- [ ] fix the mixes layout
+- [ ] fix the mixes layout, they should be centered to the page. make them look more like cassette tapes
 - [ ] update the Events layout
 - [ ] add padding
 - [ ] write the instruction manual for updating the content
@@ -23,13 +23,56 @@ This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io
 ### Prerequisites
 - Install [Homebrew](https://www.youtube.com/watch?v=IWJKRmFLn-g)
 - Install Go: `brew install go`
-- Install [Hugo](https://gohugo.io/getting-started/installing/)
+- Install Hugo: `brew install hugo`
 - Install [Node.js and npm](https://nodejs.org/) for Tailwind CSS
+- Install [VS Code](https://code.visualstudio.com/download)
+- Install VS Code Extensions:
+   - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+   - [Hugo Language and Syntax Support](https://marketplace.visualstudio.com/items?itemName=budparr.language-hugo-vscode)
 
 ### Development Setup
 
 1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/username/okay-tk-website.git
-   cd okay-tk-website
 
+   ```bash
+   git clone https://github.com/jeremyforan/okaytk-website.git
+   cd okay-tk-website
+   ```
+2. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the Development Server**:
+
+   ```bash
+   hugo server --disableFastRender --noHTTPCache
+   ```
+
+4. **Open the Browser**:
+   Navigate to `http://localhost:1313/` to view the website.
+
+
+## Project Structure
+
+The project is structured as follows:
+   
+   ```
+   .
+   ├── archetypes/         # Hugo archetypes for new content
+   ├── assets/             # CSS, JS, and image assets. These are compiled and minified for production.
+   ├── content/            # Markdown content for the website, mostly the future blog post
+   ├── data/               # Data files for the website. Events, social media links, etc.
+   ├── layouts/            # HTML templates for the website. The actual structure of the website
+   ├── public/             # Generated static website. The compiled website which is what is published
+   ├── resources/          # Generated resources
+   ├── static/             # Static files for the website. PDFs, documents, things that don't need to be compiled.
+   ├── themes/             # Hugo theme for the website. This is not used for this site and can be ignored.
+   ├── config/
+   │  ├─ _default/        # Default configuration settings for the website
+   │  |  ├─ hugo.toml     # Website config file. Contains global settings for the website and the Title, Domain, Etc.
+   ```
+
+
+   
