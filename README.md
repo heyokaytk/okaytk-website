@@ -2,7 +2,9 @@
 
 This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io/) and styled using [Tailwind CSS](https://tailwindcss.com/). The website is hosted on AWS CloudFront and deployed automatically through GitHub CI/CD actions.
 
-## Project Structure
+The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](https://d3lgpv95v1cebt.cloudfront.net/)
+
+## Project Overview
 
 - **Hugo**: Hugo is a fast, static site generator written in Go. It allows us to build dynamic content quickly with markdown files and templates.
 - **Tailwind CSS**: Tailwind is a utility-first CSS framework that provides pre-defined classes to style the website effectively and responsively.
@@ -56,6 +58,7 @@ This is the official website for DJ OKAY TK, built with [Hugo](https://gohugo.io
 
 ## Project Structure
 
+<!-- TODO: fix this with more relevant information -->
 The project is structured as follows:
    
    ```
