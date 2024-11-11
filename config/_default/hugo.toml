@@ -7,3 +7,33 @@ enableRobotsTXT = true
 [[build.cachebusters]]
     source = 'layouts/.*'
     target = 'css'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/#about'
+    URL = '#about'
+    weight = 20
+  [[menus.main]]
+    name = 'Events'
+    pageRef = '/#events'
+    URL = '#events'
+    weight = 30
+  [[menus.main]]
+    name = 'Mixes'
+    pageRef = '/#mixes'
+    URL = '#mixes'
+    weight = 40
+  [[menus.main]]
+    name = 'Press Kit'
+    pageRef = '/presskit'
+    URL = '#presskit'
+    weight = 50
+[[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 60

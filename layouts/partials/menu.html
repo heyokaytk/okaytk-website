@@ -10,14 +10,14 @@ Renders a menu for the given menu ID.
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
-{{/*  <pre> {{debug.Dump site.Menus.main }}</pre>  */}}
-
 {{- with index site.Menus $menuID }}
 
-<nav id="navbar" class=" w-full bg-black">
+<nav id="navbar" class=" w-full bg-white">
   <div class="container mx-auto px-12 py-4 flex justify-between items-center">
     <div>
-      <img src="../okaytk-logo.png" alt="OKAY TK Logo" class="max-h-28 w-auto" />
+      {{ $blackLogo := resources.Get "images/okaytk-logo-black.png" }}
+      {{ $webpBlackLogo := $blackLogo.Process "webp resize 600x" }}
+      <img src="{{ $webpBlackLogo.RelPermalink }}" class="hidden md:block w-1/3 my-2">
     </div>
   
     <!-- Desktop Menu -->
@@ -27,7 +27,7 @@ Renders a menu for the given menu ID.
   
     <!-- Mobile Menu Button -->
     <div class="md:hidden">
-      <button id="mobile-menu-button" class="text-white focus:outline-none">
+      <button id="mobile-menu-button" class="text-black focus:outline-none">
   
         <!-- Hamburger Icon -->
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -46,6 +46,8 @@ Renders a menu for the given menu ID.
   </nav>
 {{- end }}
 
+
+<!-- Link compilier -->
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
@@ -62,7 +64,7 @@ Renders a menu for the given menu ID.
       {{- end }}
     {{- end }}
     <li>
-      <a class="text-white hover:text-gray-300 anton-regular text-2xl" 
+      <a class="md:text-black text-white hover:text-gray-300 text-lg" 
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

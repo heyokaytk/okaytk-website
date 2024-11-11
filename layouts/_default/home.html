@@ -2,6 +2,7 @@
 {{ $imageHero := resources.Get "images/header.png" }}
 {{ $pngHero := $imageHero.Process "webp" }}
 
+<span class="block h-4 bg-black"></span>
 
 <section class="h-[40vh] bg-cover bg-center saturate-200 hue-rotate-5" style="background-image: url('{{ $pngHero.RelPermalink }}'); "></section> 
 
@@ -24,7 +25,7 @@
 
 
 {{/*  ABOUT  */}}
-<section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
+<section id="about" class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
     {{ partial "image-row" (dict "left" "images/OKAY-WINDOW-LEFT.png" "middle" "images/OKAY-WINDOW-MIDDLE.png" "right" "images/OKAY-TK-WINDOW-RIGHT.png") }}
 
     <span class="block h-8"></span>
@@ -36,11 +37,10 @@
         <p class="max-w-xl mx-auto text-center"><span class="font-bold">OKAY TK</span> is an award-winning DJ from Halifax, Nova Scotia, known amongst friends and peers for his personality, skill, and versatility. With multiple competition wins, memorable DJ routines, and national stage appearances, TK has connected with listeners everywhere—from award shows and special events aired on national television and commercial radio to live tours, streaming, and sharing the stage alongside some of your favourite artists.</p>
         <p class="max-w-xl mx-auto text-center"><span class="font-bold">OKAY TK</span> brings the right energy to every set, making him an ideal choice for any event looking to leave a lasting impression.</p>
     </div>
-
 </section>
 
 {{/*  Events  */}}
-<section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
+<section id="events" class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
     {{ partial "image-row" (dict "left" "images/okay-dj-new-left.png" "middle" "images/okay-tk-djing-new-middle.png" "right" "images/okay-tk-djing-right-side.png") }}
 
     <span class="block h-8"></span>
@@ -56,7 +56,7 @@
 
 {{/*  Mixes  */}}
 
-<section class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
+<section id="mixes" class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
     {{ partial "image-row" (dict "left" "images/AUSTINLEFT.png" "middle" "images/AUSTINMIDDLE.png" "right" "images/AUSTINRIGHT.png") }}
 
     <span class="block h-8"></span>
