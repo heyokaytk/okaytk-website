@@ -9,6 +9,10 @@
   --font-family-sans: 'Helvetica', 'Arial', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 p {
   @apply text-lg px-2 my-4;
   font-family: 'George', sans-serif;
