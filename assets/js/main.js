@@ -93,15 +93,61 @@ async function fetchCloudcasts() {
         cloudcasts.forEach(entry => {
             const tags = entry.tags.slice(0, 3).map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`).join(' ');
             
+            const title = entry.name.split('-').map(part => `<p class="calligraffitti-regular text-[clamp(1rem, 5vw, 3rem)] flex justify-center">${part}</p>`).join('');
+
+            console.log(title);
+
             const html = `
-              <div class="p-2 rounded-lg w-sm min-h-52" style="background-image: url('${entry.pictures.medium}'); ">
-              <div class="bg-white p-6 rounded-md shadow-2xl flex flex-col items-center text-center space-y-4">
-                  <div>
-                      <a href="${entry.url}" target="_blank" class="text-lg font-semibold text-blue-600 hover:underline">${entry.name}</a>
-                  </div>
-                  <div class="flex flex-wrap justify-center gap-2 mt-2">${tags}</div>
-                </div>
-              </div>`;
+<!-- Cassette Body -->
+<div class="relative w-[500px] h-[260px] rounded-lg shadow-lg" style="background-image: url('${entry.pictures.medium}');">
+  
+  <!-- Label Background -->
+  <div class="absolute top-5 left-5 w-[460px] h-[134px] rounded-md z-50" style="background-color: rgba(255, 255, 255, 0.80);></div>
+  
+  <!-- Label Lines -->
+  <div class="absolute top-[30px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
+  <div class="absolute top-[50px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
+  <div class="absolute top-[70px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
+
+  <!-- Text on Label Lines -->
+  <div class="absolute top-[12px] left-2 w-[450px] text-sm z-60">
+    ${title}
+  </div>
+  <div class="absolute top-[40px] left-20 w-[250px] text-sm font-semibold text-black z-30 calligraffitti-regular">
+    <!-- Additional Text Here -->
+  </div>
+  <div class="absolute top-[60px] left-20 w-[250px] text-sm font-semibold text-black z-30 calligraffitti-regular">
+    <!-- Additional Text Here -->
+  </div>
+
+  <!-- Screw Holes -->
+  <div class="absolute bottom-[50px] left-10 w-5 h-5 bg-white rounded-full z-10"></div>
+  <div class="absolute bottom-[50px] right-10 w-5 h-5 bg-white rounded-full z-10"></div>
+
+  <!-- Tape Reels -->
+  <div class="absolute top-[130px] left-[100px] w-[90px] h-[90px] bg-gray-200  rounded-full flex items-center justify-center z-10">
+    <div class="w-[40px] h-[40px] border-2 bg-white rounded-full"></div>
+  </div>
+  <div class="absolute top-[130px] right-[100px] w-[90px] h-[90px] bg-gray-200 border-gray-700 rounded-full flex items-center justify-center z-10">
+    <div class="w-[40px] h-[40px] border-2 bg-white rounded-full"></div>
+  </div>
+
+  <!-- Bottom Holes -->
+  <div class="absolute bottom-[10px] left-[100px] w-5 h-2 bg-white z-10"></div>
+  <div class="absolute bottom-[10px] left-[160px] w-5 h-2 bg-white z-10"></div>
+  <div class="absolute bottom-[10px] left-[220px] w-16 h-2 bg-white z-10"></div>
+  <div class="absolute bottom-[10px] left-[300px] w-5 h-2 bg-white z-10"></div>
+  <div class="absolute bottom-[10px] left-[360px] w-5 h-2 bg-white z-10"></div>
+</div>
+`;
+
+
+
+
+
+     
+
+
             listContainer.insertAdjacentHTML('beforeend', html);
         });
     } catch (error) {
