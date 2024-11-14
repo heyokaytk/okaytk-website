@@ -30,8 +30,8 @@ enableRobotsTXT = true
     weight = 40
   [[menus.main]]
     name = 'Press Kit'
-    pageRef = '/presskit'
-    URL = '#presskit'
+    pageRef = '/OKAYTK-PRESSKIT.zip'
+    URL = 'OKAYTK-PRESSKIT.zip'
     weight = 50
 [[menus.main]]
     name = 'Contact'
