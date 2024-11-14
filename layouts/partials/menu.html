@@ -12,7 +12,7 @@ Renders a menu for the given menu ID.
 
 {{- with index site.Menus $menuID }}
 
-<nav id="navbar" class=" w-full bg-white">
+<nav id="navbar" class="fixed top-0 w-full bg-white z-50">
   <div class="container mx-auto px-12 py-4 flex justify-between items-center">
     <div>
       {{ $blackLogo := resources.Get "images/okaytk-logo-black.png" }}
@@ -28,7 +28,6 @@ Renders a menu for the given menu ID.
     <!-- Mobile Menu Button -->
     <div class="md:hidden">
       <button id="mobile-menu-button" class="text-black focus:outline-none">
-  
         <!-- Hamburger Icon -->
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
@@ -43,11 +42,12 @@ Renders a menu for the given menu ID.
   <ul id="mobile-menu" class="hidden flex flex-col items-center bg-black bg-opacity-90">
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </ul>
-  </nav>
+</nav>
 {{- end }}
 
+<!-- Note: Ensure the rest of the page content has appropriate top margin or padding to avoid being hidden under the fixed navbar. -->
 
-<!-- Link compilier -->
+<!-- Link compiler -->
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
