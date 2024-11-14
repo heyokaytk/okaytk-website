@@ -7,6 +7,136 @@ window.onload = function() {
         mobileMenu.classList.toggle('hidden');
     });
 };
+    
+// Fetch data and build the list dynamically
+async function fetchCloudcasts() {
+    try {
+        const response = await fetch('https://api.mixcloud.com/heyokaytk/cloudcasts/');
+        const data = await response.json();
+        const cloudcasts = data.data.slice(0, 6);
+        const listContainer = document.getElementById('cloudcast-list');
+        
+        // Clear the container before adding new content
+        listContainer.innerHTML = '';
+
+        console.log(cloudcasts);
+
+        cloudcasts.forEach(entry => {
+            const tags = createTagSpans(entry.tags.slice(0, 3));
+                  
+            console.log(entry);
+
+            const html = mixtapeHTMLContent({
+              url: entry.url,
+              imageSrc: entry.pictures.extra_large,
+              bgImage: entry.pictures.small,
+              title: entry.name,
+              tags: tags,
+              audioLength: entry.audio_length,
+              createdTime: entry.created_time
+          });
+
+          listContainer.insertAdjacentHTML('beforeend', html);
+
+        });
+    } catch (error) {
+        console.error('Error fetching cloudcasts:', error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Load cloudcasts on page load
+  fetchCloudcasts();
+
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split("T")[0];
+  
+  // Select all event cards
+  document.querySelectorAll(".event-card").forEach(card => {
+    const eventDate = card.getAttribute("data-date");
+
+    // Hide events with a date before today
+    if (eventDate < today) {
+      card.style.display = "none";
+    }
+  });
+});
+
+
+function mixtapeHTMLContent({ url, imageSrc, bgImage, title, tags, audioLength, createdTime }) {
+  // Optionally, format audioLength and createdTime into human-readable formats
+
+  const formattedAudioLength = formatAudioLength(audioLength);
+  const formattedCreatedTime = formatCreatedTime(createdTime);
+
+  const html = `
+  <a target="_blank" href="${url}" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" style="background-image: url('${bgImage}'); background-repeat: repeat;">
+        <img class="object-cover w-full h-48 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="${imageSrc}" alt="">
+        <div class="relative flex flex-col justify-between p-4 leading-normal w-full bg-white/[.06]">        
+            <div class="relative p-4 rounded-lg" style="background-color: rgba(255, 255, 255, 0.95);">
+                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-800">${title}</h5>
+                <div class="flex items-center text-sm text-gray-600 mb-3">
+                    <span class="mr-2">${formattedAudioLength}</span>
+                    <span class="mr-2">&bull;</span>
+                    <span>${formattedCreatedTime}</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    ${tags}
+                </div>        
+            </div>
+        </div>
+    </a>`;
+
+  return html;
+}
+
+function formatAudioLength(audioLength) {
+  // Convert audioLength (in seconds) to a human-readable format (e.g., "5 mins 30 secs")
+  const minutes = Math.floor(audioLength / 60);
+  const seconds = audioLength % 60;
+  return `${minutes} mins`;
+}
+
+function formatCreatedTime(createdTime) {
+  // Convert createdTime (ISO string) to a human-readable date string
+  const now = new Date(createdTime);
+  return sinceWhen(now);
+}
+
+function createTagSpans(tagsArray) {
+  return tagsArray
+      .slice(0, 3)
+      .map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`)
+      .join(' ');
+}
+
+function sinceWhen(createdTime) {
+  const now = new Date();
+  const date = new Date(createdTime);
+  const diffInSeconds = Math.floor((now - date) / 1000);
+
+  if (diffInSeconds < 60) {
+      return 'just now';
+  } else if (diffInSeconds < 3600) {
+      const minutes = Math.floor(diffInSeconds / 60);
+      return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < 86400) {
+      const hours = Math.floor(diffInSeconds / 3600);
+      return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < 2592000) {
+      const days = Math.floor(diffInSeconds / 86400);
+      return `${days} day${days !== 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < 31536000) {
+      const months = Math.floor(diffInSeconds / 2592000);
+      return `${months} month${months !== 1 ? 's' : ''} ago`;
+  } else {
+      const years = Math.floor(diffInSeconds / 31536000);
+      return `${years} year${years !== 1 ? 's' : ''} ago`;
+  }
+}
+
+
+
 
 // // Navbar Background Change on Scroll
 // window.addEventListener('scroll', () => {
@@ -77,100 +207,3 @@ vinyl.addEventListener('touchstart', startDrag);  */
     section.scrollIntoView({ behavior: 'smooth' });
   }  */
 
-
-    
-    // Fetch data and build the list dynamically
-async function fetchCloudcasts() {
-    try {
-        const response = await fetch('https://api.mixcloud.com/heyokaytk/cloudcasts/');
-        const data = await response.json();
-        const cloudcasts = data.data.slice(0, 6);
-        const listContainer = document.getElementById('cloudcast-list');
-        
-        // Clear the container before adding new content
-        listContainer.innerHTML = '';
-
-        cloudcasts.forEach(entry => {
-            const tags = entry.tags.slice(0, 3).map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`).join(' ');
-            
-            const title = entry.name.split('-').map(part => `<p class="calligraffitti-regular text-[clamp(1rem, 5vw, 3rem)] flex justify-center">${part}</p>`).join('');
-
-            console.log(title);
-
-            const html = `
-<!-- Cassette Body -->
-<div class="relative w-[500px] h-[260px] rounded-lg shadow-lg" style="background-image: url('${entry.pictures.medium}');">
-  
-  <!-- Label Background -->
-  <div class="absolute top-5 left-5 w-[460px] h-[134px] rounded-md z-50" style="background-color: rgba(255, 255, 255, 0.80);></div>
-  
-  <!-- Label Lines -->
-  <div class="absolute top-[30px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
-  <div class="absolute top-[50px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
-  <div class="absolute top-[70px] left-20 w-[250px] border-t border-gray-400 z-0"></div>
-
-  <!-- Text on Label Lines -->
-  <div class="absolute top-[12px] left-2 w-[450px] text-sm z-60">
-    ${title}
-  </div>
-  <div class="absolute top-[40px] left-20 w-[250px] text-sm font-semibold text-black z-30 calligraffitti-regular">
-    <!-- Additional Text Here -->
-  </div>
-  <div class="absolute top-[60px] left-20 w-[250px] text-sm font-semibold text-black z-30 calligraffitti-regular">
-    <!-- Additional Text Here -->
-  </div>
-
-  <!-- Screw Holes -->
-  <div class="absolute bottom-[50px] left-10 w-5 h-5 bg-white rounded-full z-10"></div>
-  <div class="absolute bottom-[50px] right-10 w-5 h-5 bg-white rounded-full z-10"></div>
-
-  <!-- Tape Reels -->
-  <div class="absolute top-[130px] left-[100px] w-[90px] h-[90px] bg-gray-200  rounded-full flex items-center justify-center z-10">
-    <div class="w-[40px] h-[40px] border-2 bg-white rounded-full"></div>
-  </div>
-  <div class="absolute top-[130px] right-[100px] w-[90px] h-[90px] bg-gray-200 border-gray-700 rounded-full flex items-center justify-center z-10">
-    <div class="w-[40px] h-[40px] border-2 bg-white rounded-full"></div>
-  </div>
-
-  <!-- Bottom Holes -->
-  <div class="absolute bottom-[10px] left-[100px] w-5 h-2 bg-white z-10"></div>
-  <div class="absolute bottom-[10px] left-[160px] w-5 h-2 bg-white z-10"></div>
-  <div class="absolute bottom-[10px] left-[220px] w-16 h-2 bg-white z-10"></div>
-  <div class="absolute bottom-[10px] left-[300px] w-5 h-2 bg-white z-10"></div>
-  <div class="absolute bottom-[10px] left-[360px] w-5 h-2 bg-white z-10"></div>
-</div>
-`;
-
-
-
-
-
-     
-
-
-            listContainer.insertAdjacentHTML('beforeend', html);
-        });
-    } catch (error) {
-        console.error('Error fetching cloudcasts:', error);
-    }
-}
-
-    // Load cloudcasts on page load
-document.addEventListener('DOMContentLoaded', fetchCloudcasts);
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Get today's date in YYYY-MM-DD format
-  const today = new Date().toISOString().split("T")[0];
-  
-  // Select all event cards
-  document.querySelectorAll(".event-card").forEach(card => {
-    const eventDate = card.getAttribute("data-date");
-
-    // Hide events with a date before today
-    if (eventDate < today) {
-      card.style.display = "none";
-    }
-  });
-});
