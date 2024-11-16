@@ -19,13 +19,9 @@ async function fetchCloudcasts() {
         // Clear the container before adding new content
         listContainer.innerHTML = '';
 
-        console.log(cloudcasts);
-
         cloudcasts.forEach(entry => {
             const tags = createTagSpans(entry.tags.slice(0, 3));
                   
-            console.log(entry);
-
             const html = mixtapeHTMLContent({
               url: entry.url,
               imageSrc: entry.pictures.extra_large,
@@ -137,9 +133,6 @@ function sinceWhen(createdTime) {
   }
 }
 
-
-
-
 // // Navbar Background Change on Scroll
 // window.addEventListener('scroll', () => {
 //     const navbar = document.querySelector('nav');
@@ -208,4 +201,3 @@ vinyl.addEventListener('touchstart', startDrag);  */
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: 'smooth' });
   }  */
-
