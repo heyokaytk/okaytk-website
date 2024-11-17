@@ -1,3 +1,4 @@
+# todo: add reference for future editing
 events:
   - name: "I shouldn't be here"
     date: "2023-12-05"
@@ -7,7 +8,6 @@ events:
       venue_url: "https://downtownconventioncenter.com"
       address: "https://maps.app.goo.gl/L8qD3gph4QwfQvAH7"
     website_url: "https://techconference.com"
-    ticket_url: "https://techconference.com/tickets"
     description: "A comprehensive conference covering the latest trends in technology, software development, and innovation."
 
   - name: "Jazz Music Festival"
@@ -18,7 +18,6 @@ events:
       venue_url: "https://citypark.com"
       address: "https://maps.app.goo.gl/L8qD3gph4QwfQvAH7"
     website_url: "https://jazzfest.com"
-    ticket_url: "https://jazzfest.com/tickets"
     description: "Enjoy live jazz performances by renowned artists in a beautiful outdoor setting."
 
   - name: "Startup Pitch Night"

@@ -20,6 +20,7 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 - [ ] update the Events layout
 - [ ] add padding
 - [ ] write the instruction manual for updating the content
+- [ ] all white nav bar
 
 ## Getting Started
 

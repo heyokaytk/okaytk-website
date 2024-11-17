@@ -104,7 +104,7 @@ function formatCreatedTime(createdTime) {
 function createTagSpans(tagsArray) {
   return tagsArray
       .slice(0, 3)
-      .map(tag => `<span class="text-sm bg-blue-100 text-blue-500 px-2 py-1 rounded">${tag.name}</span>`)
+      .map(tag => `<span class="text-sm bg-white text-gray-500 px-2 py-1 rounded">${tag.name}</span>`)
       .join(' ');
 }
 
