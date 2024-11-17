@@ -12,15 +12,9 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 
 # TODOs:
 - [ ] Add more content to the website
-- [x] Add "Press Kit" link to main navigation menu. Link will instantly download Press Kit file (.zip)
-- [x] Are we able to make the menu (header) be a floating menu that follows as you scroll down?
-- [x] update fonts - Fonts Used - (Header/Footer: Helvetica) - (Body: Georgia)
-- [x] update the format of the Nav Bar
-- [ ] fix the mixes layout, they should be centered to the page. make them look more like cassette tapes
 - [ ] update the Events layout
-- [ ] add padding
+- [ ] add padding to the mobile version of the home page
 - [ ] write the instruction manual for updating the content
-- [ ] all white nav bar
 
 ## Getting Started
 
