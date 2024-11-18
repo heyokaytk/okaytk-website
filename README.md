@@ -74,6 +74,25 @@ The project is structured as follows:
    │  |  ├─ hugo.toml     # Website config file. Contains global settings for the website and the Title, Domain, Etc.
    ```
 
+# New Blog Post
+
+To create a new blog post, with the title being 'Crunkmas Mixtape' cd to the project directory and run the following command:
+
+```bash
+hugo new content content/posts/crunkmas-mixtape
+```
+
+This will create a new directory in the content/posts/ directory with the name 'crunkmas-mixtape'. Inside this directory, you will find an index.md file with the following content:
+
+```markdown
++++
+date = '2024-11-18T15:24:17-05:00'
+draft = false
+title = 'Crunkmas Mixtape'
++++
+
+.....
+```
 
 
 # Reference 
