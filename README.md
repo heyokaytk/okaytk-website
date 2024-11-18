@@ -15,6 +15,7 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 - [ ] update the Events layout
 - [ ] add padding to the mobile version of the home page
 - [ ] write the instruction manual for updating the content
+- [ ] fix the menu bar to naivagte back to the proper page/anchor. currently it is only rerouting to a local anchor
 
 ## Getting Started
 

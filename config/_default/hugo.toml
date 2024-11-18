@@ -16,17 +16,17 @@ enableRobotsTXT = true
   [[menus.main]]
     name = 'About'
     pageRef = '/#about'
-    URL = '#about'
+    URL = '/#about'
     weight = 20
   [[menus.main]]
     name = 'Events'
     pageRef = '/#events'
-    URL = '#events'
+    URL = '/#events'
     weight = 30
   [[menus.main]]
     name = 'Mixes'
     pageRef = '/#mixes'
-    URL = '#mixes'
+    URL = '/#mixes'
     weight = 40
   [[menus.main]]
     name = 'Press Kit'
@@ -36,4 +36,5 @@ enableRobotsTXT = true
 [[menus.main]]
     name = 'Contact'
     pageRef = '/contact'
+    URL = '/#contact'
     weight = 60
