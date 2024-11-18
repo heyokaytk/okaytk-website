@@ -42,7 +42,10 @@ async function fetchCloudcasts() {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Load cloudcasts on page load
-  fetchCloudcasts();
+  
+  if (window.location.pathname === '/') {
+    fetchCloudcasts();
+  }
 
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
