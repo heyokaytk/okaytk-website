@@ -1,17 +1,22 @@
 <!doctype html>
-<html>
+<html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
 <head>
-    {{ partial "meta.html" . }}
+    {{ partial "head.html" . }}
 </head>
+
 <body class="flex flex-col min-h-screen min-w-[625]">
+    
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     
-    <div id="content" class="flex-1 pt-24">
-    {{ block "main" . }}
-    {{ end }}
+    <div id="content" class="flex-1 pt-32">
+        {{ block "main" . }}
+        {{ end }}
     </div>
     
-    {{ partial "footer.html" .Page }}
+    <footer>
+        {{ partial "footer.html" . }}
+    </footer>
 </body>
 </html>
 

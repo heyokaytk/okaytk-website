@@ -2,7 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {{/*  todo: make this relative  */}}
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+{{ $favicon := resources.Get "favicon.ico" }}
+<link rel="icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}">
 
 {{/*  if is home title, else IsHome  */}}
 {{ if .IsHome }}

@@ -1,3 +1,6 @@
-{{ define "main" }}    
- {{ .Content }}
+{{ define "main" }}
+    <div class="max-w-7xl mx-auto py-12 items-center">
+        <h1 class="text-4xl">{{ .Title }}</h1>
+    {{ .Content }}
+    </div>
 {{ end }}

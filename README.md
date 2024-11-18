@@ -74,4 +74,20 @@ The project is structured as follows:
    ```
 
 
-   
+
+# Reference 
+
+Render Hooks for styling the blog post
+
+[render-hooks](https://gohugo.io/render-hooks/introduction/)
+
+layouts/
+└── _default/
+    └── _markup/
+        ├── render-blockquote.html
+        ├── render-codeblock.html
+        ├── render-heading.html
+        ├── render-image.html
+        ├── render-link.html
+        ├── render-passthrough.html
+        └── render-table.html
