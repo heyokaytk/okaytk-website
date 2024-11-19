@@ -1,0 +1,25 @@
+
+{{- with resources.Get "js/main.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      {{/*  <script defer src="{{ .RelPermalink }}"></script>  */}}
+      <script defer>{{ .Content | safeJS }}</script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+        <script defer>{{ .Content | safeJS }}</script>
+    {{/*  <script defer src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>  */}}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- $iconifyURL := "https://code.iconify.design/2/2.2.1/iconify.min.js" }}
+{{- with resources.GetRemote $iconifyURL }}
+  {{- if .Err }}
+    {{- errorf "Failed to fetch %s: %s" $iconifyURL .Err }}
+  {{- else }}
+    {{- $iconifyContent := . | resources.ExecuteAsTemplate "iconify.js" . | js.Build (dict "minify" true) }}
+    <script defer>{{ $iconifyContent.Content | safeJS }}</script>
+  {{- end }}
+{{- end }}
