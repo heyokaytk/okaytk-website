@@ -3,14 +3,14 @@
     
     {{ $imageLeft := resources.Get .left }}
     {{ $webpLeft := $imageLeft.Process "webp" }}
-    <img src="{{ $webpLeft.RelPermalink }}" class="hidden md:block w-1/3">    
+    <img src="{{ $webpLeft.RelPermalink }}" class="hidden md:block w-1/3" loading="lazy">    
     
     {{ $imageMiddle := resources.Get .middle }}
     {{ $webpMiddle := $imageMiddle.Process "webp" }}
-    <img src="{{ $webpMiddle.RelPermalink }}" class="w-full md:w-1/3">
+    <img src="{{ $webpMiddle.RelPermalink }}" class="w-full md:w-1/3" loading="lazy">
     
     {{ $imageRight := resources.Get .right }}
     {{ $webpRight := $imageRight.Process "webp" }}
-    <img src="{{ $webpRight.RelPermalink }}" class="hidden md:block w-1/3">
+    <img src="{{ $webpRight.RelPermalink }}" class="hidden md:block w-1/3" loading="lazy">
 
 </div>
