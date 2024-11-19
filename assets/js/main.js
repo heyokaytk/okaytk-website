@@ -70,8 +70,8 @@ function mixtapeHTMLContent({ url, imageSrc, bgImage, title, tags, audioLength, 
 
   const html = `
   <a target="_blank" href="${url}">
-    <div class="flex flex-col bg-white md:min-w-xl rounded-lg md:flex-row md:max-w-xl md:hover:scale-125" style="background-image: url('${bgImage}'); background-repeat: repeat;">
-      <img class="object-cover w-full h-48 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="${imageSrc}" alt="">
+    <div class="flex flex-col bg-white md:min-w-xl rounded-lg md:flex-row md:max-w-xl md:hover:scale-125" style="background-image: url('${bgImage}'); background-repeat: repeat;" loading="lazy">
+      <img class="object-cover w-full h-48 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="${imageSrc}" alt="" loading="lazy">
         <div class="relative flex flex-col justify-between p-4 leading-normal w-full">        
             <div class="relative p-4 backdrop-blur-md rounded-lg" style="background-color: rgba(255, 255, 255, 0.75);">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-black">${title}</h5>

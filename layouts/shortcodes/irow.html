@@ -14,17 +14,17 @@ Usage:
 <div class="flex justify-center">
     {{ if .Get "left" }}
     {{ $imageLeft := resources.Get (.Get "left") }}
-        <img src="{{ $imageLeft.RelPermalink }}" class="hidden md:block w-1/3">
+        <img src="{{ $imageLeft.RelPermalink }}" class="hidden md:block w-1/3" loading="lazy">
     {{ end }}
 
     {{ if .Get "middle" }}
     {{ $imageMiddle := resources.Get (.Get "middle") }}
-    <img src="{{ $imageMiddle.RelPermalink }}" class="w-full md:w-1/3">
+    <img src="{{ $imageMiddle.RelPermalink }}" class="w-full md:w-1/3" loading="lazy">
     {{ end }}
 
     {{ if .Get "right" }}
     {{ $imageRight := resources.Get (.Get "right") }}
-    <img src="{{ $imageRight.RelPermalink }}" class="hidden md:block w-1/3">
+    <img src="{{ $imageRight.RelPermalink }}" class="hidden md:block w-1/3" loading="lazy">
     {{ end }}
     
 </div>
