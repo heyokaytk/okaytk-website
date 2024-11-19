@@ -16,7 +16,7 @@ Renders a menu for the given menu ID.
     <div>
       {{ $blackLogo := resources.Get "images/okaytk-logo-black.png" }}
       {{ $webpBlackLogo := $blackLogo.Process "webp resize 600x" }}
-      <img src="{{ $webpBlackLogo.RelPermalink }}" class="md:block h-12 my-2">
+      <img src="{{ $webpBlackLogo.RelPermalink }}" class="md:block h-12 my-2" alt="OkayTK's logo, black with a lightning strike">
     </div>
   
     <!-- Desktop Menu -->
