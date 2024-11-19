@@ -1,10 +1,8 @@
 {{ define "main" }}
 {{ $imageHero := resources.Get "images/header.png" }}
-{{ $imageContent := $imageHero.Content | base64Encode }}
-{{ $imageMimeType := $imageHero.MediaType.Type }}
+{{ $pngHero := $imageHero.Process "webp" }}
 
-<section class="h-[40vh] bg-cover bg-center saturate-200 hue-rotate-5" style="background-image: url('data:{{ $imageMimeType }};base64,{{ $imageContent }}');"></section>
-
+<section class="h-[40vh] bg-cover bg-center saturate-200 hue-rotate-5" style="background-image: url('{{ $pngHero.RelPermalink }}'); "></section> 
 {{/*  WELCOME  */}}
 <section class="max-w-7xl mx-auto py-12">
     {{ partial "image-row" (dict "left" "images/OKAY-LEFT.png" "middle" "images/OKAY-MIDDLE.png" "right" "images/OKAY-RIGHT.png" "loading" "eager") }}
