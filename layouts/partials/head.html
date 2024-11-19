@@ -15,7 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Calligraffitti&display=swap" rel="stylesheet">
-<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
 {{ $t := debug.Timer "tailwindcss" }}
 {{ with resources.Get "css/main.css" }}
@@ -38,16 +37,3 @@
   {{ end }}
 {{ end }} 
 {{ $t.Stop }}
-
-{{- with resources.Get "js/main.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}"></script>
-    {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-    {{- end }}
-  {{- end }}
-{{- end }}
