@@ -1,13 +1,13 @@
 {{- $level := .Level -}}
 {{- if eq $level 1 -}}
-<h1 class="text-5xl">{{ .Text | safeHTML }}</h1>
+<h1 class="text-5xl mt-8">{{ .Text | safeHTML }}</h1>
 {{- end -}}
 {{- if eq $level 2 -}}
-<h2 class="text-3xl">{{ .Text | safeHTML }}</h2>
+<h2 class="text-3xl mt-6" >{{ .Text | safeHTML }}</h2>
 {{- end -}}
 {{- if eq $level 3 -}}
-<h3 class="text-2xl">{{ .Text | safeHTML }}</h3>
+<h3 class="text-2xl mt-4">{{ .Text | safeHTML }}</h3>
 {{- end -}}
 {{- if eq $level 4 -}}
-<h4 class="text-xl">{{ .Text | safeHTML }}</h4>
+<h4 class="text-xl mt-2">{{ .Text | safeHTML }}</h4>
 {{- end -}}
