@@ -99,13 +99,13 @@ title = 'Crunkmas Mixtape'
 .....
 ```
 
-
 # Reference 
 
 Render Hooks for styling the blog post
 
 [render-hooks](https://gohugo.io/render-hooks/introduction/)
 
+```plaintext
 layouts/
 └── _default/
     └── _markup/
@@ -116,3 +116,25 @@ layouts/
         ├── render-link.html
         ├── render-passthrough.html
         └── render-table.html
+```
+
+# Post 
+I would love to see you write these post:
+
+- Equipment Setup, controller, speakers, headphones, etc
+- How many airhorns per minute is appropriate. (airhorns = song's BPM / 4.28 ?)
+- How do you bring a song into your library, set cues, cue layout, mutiple versions of the track, sample bank
+- How do you lay out your library, do you have a naming convention? 
+- What album is slept on?
+- What is a cool trend you are seeing at the shows; trends from other DJs
+- How do you find a handsome developer to help build a website. 
+- How do you prepare for an event? How much do you practice.
+- Is there money in Twitch?
+- How do you get the dope Twitch setup you had (FYI Dj Green Lantern has a sick twitch stream)
+- How do you build a brand as a DJ?
+- What to do if you think someone is stalking you, showing up at your shows, suggesting articles for you to write.
+- Stories from the road. 
+- What does it take to put together a show like Mixtape
+- Should Halifax have more venues
+
+
