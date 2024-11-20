@@ -17,7 +17,10 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 - [ ] What should we do if there are no upcoming events. what about reoccuring events?
 - [ ] add padding to the mobile version of the home page
 - [ ] fix overflow width on the mobile version of the home page. I think it is due to the mixtapes section
-- [ ] write the instruction manual for updating the content
+- [ ] write the instruction manual for updating the content.
+- [ ] write an alias for TK to use in the terminal.
+- [ ] Events should check to see if there are any upcoming dates. if not write a short description, maybe link to an event RSS Feed.
+- [ ] Event check happens in JS currently, this should be migrated to Hugo.
 - [x] fix the menu bar to naivagte back to the proper page/anchor. currently it is only rerouting to a local anchor
 
 ## Getting Started
