@@ -136,5 +136,7 @@ I would love to see you write these post:
 - Stories from the road. 
 - What does it take to put together a show like Mixtape
 - Should Halifax have more venues
+- Transition of the month
+- Dj set breakdown, transition break down, etc
 
 
