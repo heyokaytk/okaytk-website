@@ -12,7 +12,6 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 
 # TODOs:
 - [ ] There are a few recommendations on https://pagespeed.web.dev/ for better accesibility. I will work through these soon.
-- [ ] Add more content to the website
 - [ ] update the Events layout to adhere to best practices in pagespeed.
 - [ ] What should we do if there are no upcoming events. what about reoccuring events?
 - [ ] add padding to the mobile version of the home page
@@ -52,7 +51,7 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 3. **Start the Development Server**:
 
    ```bash
-   hugo server --disableFastRender --noHTTPCache
+   hugo  server --logLevel debug --navigateToChanged --disableFastRender --noHTTPCache --buildDrafts
    ```
 
 4. **Open the Browser**:
