@@ -32,3 +32,8 @@ The future is wide open. Stems are going to influence everything from how tracks
 
 So, to all my fellow DJs: it’s time to step up. Serato just handed us a tool that can redefine what it means to perform. The question is, how are you going to use it? Are you going to cling to the old ways, or are you going to embrace the chaos and get creative? The choice is yours—but let me tell you, the DJs who lean into this are the ones who are going to shape the future.
 
+<!-- 
+{{< instagram C6ulegJpfOF >}}
+
+{{< twitter user="heyokaytk" id="1857664030766239997" >}} 
+-->
