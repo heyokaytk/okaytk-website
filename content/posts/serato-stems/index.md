@@ -22,7 +22,7 @@ Remember the golden era of mashups? Girl Talk? DJ Earworm? Well, stems are breat
 ## A Tool, Not a Crutch
 Now, let’s keep it real for a second. Just because Serato Stems exists doesn’t mean every DJ should abuse it. We’ve all seen people overuse effects to the point where it kills the vibe. Stems are no different. Pulling out vocals for every track, every transition? That’s how you lose a crowd. Stems should be treated like seasoning: add just enough to elevate the flavor, but don’t overdo it. Use stems to enhance your creativity, not to overcomplicate things.
 
-{{< youtube v2Wy9szxU3A >}}
+{{< youtube Tn7D6wzf8MM >}}
 
 ## The Impact on DJ Culture
 Here’s the big picture: stems are going to shift how DJs think about music. Instead of just curating tracks, you’re remixing them live. That’s huge for how we approach gigs, prepare for sets, and even how we see ourselves as artists. DJing has always been about finding the balance between technical skill and musical taste. Now, with stems, there’s a third element: real-time remixing. The DJs who master this trifecta are the ones who’ll stand out in the post-stems world.
