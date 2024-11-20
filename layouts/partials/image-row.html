@@ -9,7 +9,7 @@
     {{ $imageMiddle := resources.Get .middle }}
     {{ $webpMiddle := $imageMiddle.Process "webp" }}
     {{ $altMiddle := $imageMiddle.Name | strings.TrimSuffix (path.Ext $imageMiddle.Name) | strings.ReplaceRE "[-_]" " " | strings.Title }}
-    <img src="{{ $webpMiddle.RelPermalink }}" alt="{{ $altMiddle }}" class="w-full md:w-1/3" loading="{{ $loading }}">
+    <img src="{{ $webpMiddle.RelPermalink }}" alt="{{ $altMiddle }}" class="max-w-full h-auto md:w-1/3" loading="{{ $loading }}">
 
     {{ $imageRight := resources.Get .right }}
     {{ $webpRight := $imageRight.Process "webp" }}

@@ -8,7 +8,7 @@
     {{ partial "image-row" (dict "left" "images/OKAY-LEFT.png" "middle" "images/OKAY-MIDDLE.png" "right" "images/OKAY-RIGHT.png" "loading" "eager") }}
     <span class="block h-8"></span>
     <div class="mx-auto">
-        <h1 class="md:text-left text-6xl">Welcome.</h1>
+        <h1 class="md:text-left text-6xl text-center">Welcome.</h1>
         <span class="block h-8"></span>
         <p class="max-w-3xl mx-auto text-center">Welcome to my official website. I go by <span class="font-bold">OKAY TK</span>. Maybe you don’t know me yet, and that’s alright—this space is all about connecting. Here, you’ll find my music, videos, mixes, and event dates, all kept simple and to the point. Thanks for stopping by, and I hope you’ll get to know a bit more about me.</p>
     </div>
@@ -19,7 +19,7 @@
     {{ partial "image-row" (dict "left" "images/OKAY-WINDOW-LEFT.png" "middle" "images/OKAY-WINDOW-MIDDLE.png" "right" "images/OKAY-TK-WINDOW-RIGHT.png" "loading" "eager") }}
     <span class="block h-8"></span>
     <div class="mx-auto">
-        <h1 class="text-left text-6xl">About.</h1>
+        <h1 class="md:text-left text-6xl text-center">About.</h1>
         <span class="block h-8"></span>
         
         {{/*  TODO: the width should be contained in the parent and not the <p> tag</p>  */}}
@@ -33,7 +33,7 @@
     {{ partial "image-row" (dict "left" "images/okay-dj-new-left.png" "middle" "images/okay-tk-djing-new-middle.png" "right" "images/okay-tk-djing-right-side.png" ) }}
     <span class="block h-8"></span>
     <div class="mx-auto">
-        <h1 class="text-left text-6xl">Events.</h1>
+        <h1 class="md:text-left text-6xl text-center">Events.</h1>
         <span class="block h-8"></span>
     {{ partial "events" . }}
     </div>
@@ -44,7 +44,7 @@
 <section id="mixes" class="max-w-7xl mx-auto py-12 md:px-0 px-2 block">
     {{ partial "image-row" (dict "left" "images/AUSTINLEFT.png" "middle" "images/AUSTINMIDDLE.png" "right" "images/AUSTINRIGHT.png") }}
     <span class="block h-8"></span>
-        <h1 class="text-left text-6xl">Mixes.</h1>
+    <h1 class="md:text-left text-6xl text-center">Mixes.</h1>
         <span class="block h-8"></span>
         <p class="mx-auto max-w-3xl text-center p-10">Here are a few of my mixes—perfect for any vibe. Pick one, give it a listen, and let me know what you think! This section will be updated regularly, so check back often.</p>    
         <div id="mixtapes" class="mx-auto">
@@ -61,7 +61,7 @@
     {{ partial "image-row" (dict "left" "images/STRANGELEFT.png" "middle" "images/STRANGEMIDDLE.png" "right" "images/STRANGERIGHT.png") }}
     <span class="block h-8"></span>
     <div class="mx-auto">
-        <h1 class="text-left text-6xl">Contact.</h1>
+        <h1 class="md:text-left text-6xl text-center">Contact.</h1>
         <span class="block h-8"></span>
         <div id="cloudcast-list" class="space-y-6 flex flex-wrap gap-x-4 items-center">
             <!-- JavaScript will populate entries here -->
