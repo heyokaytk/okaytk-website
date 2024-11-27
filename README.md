@@ -10,18 +10,8 @@ The development site is currently deployed to [d3lgpv95v1cebt.cloudfront.net](ht
 - **Tailwind CSS**: Tailwind is a utility-first CSS framework that provides pre-defined classes to style the website effectively and responsively.
 - **AWS CloudFront**: AWS CloudFront is used to serve the website globally, ensuring fast load times and secure content delivery.
 
-# TODOs:
-- [ ] There are a few recommendations on https://pagespeed.web.dev/ for better accesibility. I will work through these soon.
-- [ ] add tags to posts
-- [ ] update the Events layout to adhere to best practices in pagespeed.
-- [ ] What should we do if there are no upcoming events. what about reoccuring events?
-- [ ] add padding to the mobile version of the home page
-- [ ] fix overflow width on the mobile version of the home page. I think it is due to the mixtapes section
-- [ ] write the instruction manual for updating the content.
-- [ ] write an alias for TK to use in the terminal.
-- [ ] Events should check to see if there are any upcoming dates. if not write a short description, maybe link to an event RSS Feed.
-- [ ] Event check happens in JS currently, this should be migrated to Hugo.
-- [x] fix the menu bar to naivagte back to the proper page/anchor. currently it is only rerouting to a local anchor
+## TODOs:
+Todos have been moved to the issues section of this GitHub repo.
 
 ## Getting Started
 
