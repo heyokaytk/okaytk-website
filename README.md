@@ -111,7 +111,7 @@ To create a link you just need the text you would like to see and the link to th
 ### Youtube videos
 Adding a YT video is pretty straight forward. You just need the video ID which can be pulled from the video's url.
 
-The ID is in the URL of the video: https://www.youtube.com/watch?v=**sdCd54ec5io** where **sdCd54ec5io** is the ID.
+The ID is in the URL of the video: "https://www.youtube.com/watch?v=**sdCd54ec5io**" where **sdCd54ec5io** is the ID.
 
 To embed a YouTube video
 ```hugo
@@ -151,8 +151,6 @@ layouts/
 
 # Post Ideas
 I would love to see you write these post:
-```markdown
-# Blog Topics with Tags
 
 ---
 
@@ -272,6 +270,5 @@ I would love to see you write these post:
 - **Audience:** Aspiring DJs  
 - **Topic:** Technique  
 - **Type:** Guides  
-```
 
 
