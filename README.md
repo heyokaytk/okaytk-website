@@ -48,7 +48,6 @@ Todos have been moved to the issues section of this GitHub repo.
 4. **Open the Browser**:
    Navigate to `http://localhost:1313/` to view the website.
 
-
 ## Project Structure
 
 <!-- TODO: fix this with more relevant information -->
@@ -90,6 +89,43 @@ title = 'Crunkmas Mixtape'
 .....
 ```
 
+## Adding Content to a Post
+
+### Images 
+
+Each post will have its own **images** folder. Anything you drop in here will be available to that blog post. Images are automatically reformatted to webp for better performance.
+
+To include an image in the blog post reference it like so:
+
+```markdown	
+![image description here](images/facebook.jpg)
+```
+The description is used as the alt text and is contributes to how SEO rank the site.
+
+### Links
+
+To create a link you just need the text you would like to see and the link to the site.
+```markdown
+[Serato Stems](https://serato.com/dj/pro/stems)
+```
+### Youtube videos
+Adding a YT video is pretty straight forward. You just need the video ID which can be pulled from the video's url.
+
+The ID is in the URL of the video: https://www.youtube.com/watch?v=**sdCd54ec5io** where **sdCd54ec5io** is the ID.
+
+To embed a YouTube video
+```hugo
+{{< youtube sdCd54ec5io >}}
+```
+
+### Instagram
+	
+{{< instagram C6ulegJpfOF >}}
+
+### Twitter
+
+{{< twitter user="heyokaytk" id="1857664030766239997" >}}
+
 # Reference 
 
 Render Hooks for styling the blog post
@@ -108,26 +144,134 @@ layouts/
         ├── render-passthrough.html
         └── render-table.html
 ```
+# TAGS
+   Audience:   [ DJs, Fans, Promoters, Audiophiles, Music Lovers, Aspiring Djs]
+   Topic:      [Technique, Music, Gear, Industry, Career] 
+   Types:      [Opinion, Tips, Guides, Review, Recap]
 
-# Post 
+# Post Ideas
 I would love to see you write these post:
+```markdown
+# Blog Topics with Tags
 
-- Equipment Setup, controller, speakers, headphones, etc
-- How many airhorns per minute is appropriate. (airhorns = song's BPM / 4.28 ?)
-- How do you bring a song into your library, set cues, cue layout, mutiple versions of the track, sample bank
-- How do you lay out your library, do you have a naming convention? 
-- What album is slept on?
-- What is a cool trend you are seeing at the shows; trends from other DJs
-- How do you find a handsome developer to help build a website. 
-- How do you prepare for an event? How much do you practice.
-- Is there money in Twitch?
-- How do you get the dope Twitch setup you had (FYI Dj Green Lantern has a sick twitch stream)
-- How do you build a brand as a DJ?
-- What to do if you think someone is stalking you, showing up at your shows, suggesting articles for you to write.
-- Stories from the road. 
-- What does it take to put together a show like Mixtape
-- Should Halifax have more venues
-- Transition of the month
-- Dj set breakdown, transition break down, etc
+---
+
+## 1. Equipment Setup: Controller, Speakers, Headphones, etc.
+- **Audience:** Aspiring DJs  
+- **Topic:** Gear  
+- **Type:** Guides  
+
+---
+
+## 2. How Many Airhorns per Minute is Appropriate? (Airhorns = Song's BPM / 4.28?)
+- **Audience:** DJs  
+- **Topic:** Technique  
+- **Type:** Opinion  
+
+---
+
+## 3. How Do You Bring a Song into Your Library? (Set Cues, Cue Layout, Multiple Versions, Sample Bank)
+- **Audience:** DJs  
+- **Topic:** Technique  
+- **Type:** Tips  
+
+---
+
+## 4. How Do You Lay Out Your Library? Do You Have a Naming Convention?
+- **Audience:** Aspiring DJs  
+- **Topic:** Technique  
+- **Type:** Guides  
+
+---
+
+## 5. What Album is Slept On?
+- **Audience:** Music Lovers  
+- **Topic:** Music  
+- **Type:** Opinion  
+
+---
+
+## 6. What is a Cool Trend You Are Seeing at the Shows? (Trends from Other DJs)
+- **Audience:** Promoters  
+- **Topic:** Industry  
+- **Type:** Recap  
+
+---
+
+## 7. How Do You Find a Handsome Developer to Help Build a Website?
+- **Audience:** DJs  
+- **Topic:** Career  
+- **Type:** Opinion  
+
+---
+
+## 8. How Do You Prepare for an Event? How Much Do You Practice?
+- **Audience:** Aspiring DJs  
+- **Topic:** Career  
+- **Type:** Tips  
+
+---
+
+## 9. Is There Money in Twitch?
+- **Audience:** DJs  
+- **Topic:** Career  
+- **Type:** Opinion  
+
+---
+
+## 10. How Do You Get the Dope Twitch Setup You Had? (FYI DJ Green Lantern Has a Sick Twitch Stream)
+- **Audience:** Aspiring DJs  
+- **Topic:** Gear  
+- **Type:** Guides  
+
+---
+
+## 11. How Do You Build a Brand as a DJ?
+- **Audience:** DJs  
+- **Topic:** Career  
+- **Type:** Tips  
+
+---
+
+## 12. What to Do if You Think Someone is Stalking You (Showing Up at Your Shows, Suggesting Articles for You to Write)?
+- **Audience:** DJs  
+- **Topic:** Career  
+- **Type:** Opinion  
+
+---
+
+## 13. Stories from the Road
+- **Audience:** Fans  
+- **Topic:** Industry  
+- **Type:** Recap  
+
+---
+
+## 14. What Does It Take to Put Together a Show Like Mixtape?
+- **Audience:** Promoters  
+- **Topic:** Industry  
+- **Type:** Guides  
+
+---
+
+## 15. Should Halifax Have More Venues?
+- **Audience:** Fans  
+- **Topic:** Industry  
+- **Type:** Opinion  
+
+---
+
+## 16. Transition of the Month
+- **Audience:** DJs  
+- **Topic:** Technique  
+- **Type:** Recap  
+
+---
+
+## 17. DJ Set Breakdown: Transition Breakdown, etc.
+- **Audience:** Aspiring DJs  
+- **Topic:** Technique  
+- **Type:** Guides  
+```
 
 
