@@ -69,6 +69,34 @@ The project is structured as follows:
    │  |  ├─ hugo.toml     # Website config file. Contains global settings for the website and the Title, Domain, Etc.
    ```
 
+# Domain
+
+OWNER
+```OKAY TK
+6300 Duncan Street
+Halifax, NS, B3L1K3
+CA
++1.9028308711
+okaytkokay@gmail.com
+```
+
+ADMINSTRATOR
+```Tristan Thorpe
+6300 Duncan Street
+Halifax, NS, B3L 1K3
+CA
++1.9028308711
+OKAYTKOKAY@GMAIL.COM
+```
+
+TECHNICAL CONTACT
+```BLUEHOST.COM
+5335 GATE PKWY.
+JACKSONVILLE, FL, 32256
+US
++1.8017659400
+whois@bluehost.com
+```
 # New Blog Post
 
 To create a new blog post, with the title being 'Crunkmas Mixtape' cd to the project directory and run the following command:
