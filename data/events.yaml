@@ -1,43 +1,19 @@
 # todo: add reference for future editing
 events:
-  - name: "I shouldn't be here"
-    date: "2023-12-05"
-    time: "09:00 AM"
-    location: 
-      venue: "Downtown Convention Center"
+  - name: "Ice Fest Block Party"
+    date: "2025-02-01"
+    time: "12:00 PM - 4:00 PM"
+    location:
+      venue: "Alderney Drive to Victoria Road, Dartmouth"
       venue_url: "https://downtownconventioncenter.com"
-      address: "https://maps.app.goo.gl/L8qD3gph4QwfQvAH7"
-    website_url: "https://techconference.com"
-    description: "A comprehensive conference covering the latest trends in technology, software development, and innovation."
+    website_url: "https://www.downtowndartmouth.ca/icefestival"
+    description: "Join us for a winter celebration! Enjoy live ice carving, live entertainment, a street party, and so much more."
 
-  - name: "Jazz Music Festival"
-    date: "2025-06-15"
-    time: "05:00 PM"
-    location: 
+  - name: "Bump & Grind"
+    date: "2025-02-14"
+    time: "09:00 PM - 1:00 AM"
+    location:
       venue: "City Park"
       venue_url: "https://citypark.com"
       address: "https://maps.app.goo.gl/L8qD3gph4QwfQvAH7"
-    website_url: "https://jazzfest.com"
-    description: "Enjoy live jazz performances by renowned artists in a beautiful outdoor setting."
-
-  - name: "Startup Pitch Night"
-    date: "2025-03-10"
-    time: "06:00 PM"
-    location: 
-      venue: "Innovation Hub"
-      venue_url: "https://innovationhub.com"
-      address: "https://maps.app.goo.gl/L8qD3gph4QwfQvAH7"
-    website_url: "https://startuppitchnight.com"
-    ticket_url: "https://startuppitchnight.com/register"
-    description: "A night for emerging startups to pitch their ideas to investors and the community."
-
-  - name: "Film Screening: Classic Movies Night"
-    date: "2025-02-20"
-    time: "07:30 PM"
-    location: 
-      venue: "City Cinema"
-      venue_url: "https://citycinema.com"
-      address: "321 Cinema Rd"
-    website_url: "https://citycinema.com/classic-movies-night"
-    ticket_url: "https://citycinema.com/tickets"
-    description: "An evening screening of classic films. Popcorn included with each ticket!"
+    description: "Your Favourite 90s R&B Event"
