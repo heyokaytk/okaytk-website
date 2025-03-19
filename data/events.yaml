@@ -25,8 +25,8 @@ events:
     date: "2025-03-22"
     time: "09:00 PM - 1:00 AM"
     location:
-      venue: "1873 Granville Street"
-      # venue_url: "https://2037gottingen.ca/marquee/"
+      venue: "Art Bar +Projects"
+      venue_url: "https://www.showpass.com/bumpandgrindrnb/"
       ticket_url: "https://www.showpass.com/bumpandgrindrnb/"
       address: "1873 Granville Street"
     description: -|
