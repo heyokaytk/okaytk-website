@@ -18,7 +18,7 @@ events:
       ticket_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
       address: "https://maps.app.goo.gl/kPzkyD69aToxn2Zz9"
     website_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
-    description: -|
+    description: 
       High School Mixtape is back for Volume 3!
       We've got another amazing all-star roster of local artists performing 90s and 2000s hip-hop and r&b anthems live, backed by the legendary Mellotones.
 
@@ -31,5 +31,5 @@ events:
       ticket_url: "https://www.showpass.com/bumpandgrindrnb/"
       address: "1873 Granville Street"
     website_url: "https://www.showpass.com/bumpandgrindrnb/"
-    description: -|
+    description:
       After a SOLD-OUT February event, Bump & Grind R&B Night returns on Saturday, March 22nd!
