@@ -41,8 +41,8 @@ jobs:
           submodules: recursive
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Install Tailwind CSS v4aplha
-        run: npm install tailwindcss@next @tailwindcss/cli@next  
+      - name: Install Tailwind CSS v4
+        run: npm install --save-dev tailwindcss @tailwindcss/cli
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
