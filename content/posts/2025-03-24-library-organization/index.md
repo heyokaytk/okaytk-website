@@ -10,7 +10,7 @@ title = 'Library Management'
 
 Now, keep in mind—everyone organizes their library differently. Think of it like your kitchen: where you place things depends on your flow. Some people keep the knives by the stove, others by the sink—it’s all about how you cook. Same goes for DJing. This is just how I prep my ingredients, but hopefully a few of these ideas help you sharpen your own setup in Serato.
 
-## ## Folder Structure: Simple, Structured, All Caps
+## Folder Structure: Simple, Structured, All Caps
 
 Everything’s organized by **Genre**, then **Decade**. That’s it. No wild subgenres or over-complications. Simplicity = speed. And when you’re live, speed matters.
 
