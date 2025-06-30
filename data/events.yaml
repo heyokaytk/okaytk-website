@@ -24,10 +24,10 @@ events:
 
   - name: "Bump & Grind - Summer Day Party"
     date: "July 26th 2025"
-    time: "012:00 AM - 9:00 PM"
+    time: "12:00 AM - 9:00 PM"
     location:
       venue: "Maxwell’s Plum"
-      venue_url: "https://maps.app.goo.gl/6BKuBHFJ3HKpt8c5A"
+      venue_url: "https://www.maxwellsplum.ca/"
       ticket_url: "https://showpass.com/?utm_source=www.bumpandgrindhfx.com&utm_medium=newsletter&utm_campaign=bump-grind"
       address: "1873 Granville St, Halifax, NS B3J 3L6"
     website_url: "https://www.maxwellsplum.ca/"
