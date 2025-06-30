@@ -9,27 +9,27 @@ events:
   #   website_url: "https://www.downtowndartmouth.ca/icefestival"
   #   description: "Join us for a winter celebration! Enjoy live ice carving, live entertainment, a street party, and so much more."
 
-  - name: "High School Mixtape Volume 3"
-    date: "2025-04-26"
-    time: "09:00 PM - 2:00 AM"
-    location:
-      venue: "The Marquee"
-      venue_url: "https://2037gottingen.ca/marquee/"
-      ticket_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
-      address: "https://maps.app.goo.gl/kPzkyD69aToxn2Zz9"
-    website_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
-    description: 
-      High School Mixtape is back for Volume 3!
-      We've got another amazing all-star roster of local artists performing 90s and 2000s hip-hop and r&b anthems live, backed by the legendary Mellotones.
+  # - name: "High School Mixtape Volume 3"
+  #   date: "2025-04-26"
+  #   time: "09:00 PM - 2:00 AM"
+  #   location:
+  #     venue: "The Marquee"
+  #     venue_url: "https://2037gottingen.ca/marquee/"
+  #     ticket_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
+  #     address: "https://maps.app.goo.gl/kPzkyD69aToxn2Zz9"
+  #   website_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
+  #   description: 
+  #     High School Mixtape is back for Volume 3!
+  #     We've got another amazing all-star roster of local artists performing 90s and 2000s hip-hop and r&b anthems live, backed by the legendary Mellotones.
 
-  - name: "Bump & Grind R&B"
-    date: "2025-03-22"
-    time: "09:00 PM - 1:00 AM"
+  - name: "Bump & Grind - Summer Day Party"
+    date: "2025-07-26"
+    time: "012:00 AM - 9:00 PM"
     location:
-      venue: "Art Bar +Projects"
-      venue_url: "https://www.showpass.com/bumpandgrindrnb/"
-      ticket_url: "https://www.showpass.com/bumpandgrindrnb/"
+      venue: "Maxwell’s Plum"
+      venue_url: "https://maps.app.goo.gl/2z61FFVkZB7r5iN59"
+      ticket_url: "https://showpass.com/?utm_source=www.bumpandgrindhfx.com&utm_medium=newsletter&utm_campaign=bump-grind"
       address: "1873 Granville Street"
-    website_url: "https://www.showpass.com/bumpandgrindrnb/"
+    website_url: "https://www.maxwellsplum.ca/"
     description:
-      After a SOLD-OUT February event, Bump & Grind R&B Night returns on Saturday, March 22nd!
+      Mark your calendars—Bump & Grind is back with another summer day party on Saturday, July 26th, and this one’s about to be big. We’ve locked in the venue and the vibe: this time we’re taking over Maxwell’s Plum (right by Pizza Corner in downtown Halifax).
