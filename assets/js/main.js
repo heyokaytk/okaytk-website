@@ -136,6 +136,32 @@ function sinceWhen(createdTime) {
   }
 }
 
+function convertToHumanReadableDate(dateString) {
+  // Create a new Date object from the input date string.
+  // Note: Parsing "YYYY-MM-DD" directly is generally reliable, but for broader compatibility
+  // and to avoid potential timezone issues, it's often better to manually parse or
+  // ensure the string is in a format like "YYYY/MM/DD" or "YYYY-MM-DDTHH:mm:ssZ"
+  // if dealing with times or timezones. For this specific format, it works well.
+  const date = new Date(dateString);
+
+  // Check if the date is valid.
+  if (isNaN(date.getTime())) {
+    return "Invalid Date";
+  }
+
+  // Options for formatting the date.
+  // We want the full month name, day as a numeric value, and full year.
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
+  // Use toLocaleDateString to get a human-readable format based on the user's locale.
+  // 'en-US' is specified here for a common format like "Month Day, Year".
+  return date.toLocaleDateString('en-US', options);
+}
+
 // // Navbar Background Change on Scroll
 // window.addEventListener('scroll', () => {
 //     const navbar = document.querySelector('nav');
