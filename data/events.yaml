@@ -11,11 +11,11 @@ events:
 
   # - name: "High School Mixtape Volume 3"
   #   date: "2025-04-26"
-  #   time: "09:00 PM - 2:00 AM"
+  #   time: "2:00 PM - 6:00 PM"
   #   location:
   #     venue: "The Marquee"
   #     venue_url: "https://2037gottingen.ca/marquee/"
-  #     ticket_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
+  #     ticket_url: "https://www.tickettailor.com/events/hardpatch/1756742?fbclid=PAQ0xDSwLQnwVleHRuA2FlbQIxMQABpykmILyVjMhKLu0Pw8qgWllTqQyI1-8zLakM8n73cFrV1PUA9Q6VSEBJoIgt_aem_10DdOGHcb3nXKlpBpp84Jg"
   #     address: "https://maps.app.goo.gl/kPzkyD69aToxn2Zz9"
   #   website_url: "https://www.eventbrite.ca/e/high-school-mixtape-volume-3-tickets-1234567890"
   #   description: 
@@ -24,11 +24,11 @@ events:
 
   - name: "Bump & Grind - Summer Day Party"
     date: "July 26th 2025"
-    time: "12:00 AM - 9:00 PM"
+    time: "2:00 PM - 6:00 PM"
     location:
       venue: "Maxwell’s Plum"
       venue_url: "https://www.maxwellsplum.ca/"
-      ticket_url: "https://showpass.com/?utm_source=www.bumpandgrindhfx.com&utm_medium=newsletter&utm_campaign=bump-grind"
+      ticket_url: "https://www.tickettailor.com/events/hardpatch/1756742?fbclid=PAQ0xDSwLQnwVleHRuA2FlbQIxMQABpykmILyVjMhKLu0Pw8qgWllTqQyI1-8zLakM8n73cFrV1PUA9Q6VSEBJoIgt_aem_10DdOGHcb3nXKlpBpp84Jg"
       address: "1873 Granville St, Halifax, NS B3J 3L6"
     website_url: "https://www.maxwellsplum.ca/"
     description: >
