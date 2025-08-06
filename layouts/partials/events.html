@@ -32,15 +32,13 @@
           </li>
           {{ end }}
           {{ if $event.ticket_url }}
-          <li>
-            <a href="{{ $event.ticket_url }}" class="flex items-center text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer">
-              <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M22 10V7a2 2 0 0 0-2-2h-3.17a3 3 0 0 0-5.66 0H8a2 2 0 0 0-2 2v3.17a3 3 0 0 0 0 5.66V17a2 2 0 0 0 2 2h3.17a3 3 0 0 0 5.66 0H20a2 2 0 0 0 2-2v-3.17a3 3 0 0 0 0-5.66zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-              </svg>
-              <span>Tickets</span>
-            </a>
-          </li>
-          {{ end }}
+  <li>
+    <a href="{{ $event.ticket_url }}">
+      ...
+      <span>Tickets</span>
+    </a>
+  </li>
+{{ end }}
           {{ if $event.location.venue_url }}
           <li>
             <a href="{{ $event.location.venue_url }}" class="flex items-center text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer">
