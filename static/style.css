@@ -97,19 +97,17 @@ nav a {
 
 /* Header social icons styling */
 .header-social-icons {
-    display: inline-flex;
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
     align-items: center;
-    margin-left: 30px;
 }
 
-.header-social-icons a {
-    font-size: 16px;
-    margin-left: 15px;
-    transition: color 0.2s;
+.header-social-icons i {
+    font-size: 0.9rem;
 }
-
 .header-social-icons a:first-child {
-    margin-left: 20px; /* Extra space from CONTACT link */
+    margin-left: 20px;
 }
 
 /* ------------------------------------
