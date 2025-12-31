@@ -1,0 +1,431 @@
+/* ------------------------------------
+ * 1. BASE STYLES & RESET
+ * ------------------------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: white; 
+    background-color: black; 
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+/* Global Link Hover: Turns all links grey on hover */
+a:hover {
+    color: #aaaaaa; 
+}
+
+/* ------------------------------------
+ * 2. HERO SECTION WITH SCROLLING BACKGROUND
+ * ------------------------------------ */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#fixed-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh; /* Reduced from 150vh so it doesn't cover content */
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 40%,
+            rgba(0, 0, 0, 0.7) 70%,
+            rgba(0, 0, 0, 0.95) 100%
+        ),
+        url('OKAYTK-BACKGROUND.png');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+    z-index: 0;
+}
+
+/* ------------------------------------
+ * 3. FLOATING HEADER/NAVIGATION
+ * ------------------------------------ */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2); 
+    
+    /* Transition for smooth fade-out with JavaScript */
+    transition: opacity 0.3s ease-out; 
+}
+
+.logo img {
+    height: 35px; 
+    width: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    font-family: 'Oswald', sans-serif; 
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Header social icons styling */
+.header-social-icons {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.header-social-icons a {
+    font-size: 16px;
+    margin-left: 15px;
+    transition: color 0.2s;
+}
+
+.header-social-icons a:first-child {
+    margin-left: 20px; /* Extra space from CONTACT link */
+}
+
+/* ------------------------------------
+ * 4. HERO CONTENT (Initial View)
+ * ------------------------------------ */
+.hero-content {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 25vw; 
+    max-width: 300px; 
+    height: auto; 
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); 
+}
+
+/* ------------------------------------
+ * 5. FADE-OUT TRANSITION SECTION
+ * ------------------------------------ */
+.fade-out-scroll {
+    height: 20vh; 
+    width: 100%;
+    /* Gradient from transparent to solid black */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,      
+        rgba(0, 0, 0, 0.9) 75%,   
+        rgb(0, 0, 0) 100%         
+    );
+    position: relative;
+    z-index: 2; /* Above the background image */
+}
+
+/* ------------------------------------
+ * 6. DARK CONTENT & NEW SECTION STYLES
+ * ------------------------------------ */
+.dark-content {
+    background-color: black;
+    color: white;
+    padding: 0;
+    position: relative;
+    z-index: 2; /* Above the background image */
+}
+
+.content-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Generic style for new content sections */
+.content-block {
+    padding: 80px 0; 
+    scroll-margin-top: 100px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.content-block:first-of-type {
+    border-top: none;
+}
+
+/* Default H2 Style: Centered for 'About' and 'Mixes' */
+.content-block h2 {
+    font-family: 'Oswald', sans-serif; 
+    font-size: 5em; 
+    margin: 0 0 20px 0; 
+    padding: 0; 
+    text-align: center;
+    color: white;
+}
+
+/* New specific class for left-aligned headers (UPCOMING EVENTS, MIXES) */
+.align-left {
+    text-align: left !important;
+    /* This formula pulls the left edge of the content flush with the left edge of the viewport */
+    margin-left: calc(-50vw + 50%) !important;
+    /* Re-adds padding inside the container so the text is not flush with the browser edge */
+    padding-left: 50px; 
+}
+
+/* ABOUT Section Specifics */
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* ------------------------------------
+ * 7. EVENT HERO SECTION STYLES (Side-by-Side Centered Text)
+ * ------------------------------------ */
+.event-hero { 
+    display: flex;
+    justify-content: center; 
+    gap: 80px; 
+    padding-bottom: 0px; 
+    flex-wrap: wrap; 
+}
+
+/* This is the container for each individual event's text */
+.event-text-column { 
+    width: 400px; 
+    text-align: center; 
+    padding-top: 50px; 
+}
+
+/* Event Text Styling (Similar to Soulection) */
+.event-city-date {
+    font-family: sans-serif; 
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #aaaaaa;
+    margin-bottom: 5px;
+}
+
+.event-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em; 
+    line-height: 1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    color: white;
+    /* Ensures BUMP & GRIND stays on one line */
+    white-space: nowrap; 
+}
+
+.event-location-address {
+    font-family: sans-serif;
+    font-size: 1.2em;
+    line-height: 1.4;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+/* Ticket Button Styling */
+.event-ticket-button {
+    display: inline-block;
+    background-color: white;
+    color: black !important; 
+    padding: 15px 40px;
+    border-radius: 4px; 
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 15px; 
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.event-ticket-button:hover {
+    background-color: #aaaaaa; 
+    color: black !important;
+}
+
+/* ------------------------------------
+ * 8. MIXES SECTION STYLES
+ * ------------------------------------ */
+.mixes-intro-text {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.mixes-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.mix-card {
+    width: 220px;
+    height: 220px; 
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.mix-card:hover {
+    transform: scale(1.03);
+}
+
+.mix-card iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.mix-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%; 
+    font-style: italic;
+    font-size: 0.9em;
+    background-color: #222;
+}
+
+.mix-info {
+    padding: 10px 15px;
+    height: 20%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.mix-info h4 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.mix-info .mix-link {
+    font-size: 0.8em;
+    color: #aaaaaa;
+}
+
+/* ------------------------------------
+ * 9. FOOTER STYLES
+ * ------------------------------------ */
+#main-footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    /* This padding is what we are counteracting with negative margins below */
+    padding: 50px 50px 70px; 
+    margin-top: 100px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+/* --- Contact Form (Left Side) --- */
+.footer-left {
+    width: 45%; 
+    /* FIX: Counteract the 50px padding from #main-footer for left alignment */
+    margin-left: -50px; 
+    /* Re-apply the 50px padding internally so the text/form content is spaced correctly */
+    padding-left: 50px;
+}
+
+.footer-left h3 {
+    font-family: 'Oswald', sans-serif; 
+    margin-bottom: 20px;
+    font-size: 3em; 
+    color: #aaaaaa; 
+    text-transform: uppercase; 
+}
+
+.contact-form input,
+.contact-form textarea, 
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05); 
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    resize: vertical; 
+    min-height: 50px; 
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #aaaaaa;
+}
+
+.contact-form button {
+    background-color: white; 
+    color: black;
+    border: 1px solid white;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background-color: #aaaaaa; 
+    color: black;
+    border-color: #aaaaaa;
+}
+
+/* --- Social Media (Right Side) --- */
+.footer-right {
+    text-align: right;
+    width: 45%;
+    /* FIX: Counteract the 50px padding from #main-footer for right alignment */
+    margin-right: -50px; 
+    /* Re-apply the 50px padding internally so the icons are spaced correctly */
+    padding-right: 50px;
+}
+
+.follow-text {
+    font-size: 3em; 
+    font-family: 'Oswald', sans-serif; 
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+}
+
+.social-links a {
+    font-size: 42px; 
+    margin-left: 20px;
+    display: inline-block; 
+}
