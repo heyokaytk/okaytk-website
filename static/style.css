@@ -335,6 +335,54 @@ nav a {
 }
 
 /* ------------------------------------
+ * 8.5 CLIENT LOGO GRID
+ * ------------------------------------ */
+.client-section {
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.client-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em; /* Slightly smaller than main section headers */
+    margin-bottom: 40px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px; /* Space between logos */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-item img {
+    height: 50px; /* Standardize the height for all logos */
+    width: auto;
+    object-fit: contain;
+    /* The "Corporate" Look: Grayscale by default */
+    filter: grayscale(100%) brightness(1.5) opacity(0.6);
+    transition: all 0.4s ease;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%) brightness(1) opacity(1);
+    transform: scale(1.1);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .logo-grid { gap: 30px; }
+    .logo-item img { height: 40px; }
+}
+
+/* ------------------------------------
  * 9. FOOTER STYLES
  * ------------------------------------ */
 #main-footer {
