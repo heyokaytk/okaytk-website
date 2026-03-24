@@ -1,17 +1,8 @@
-{{ $links := .Site.Data.social_links }}
 <div class="tk-footer">
   <div class="tk-footer-logo">OKAY TK</div>
   <div class="tk-footer-links">
-    {{ if $links }}
-      {{ range $links.links }}
-      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-      {{ end }}
-    {{ else }}
-      <a href="https://instagram.com/heyokaytk" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://facebook.com/okaytk" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.mixcloud.com/okaytk" target="_blank" rel="noopener">Mixcloud</a>
-      <a href="https://twitch.tv/heyokaytk" target="_blank" rel="noopener">Twitch</a>
-      <a href="https://youtube.com/@okaytk" target="_blank" rel="noopener">YouTube</a>
+    {{ range .Site.Data.social_links }}
+    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .platform }}</a>
     {{ end }}
   </div>
   <div class="tk-footer-copy">© {{ now.Year }} OKAY TK</div>
