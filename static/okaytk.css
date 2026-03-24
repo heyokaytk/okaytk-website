@@ -1,14 +1,14 @@
 /* ============================================================
    OKAY TK — Redesign Styles
    Add @import for this file in assets/css/main.css:
-   @import "../../static/okaytk.css";
+   @import url('/okaytk.css');
    ============================================================ */
 
 :root {
   --tk-black: #080808;
   --tk-white: #f2f0eb;
-  --tk-dim: #666;
-  --tk-dimmer: #333;
+  --tk-dim: #999;
+  --tk-dimmer: #444;
   --tk-gold: #c8a84b;
   --tk-border: rgba(242, 240, 235, 0.1);
   --tk-border-hover: rgba(242, 240, 235, 0.28);
@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Remove old pt-32 content offset — nav is now sticky */
 #content {
   padding-top: 0 !important;
 }
@@ -73,9 +72,7 @@ body {
 }
 
 .tk-nav-links a:hover,
-.tk-nav-links a.tk-nav-active {
-  color: var(--tk-white);
-}
+.tk-nav-links a.tk-nav-active { color: var(--tk-white); }
 
 .tk-nav-cta {
   background: var(--tk-white);
@@ -93,7 +90,6 @@ body {
 
 .tk-nav-cta:hover { opacity: 0.85; }
 
-/* Mobile hamburger */
 .tk-nav-hamburger {
   display: none;
   flex-direction: column;
@@ -145,6 +141,8 @@ body {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  /* Fallback gradient when no photo is set */
+  background-color: #111;
 }
 
 .tk-hero-overlay {
@@ -195,13 +193,14 @@ body {
 }
 
 .tk-hero-tagline {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-  color: rgba(242, 240, 235, 0.55);
-  max-width: 360px;
+  color: var(--tk-white);
+  max-width: 400px;
   margin: 20px 0 36px;
   font-style: italic;
   font-family: var(--tk-font-body);
+  opacity: 0.85;
 }
 
 .tk-hero-actions {
@@ -231,7 +230,7 @@ body {
 .tk-btn-primary:hover { opacity: 0.85; }
 
 .tk-btn-ghost {
-  color: rgba(242, 240, 235, 0.55);
+  color: var(--tk-white);
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -244,9 +243,10 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  opacity: 0.75;
 }
 
-.tk-btn-ghost:hover { color: var(--tk-white); }
+.tk-btn-ghost:hover { opacity: 1; color: var(--tk-white); }
 
 /* ── MARQUEE ─────────────────────────────────────────────── */
 .tk-marquee-wrap {
@@ -302,16 +302,15 @@ body {
   margin: 0;
 }
 
-.tk-about-right {
-  padding: 64px 52px;
-}
+.tk-about-right { padding: 64px 52px; }
 
 .tk-about-text {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(242, 240, 235, 0.6);
+  color: var(--tk-white);
   max-width: 580px;
   font-family: var(--tk-font-body);
+  opacity: 0.8;
 }
 
 .tk-stats-grid {
@@ -389,9 +388,7 @@ body {
 }
 
 /* ── EVENTS ──────────────────────────────────────────────── */
-.tk-events {
-  border-bottom: 0.5px solid var(--tk-border);
-}
+.tk-events { border-bottom: 0.5px solid var(--tk-border); }
 
 .tk-event-row {
   display: flex;
@@ -402,9 +399,7 @@ body {
   transition: background 0.15s;
 }
 
-.tk-event-row:hover {
-  background: rgba(242, 240, 235, 0.03);
-}
+.tk-event-row:hover { background: rgba(242, 240, 235, 0.03); }
 
 .tk-event-date {
   font-family: var(--tk-font-display);
@@ -453,13 +448,8 @@ body {
 }
 
 /* ── MIXES ───────────────────────────────────────────────── */
-.tk-mixes {
-  border-bottom: 0.5px solid var(--tk-border);
-}
-
-.tk-mix-list {
-  padding: 0 52px 48px;
-}
+.tk-mixes { border-bottom: 0.5px solid var(--tk-border); }
+.tk-mix-list { padding: 0 52px 48px; }
 
 /* ── CLIENTS ─────────────────────────────────────────────── */
 .tk-clients {
@@ -521,10 +511,11 @@ body {
 .tk-booking-desc {
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(242, 240, 235, 0.5);
+  color: var(--tk-white);
   max-width: 380px;
   font-family: var(--tk-font-body);
   margin: 0;
+  opacity: 0.7;
 }
 
 .tk-service-tags {
@@ -545,14 +536,46 @@ body {
 
 .tk-booking-right {
   padding: 64px 52px;
+  background: var(--tk-black);
 }
 
-/* Override contact form styles within booking section */
+/* ── CONTACT FORM OVERRIDES ──────────────────────────────── */
+/* Force the existing contact partial to match our dark theme */
+.tk-booking-right *,
+.tk-booking-right *:before,
+.tk-booking-right *:after {
+  background-color: transparent;
+  font-family: var(--tk-font-body) !important;
+}
+
+.tk-booking-right form,
+.tk-booking-right .contact-form,
+.tk-booking-right > div,
+.tk-booking-right > section {
+  background: var(--tk-black) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  color: var(--tk-white) !important;
+}
+
+.tk-booking-right label,
+.tk-booking-right h2,
+.tk-booking-right h3,
+.tk-booking-right p {
+  color: var(--tk-white) !important;
+  font-family: var(--tk-font-display) !important;
+  letter-spacing: 0.08em !important;
+  background: transparent !important;
+}
+
 .tk-booking-right input,
 .tk-booking-right textarea,
 .tk-booking-right select {
   background: #0d0d0d !important;
   border: 0.5px solid var(--tk-border) !important;
+  border-radius: 0 !important;
   color: var(--tk-white) !important;
   padding: 13px 16px !important;
   font-family: var(--tk-font-body) !important;
@@ -561,14 +584,12 @@ body {
   outline: none !important;
   width: 100% !important;
   margin-bottom: 10px !important;
-  border-radius: 0 !important;
+  box-shadow: none !important;
   transition: border-color 0.2s !important;
 }
 
 .tk-booking-right input::placeholder,
-.tk-booking-right textarea::placeholder {
-  color: #444 !important;
-}
+.tk-booking-right textarea::placeholder { color: #555 !important; }
 
 .tk-booking-right input:focus,
 .tk-booking-right textarea:focus {
@@ -580,30 +601,35 @@ body {
   height: 96px !important;
 }
 
+.tk-booking-right button,
 .tk-booking-right button[type="submit"],
 .tk-booking-right input[type="submit"] {
   background: var(--tk-white) !important;
   color: var(--tk-black) !important;
-  padding: 15px !important;
+  padding: 15px 24px !important;
   font-family: var(--tk-font-body) !important;
   font-size: 12px !important;
   font-weight: 400 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   border: none !important;
+  border-radius: 0 !important;
   cursor: pointer !important;
   width: 100% !important;
   margin-top: 4px !important;
   transition: opacity 0.2s !important;
+  box-shadow: none !important;
 }
 
-.tk-booking-right button[type="submit"]:hover,
-.tk-booking-right input[type="submit"]:hover {
-  opacity: 0.85 !important;
-}
+.tk-booking-right button:hover,
+.tk-booking-right input[type="submit"]:hover { opacity: 0.85 !important; }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
-footer { background: var(--tk-black) !important; }
+footer,
+footer * {
+  background: var(--tk-black) !important;
+  color: var(--tk-white) !important;
+}
 
 .tk-footer {
   padding: 32px 52px;
@@ -612,23 +638,20 @@ footer { background: var(--tk-black) !important; }
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+  background: var(--tk-black) !important;
 }
 
 .tk-footer-logo {
   font-family: var(--tk-font-display);
   font-size: 18px;
   letter-spacing: 0.15em;
-  color: var(--tk-white);
+  color: var(--tk-white) !important;
 }
 
-.tk-footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
+.tk-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 
 .tk-footer-links a {
-  color: var(--tk-dim);
+  color: var(--tk-dim) !important;
   text-decoration: none;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -637,17 +660,17 @@ footer { background: var(--tk-black) !important; }
   transition: color 0.2s;
 }
 
-.tk-footer-links a:hover { color: var(--tk-white); }
+.tk-footer-links a:hover { color: var(--tk-white) !important; }
 
 .tk-footer-copy {
   font-size: 11px;
-  color: var(--tk-dimmer);
+  color: var(--tk-dimmer) !important;
   letter-spacing: 0.08em;
   font-family: var(--tk-font-body);
 }
 
 /* ── UTILITIES ───────────────────────────────────────────── */
-.tk-gold { color: var(--tk-gold); }
+.tk-gold { color: var(--tk-gold) !important; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -662,14 +685,12 @@ footer { background: var(--tk-black) !important; }
   .tk-about { grid-template-columns: 1fr; }
   .tk-about-left { padding: 40px 24px 24px; border-right: none; border-bottom: 0.5px solid var(--tk-border); }
   .tk-about-right { padding: 32px 24px 48px; }
-  .tk-stats-grid { grid-template-columns: repeat(3, 1fr); }
 
   .tk-section-header { padding: 40px 24px 24px; }
   .tk-section-title { font-size: 30px; }
 
   .tk-event-row { padding: 16px 24px; gap: 16px; flex-wrap: wrap; }
   .tk-event-date { min-width: 100%; }
-  .tk-event-cta { margin-top: 4px; }
 
   .tk-mix-list { padding: 0 24px 40px; }
 
