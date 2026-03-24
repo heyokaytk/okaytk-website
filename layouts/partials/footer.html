@@ -1,30 +1,18 @@
-{{/*  <pre>{{ debug.Dump site.Data.social_links }}</pre>  */}}
-<div class="bg-gray-900 text-white py-12">
-    <!-- Social Media Links -->
-        
-    <div class="flex flex-col items-center">
-        <div class="flex space-x-6 mb-4">
-            {{ range $social := site.Data.social_links }}
-            <a href="{{ .url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="{{ .color }} transition duration-300"
-                aria-label="{{ .platform }}">
-                <span class="sm:text-1xl md:text-2xl">
-                    <span class="iconify"
-                        data-icon="{{ .icon | safeURL }}"
-                        data-inline="false">
-                    </span>
-                </span>
-              </a>
-            {{ end }}
-        </div>
-
-    <!-- Copyright Text -->
-    <div class="text-center">
-        <p class="text-sm">
-        &copy; {{ now.Year }} OKAY TK. All rights reserved.
-        </p>
-    </div>
+{{ $links := .Site.Data.social_links }}
+<div class="tk-footer">
+  <div class="tk-footer-logo">OKAY TK</div>
+  <div class="tk-footer-links">
+    {{ if $links }}
+      {{ range $links.links }}
+      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+      {{ end }}
+    {{ else }}
+      <a href="https://instagram.com/heyokaytk" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/okaytk" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.mixcloud.com/okaytk" target="_blank" rel="noopener">Mixcloud</a>
+      <a href="https://twitch.tv/heyokaytk" target="_blank" rel="noopener">Twitch</a>
+      <a href="https://youtube.com/@okaytk" target="_blank" rel="noopener">YouTube</a>
+    {{ end }}
+  </div>
+  <div class="tk-footer-copy">© {{ now.Year }} OKAY TK</div>
 </div>
-
