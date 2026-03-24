@@ -1,0 +1,691 @@
+/* ============================================================
+   OKAY TK — Redesign Styles
+   Add @import for this file in assets/css/main.css:
+   @import "../../static/okaytk.css";
+   ============================================================ */
+
+:root {
+  --tk-black: #080808;
+  --tk-white: #f2f0eb;
+  --tk-dim: #666;
+  --tk-dimmer: #333;
+  --tk-gold: #c8a84b;
+  --tk-border: rgba(242, 240, 235, 0.1);
+  --tk-border-hover: rgba(242, 240, 235, 0.28);
+  --tk-surface: #0d0d0d;
+  --tk-font-display: 'Bebas Neue', sans-serif;
+  --tk-font-body: 'DM Sans', sans-serif;
+}
+
+/* ── RESET BODY ──────────────────────────────────────────── */
+body {
+  background: var(--tk-black) !important;
+  color: var(--tk-white);
+  font-family: var(--tk-font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Remove old pt-32 content offset — nav is now sticky */
+#content {
+  padding-top: 0 !important;
+}
+
+/* ── NAV ─────────────────────────────────────────────────── */
+.tk-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 52px;
+  border-bottom: 0.5px solid var(--tk-border);
+  position: sticky;
+  top: 0;
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.tk-nav-logo {
+  font-family: var(--tk-font-display);
+  font-size: 22px;
+  letter-spacing: 0.15em;
+  color: var(--tk-white);
+  text-decoration: none;
+}
+
+.tk-nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tk-nav-links a {
+  color: var(--tk-dim);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  font-family: var(--tk-font-body);
+}
+
+.tk-nav-links a:hover,
+.tk-nav-links a.tk-nav-active {
+  color: var(--tk-white);
+}
+
+.tk-nav-cta {
+  background: var(--tk-white);
+  color: var(--tk-black);
+  padding: 9px 20px;
+  font-family: var(--tk-font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+
+.tk-nav-cta:hover { opacity: 0.85; }
+
+/* Mobile hamburger */
+.tk-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.tk-nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--tk-white);
+}
+
+.tk-nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--tk-black);
+  border-bottom: 0.5px solid var(--tk-border);
+  padding: 16px 24px 24px;
+}
+
+.tk-nav-mobile a {
+  color: var(--tk-dim);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 0;
+  border-bottom: 0.5px solid var(--tk-border);
+  font-family: var(--tk-font-body);
+}
+
+.tk-nav-mobile a:hover { color: var(--tk-white); }
+.tk-nav-mobile.tk-mobile-open { display: flex; }
+
+/* ── HERO ────────────────────────────────────────────────── */
+.tk-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.tk-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8, 8, 8, 0.93) 0%,
+    rgba(8, 8, 8, 0.72) 55%,
+    rgba(8, 8, 8, 0.15) 100%
+  );
+}
+
+.tk-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 52px 72px;
+  max-width: 600px;
+}
+
+.tk-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tk-gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--tk-font-body);
+}
+
+.tk-eyebrow::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--tk-gold);
+}
+
+.tk-hero-name {
+  font-family: var(--tk-font-display);
+  font-size: clamp(80px, 11vw, 128px);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  color: var(--tk-white);
+  margin: 0 0 12px;
+}
+
+.tk-hero-tagline {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(242, 240, 235, 0.55);
+  max-width: 360px;
+  margin: 20px 0 36px;
+  font-style: italic;
+  font-family: var(--tk-font-body);
+}
+
+.tk-hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.tk-btn-primary {
+  background: var(--tk-white);
+  color: var(--tk-black) !important;
+  padding: 13px 28px;
+  font-family: var(--tk-font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.tk-btn-primary:hover { opacity: 0.85; }
+
+.tk-btn-ghost {
+  color: rgba(242, 240, 235, 0.55);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--tk-font-body);
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tk-btn-ghost:hover { color: var(--tk-white); }
+
+/* ── MARQUEE ─────────────────────────────────────────────── */
+.tk-marquee-wrap {
+  border-top: 0.5px solid var(--tk-border);
+  border-bottom: 0.5px solid var(--tk-border);
+  overflow: hidden;
+  padding: 14px 0;
+}
+
+.tk-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: tk-scroll 24s linear infinite;
+}
+
+.tk-marquee-item {
+  font-family: var(--tk-font-display);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--tk-dim);
+  padding: 0 32px;
+  border-right: 0.5px solid var(--tk-border);
+  flex-shrink: 0;
+}
+
+@keyframes tk-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── ABOUT ───────────────────────────────────────────────── */
+.tk-about {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 0.5px solid var(--tk-border);
+}
+
+.tk-about-left {
+  padding: 64px 52px;
+  border-right: 0.5px solid var(--tk-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.tk-about-heading {
+  font-family: var(--tk-font-display);
+  font-size: 56px;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  color: var(--tk-white);
+  margin: 0;
+}
+
+.tk-about-right {
+  padding: 64px 52px;
+}
+
+.tk-about-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(242, 240, 235, 0.6);
+  max-width: 580px;
+  font-family: var(--tk-font-body);
+}
+
+.tk-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--tk-border);
+  margin-top: 48px;
+}
+
+.tk-stat {
+  background: var(--tk-black);
+  padding: 24px;
+  text-align: center;
+}
+
+.tk-stat-num {
+  font-family: var(--tk-font-display);
+  font-size: 38px;
+  letter-spacing: 0.04em;
+  color: var(--tk-white);
+  display: block;
+}
+
+.tk-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  display: block;
+  margin-top: 4px;
+  font-family: var(--tk-font-body);
+}
+
+/* ── SHARED SECTION ELEMENTS ─────────────────────────────── */
+.tk-section-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  font-family: var(--tk-font-body);
+  margin: 0;
+}
+
+.tk-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 48px 52px 32px;
+}
+
+.tk-section-title {
+  font-family: var(--tk-font-display);
+  font-size: 40px;
+  letter-spacing: 0.08em;
+  color: var(--tk-white);
+  margin: 0;
+}
+
+.tk-section-link {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--tk-dim);
+  padding-bottom: 2px;
+  font-family: var(--tk-font-body);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tk-section-link:hover {
+  color: var(--tk-white);
+  border-color: var(--tk-white);
+}
+
+/* ── EVENTS ──────────────────────────────────────────────── */
+.tk-events {
+  border-bottom: 0.5px solid var(--tk-border);
+}
+
+.tk-event-row {
+  display: flex;
+  align-items: center;
+  padding: 20px 52px;
+  border-top: 0.5px solid var(--tk-border);
+  gap: 32px;
+  transition: background 0.15s;
+}
+
+.tk-event-row:hover {
+  background: rgba(242, 240, 235, 0.03);
+}
+
+.tk-event-date {
+  font-family: var(--tk-font-display);
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: var(--tk-gold);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.tk-event-info { flex: 1; }
+
+.tk-event-name {
+  font-family: var(--tk-font-display);
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  color: var(--tk-white);
+  margin-bottom: 4px;
+}
+
+.tk-event-venue {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  font-family: var(--tk-font-body);
+}
+
+.tk-event-cta {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  text-decoration: none;
+  border: 0.5px solid var(--tk-border);
+  padding: 9px 18px;
+  font-family: var(--tk-font-body);
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.tk-event-cta:hover {
+  border-color: var(--tk-white);
+  color: var(--tk-white);
+}
+
+/* ── MIXES ───────────────────────────────────────────────── */
+.tk-mixes {
+  border-bottom: 0.5px solid var(--tk-border);
+}
+
+.tk-mix-list {
+  padding: 0 52px 48px;
+}
+
+/* ── CLIENTS ─────────────────────────────────────────────── */
+.tk-clients {
+  border-bottom: 0.5px solid var(--tk-border);
+  padding: 64px 52px;
+}
+
+.tk-client-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--tk-border);
+}
+
+.tk-client-tile {
+  background: var(--tk-black);
+  padding: 32px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--tk-font-display);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--tk-dimmer);
+  transition: color 0.25s, background 0.25s;
+  cursor: default;
+  text-align: center;
+}
+
+.tk-client-tile:hover {
+  color: var(--tk-white);
+  background: #111;
+}
+
+/* ── BOOKING ─────────────────────────────────────────────── */
+.tk-booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 0.5px solid var(--tk-border);
+}
+
+.tk-booking-left {
+  padding: 64px 52px;
+  border-right: 0.5px solid var(--tk-border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tk-booking-title {
+  font-family: var(--tk-font-display);
+  font-size: 58px;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  color: var(--tk-white);
+  margin: 0;
+}
+
+.tk-booking-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(242, 240, 235, 0.5);
+  max-width: 380px;
+  font-family: var(--tk-font-body);
+  margin: 0;
+}
+
+.tk-service-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tk-tag {
+  padding: 6px 14px;
+  border: 0.5px solid var(--tk-border);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tk-dim);
+  font-family: var(--tk-font-body);
+}
+
+.tk-booking-right {
+  padding: 64px 52px;
+}
+
+/* Override contact form styles within booking section */
+.tk-booking-right input,
+.tk-booking-right textarea,
+.tk-booking-right select {
+  background: #0d0d0d !important;
+  border: 0.5px solid var(--tk-border) !important;
+  color: var(--tk-white) !important;
+  padding: 13px 16px !important;
+  font-family: var(--tk-font-body) !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  outline: none !important;
+  width: 100% !important;
+  margin-bottom: 10px !important;
+  border-radius: 0 !important;
+  transition: border-color 0.2s !important;
+}
+
+.tk-booking-right input::placeholder,
+.tk-booking-right textarea::placeholder {
+  color: #444 !important;
+}
+
+.tk-booking-right input:focus,
+.tk-booking-right textarea:focus {
+  border-color: rgba(242, 240, 235, 0.3) !important;
+}
+
+.tk-booking-right textarea {
+  resize: none !important;
+  height: 96px !important;
+}
+
+.tk-booking-right button[type="submit"],
+.tk-booking-right input[type="submit"] {
+  background: var(--tk-white) !important;
+  color: var(--tk-black) !important;
+  padding: 15px !important;
+  font-family: var(--tk-font-body) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  transition: opacity 0.2s !important;
+}
+
+.tk-booking-right button[type="submit"]:hover,
+.tk-booking-right input[type="submit"]:hover {
+  opacity: 0.85 !important;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer { background: var(--tk-black) !important; }
+
+.tk-footer {
+  padding: 32px 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tk-footer-logo {
+  font-family: var(--tk-font-display);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  color: var(--tk-white);
+}
+
+.tk-footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.tk-footer-links a {
+  color: var(--tk-dim);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--tk-font-body);
+  transition: color 0.2s;
+}
+
+.tk-footer-links a:hover { color: var(--tk-white); }
+
+.tk-footer-copy {
+  font-size: 11px;
+  color: var(--tk-dimmer);
+  letter-spacing: 0.08em;
+  font-family: var(--tk-font-body);
+}
+
+/* ── UTILITIES ───────────────────────────────────────────── */
+.tk-gold { color: var(--tk-gold); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tk-nav { padding: 18px 24px; }
+  .tk-nav-links { display: none; }
+  .tk-nav-cta { display: none; }
+  .tk-nav-hamburger { display: flex; }
+
+  .tk-hero-content { padding: 0 24px 56px; }
+  .tk-hero-name { font-size: clamp(72px, 18vw, 100px); }
+
+  .tk-about { grid-template-columns: 1fr; }
+  .tk-about-left { padding: 40px 24px 24px; border-right: none; border-bottom: 0.5px solid var(--tk-border); }
+  .tk-about-right { padding: 32px 24px 48px; }
+  .tk-stats-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .tk-section-header { padding: 40px 24px 24px; }
+  .tk-section-title { font-size: 30px; }
+
+  .tk-event-row { padding: 16px 24px; gap: 16px; flex-wrap: wrap; }
+  .tk-event-date { min-width: 100%; }
+  .tk-event-cta { margin-top: 4px; }
+
+  .tk-mix-list { padding: 0 24px 40px; }
+
+  .tk-clients { padding: 48px 24px; }
+  .tk-client-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .tk-booking { grid-template-columns: 1fr; }
+  .tk-booking-left { padding: 48px 24px 32px; border-right: none; border-bottom: 0.5px solid var(--tk-border); }
+  .tk-booking-right { padding: 32px 24px 48px; }
+  .tk-booking-title { font-size: 44px; }
+
+  .tk-footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+@media (max-width: 540px) {
+  .tk-client-grid { grid-template-columns: repeat(2, 1fr); }
+  .tk-stats-grid { grid-template-columns: 1fr 1fr; }
+  .tk-hero-name { font-size: 72px; }
+}
