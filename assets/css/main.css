@@ -1,3 +1,5 @@
+@import url('/okaytk.css');
+
 @import "tailwindcss";
 
 /* TODO: remove this var. This was used to handle the transition of the color change of the nav bar. still being used but should be removed */
