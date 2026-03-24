@@ -1,21 +1,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore the official website of OKAY TK, an award-winning DJ from Halifax, Nova Scotia. Discover his music, videos, mixes, and upcoming event dates, all presented in a straightforward and engaging manner." />
+<meta name="description" content="OKAY TK is an award-winning DJ from Halifax, Nova Scotia — known for personality, skill, and versatility. Book TK for corporate events, weddings, club nights, and national stages." />
 
 {{ $favicon := resources.Get "favicon.ico" }}
 <link rel="icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}">
 
-{{/*  if is home title, else IsHome  */}}
+{{/* Title */}}
 {{ if .IsHome }}
-  <title>OKAY TK</title>
+  <title>OKAY TK | One Of A Kind</title>
 {{ else }}
-  <title>OKAY TK | {{ .Title }} </title>
+  <title>OKAY TK | {{ .Title }}</title>
 {{ end }}
 
+{{/* Fonts — Bebas Neue for display, DM Sans for body */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Calligraffitti&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
 
+{{/* Tailwind CSS */}}
 {{ $t := debug.Timer "tailwindcss" }}
 {{ with resources.Get "css/main.css" }}
   {{ $opts := dict
@@ -35,5 +37,5 @@
       {{ end }}
     {{ end }}
   {{ end }}
-{{ end }} 
+{{ end }}
 {{ $t.Stop }}
