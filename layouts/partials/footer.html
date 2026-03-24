@@ -1,9 +1,9 @@
 <div class="tk-footer">
-  <div class="tk-footer-logo">OKAY TK</div>
+  <div class="tk-footer-logo">OKAY <span class="tk-gold">&#9889;</span> TK</div>
   <div class="tk-footer-links">
     {{ range .Site.Data.social_links }}
     <a href="{{ .url }}" target="_blank" rel="noopener">{{ .platform }}</a>
     {{ end }}
   </div>
-  <div class="tk-footer-copy">© {{ now.Year }} OKAY TK</div>
+  <div class="tk-footer-copy">&copy; {{ now.Year }} OKAY TK</div>
 </div>
