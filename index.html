@@ -46,11 +46,6 @@ body { background: var(--tk-page-bg); color: var(--tk-white); font-family: var(-
 .tk-btn-ghost { color:#111; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.2s; }
 .tk-btn-ghost:hover { opacity:1; }
 
-/* MARQUEE */
-.tk-marquee-wrap { border-top:0.5px solid var(--tk-border); border-bottom:0.5px solid var(--tk-border); overflow:hidden; padding:14px 0; }
-.tk-marquee-track { display:flex; white-space:nowrap; animation:tk-scroll 24s linear infinite; }
-.tk-marquee-item { font-family:var(--tk-font-display); font-size:13px; letter-spacing:0.2em; color:var(--tk-white); padding:0 32px; border-right:0.5px solid var(--tk-border); flex-shrink:0; }
-@keyframes tk-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 .tk-gold { color:var(--tk-gold) !important; }
 
 /* ABOUT */
@@ -167,23 +162,6 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
     </div>
   </div>
 </section>
-
-<div class="tk-marquee-wrap">
-  <div class="tk-marquee-track">
-    <span class="tk-marquee-item">Award-Winning DJ</span>
-    <span class="tk-marquee-item">National Stages</span>
-    <span class="tk-marquee-item">Corporate Events</span>
-    <span class="tk-marquee-item">Nightclub Events</span>
-    <span class="tk-marquee-item">Show Programming</span>
-    <span class="tk-marquee-item">Event Management</span>
-    <span class="tk-marquee-item">Award-Winning DJ</span>
-    <span class="tk-marquee-item">National Stages</span>
-    <span class="tk-marquee-item">Corporate Events</span>
-    <span class="tk-marquee-item">Nightclub Events</span>
-    <span class="tk-marquee-item">Show Programming</span>
-    <span class="tk-marquee-item">Event Management</span>
-  </div>
-</div>
 
 <section class="tk-about" id="about">
   <div class="tk-about-left">
