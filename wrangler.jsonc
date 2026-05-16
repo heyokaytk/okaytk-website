@@ -1,0 +1,13 @@
+{
+  "name": "okaytk-website",
+  "compatibility_date": "2026-05-16",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "."
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
