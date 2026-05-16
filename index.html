@@ -95,25 +95,80 @@ body { background: var(--tk-page-bg); color: var(--tk-white); font-family: var(-
 .tk-event-ticket:hover { background:var(--tk-gold); color:#fff; }
 .tk-event-ticket-dim { background:transparent; color:var(--tk-dimmer); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; flex-shrink:0; border:0.5px solid var(--tk-border); cursor:default; }
 
-/* MIXES */
+/* MIXES + STREAM */
 .tk-mixes-stream { display:grid; grid-template-columns:1fr 1fr; border-bottom:0.5px solid var(--tk-border); }
 .tk-mixes-col { border-right:0.5px solid var(--tk-border); }
 .tk-stream-col { }
-.tk-mix-list { padding:0 52px 48px; display:flex; flex-direction:column; }
-.tk-mix-row { display:flex; align-items:center; padding:20px 0; border-top:0.5px solid var(--tk-border); gap:32px; transition:background 0.15s; }
-.tk-mix-num { font-family:var(--tk-font-display); font-size:13px; letter-spacing:0.1em; color:var(--tk-dimmer); min-width:28px; flex-shrink:0; }
-.tk-mix-info { flex:1; }
-.tk-mix-title { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-white); line-height:1; }
-.tk-mix-date { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); margin-top:4px; }
-.tk-mix-listen { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); text-decoration:none; flex-shrink:0; transition:color 0.2s; }
-.tk-mix-listen:hover { color:var(--tk-white); }
 
-/* CLIENTS */
-.tk-stream-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#e0ddd5; margin:0 52px 52px; }
-.tk-stream-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+/* shared box style for both player and stream */
+.tk-stream-wrap,
+.tk-mix-player-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: #e0ddd5;
+  margin: 0 52px 0;
+}
+.tk-stream-wrap iframe,
+.tk-mix-player-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
 .tk-stream-offline { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
 .tk-stream-offline span { font-family:var(--tk-font-display); font-size:13px; letter-spacing:0.15em; color:var(--tk-dimmer); text-transform:uppercase; }
 
+/* carousel slides fill the player box */
+.tk-carousel-slide { display:none; position:absolute; top:0; left:0; width:100%; height:100%; }
+.tk-carousel-slide.active { display:block; }
+.tk-carousel-slide iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+/* overlay arrows inside the player box */
+.tk-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  background: rgba(245,243,238,0.88);
+  border: 0.5px solid rgba(0,0,0,0.12);
+  color: var(--tk-white);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.tk-carousel-arrow:hover { background: rgba(245,243,238,1); }
+#mixPrev { left: 12px; }
+#mixNext { right: 12px; }
+
+/* title/date + dots below the player */
+.tk-mix-carousel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 52px 48px;
+}
+
+.tk-mix-title { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-white); line-height:1; }
+.tk-mix-date { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); margin-top:4px; }
+
+.tk-carousel-dots { display:flex; gap:10px; }
+.tk-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+.tk-carousel-dot.active { background: var(--tk-white); }
+
+/* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
 .tk-client-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--tk-border); }
 .tk-client-tile { background:var(--tk-page-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-dimmer); text-align:center; transition:color 0.25s, background 0.25s; cursor:default; }
@@ -161,7 +216,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
     <li><a href="#about">About</a></li>
     <li><a href="#events">Events</a></li>
     <li><a href="#mixes">Mixes</a></li>
-    <li><a href="#tk-clients" target="_blank">Clientele</a></li>
+    <li><a href="#tk-clients">Clientele</a></li>
   </ul>
   <a href="#booking" class="tk-nav-cta">Book Now</a>
 </nav>
@@ -191,7 +246,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
     <div class="tk-stats-grid">
       <div class="tk-stat"><span class="tk-stat-num">15+</span><span class="tk-stat-label">Years DJing</span></div>
       <div class="tk-stat"><span class="tk-stat-num">Multi</span><span class="tk-stat-label">Award Winner</span></div>
-      <div class="tk-stat"><span class="tk-stat-num">TV</span><span class="tk-stat-label">& Radio</span></div>
+      <div class="tk-stat"><span class="tk-stat-num">TV</span><span class="tk-stat-label">&amp; Radio</span></div>
     </div>
   </div>
 </section>
@@ -208,7 +263,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
   <div class="tk-event-row">
     <div class="tk-event-date">Fri. May 15th, 2026</div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Golden - All 90s & 2000s Music. All Night!</div>
+      <div class="tk-event-name">Golden - All 90s &amp; 2000s Music. All Night!</div>
       <div class="tk-event-venue">Lot Six Bar · 1685 Argyle Street · Halifax · 9:00 PM</div>
     </div>
     <a href="https://www.showpass.com/golden90s2000s/" target="_blank" class="tk-event-ticket">Sold Out!</a>
@@ -216,7 +271,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
   <div class="tk-event-row">
     <div class="tk-event-date">Sun. May 17th, 2026</div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Bump & Grind - R&B Day Party</div>
+      <div class="tk-event-name">Bump &amp; Grind - R&amp;B Day Party</div>
       <div class="tk-event-venue">The Pint Patio · 1575 Argyle Street · Halifax · 3:00 PM</div>
     </div>
     <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/933" target="_blank" class="tk-event-ticket">Sold Out!</a>
@@ -264,7 +319,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
   <div class="tk-event-row">
     <div class="tk-event-date">Sun. June 21st, 2026</div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Bump & Grind: R&B Patio Party</div>
+      <div class="tk-event-name">Bump &amp; Grind: R&amp;B Patio Party</div>
       <div class="tk-event-venue">The Pint Patio · 1575 Argyle Street · Downtown Halifax</div>
     </div>
     <span class="tk-event-ticket-dim">Details TBA</span>
@@ -273,6 +328,7 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
 
 <div class="tk-photo-break" style="background-image:url('IMAGES/OKAYWEB-3RD-HERO.jpg');"></div>
 
+<!-- MIXES CAROUSEL + STREAM -->
 <section class="tk-mixes-stream" id="mixes">
   <div class="tk-mixes-col">
     <div class="tk-section-header">
@@ -282,33 +338,34 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
       </div>
       <a href="https://www.mixcloud.com/heyokaytk/" target="_blank" class="tk-section-link">All mixes →</a>
     </div>
-    <div class="tk-mix-list">
-      <div class="tk-mix-row">
-        <div class="tk-mix-num">01</div>
-        <div class="tk-mix-info">
-          <div class="tk-mix-title">Bump & Grind R&B Mix</div>
-          <div class="tk-mix-date">January 2026</div>
-        </div>
-        <a href="https://www.mixcloud.com/heyokaytk/bump-grind-rb-mix-january-2026/" target="_blank" class="tk-mix-listen">Listen →</a>
+
+    <div class="tk-mix-player-wrap">
+      <div class="tk-carousel-slide active">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/bump-grind-rb-mix-january-2026/" frameborder="0" allow="autoplay"></iframe>
       </div>
-      <div class="tk-mix-row">
-        <div class="tk-mix-num">02</div>
-        <div class="tk-mix-info">
-          <div class="tk-mix-title">Bump & Grind R&B Mix</div>
-          <div class="tk-mix-date">November 2025</div>
-        </div>
-        <a href="https://www.mixcloud.com/heyokaytk/okay-tk-bump-grind-rb-mix-november-2025/" target="_blank" class="tk-mix-listen">Listen →</a>
+      <div class="tk-carousel-slide">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/okay-tk-bump-grind-rb-mix-november-2025/" frameborder="0" allow="autoplay"></iframe>
       </div>
-      <div class="tk-mix-row">
-        <div class="tk-mix-num">03</div>
-        <div class="tk-mix-info">
-          <div class="tk-mix-title">Bump & Grind R&B Mix</div>
-          <div class="tk-mix-date">August 2025</div>
-        </div>
-        <a href="https://www.mixcloud.com/heyokaytk/okay-tk-bump-grind-rb-mix-august-2025/" target="_blank" class="tk-mix-listen">Listen →</a>
+      <div class="tk-carousel-slide">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/okay-tk-bump-grind-rb-mix-august-2025/" frameborder="0" allow="autoplay"></iframe>
+      </div>
+      <button class="tk-carousel-arrow" id="mixPrev" aria-label="Previous mix">&#8249;</button>
+      <button class="tk-carousel-arrow" id="mixNext" aria-label="Next mix">&#8250;</button>
+    </div>
+
+    <div class="tk-mix-carousel-footer">
+      <div>
+        <div class="tk-mix-title" id="mixTitle">Bump &amp; Grind R&amp;B Mix</div>
+        <div class="tk-mix-date" id="mixDate">January 2026</div>
+      </div>
+      <div class="tk-carousel-dots">
+        <button class="tk-carousel-dot active" data-index="0" aria-label="Mix 1"></button>
+        <button class="tk-carousel-dot" data-index="1" aria-label="Mix 2"></button>
+        <button class="tk-carousel-dot" data-index="2" aria-label="Mix 3"></button>
       </div>
     </div>
   </div>
+
   <div class="tk-stream-col" id="stream">
     <div class="tk-section-header">
       <div>
@@ -317,16 +374,16 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
       </div>
       <a href="https://www.twitch.tv/heyokaytk" target="_blank" class="tk-section-link">Follow →</a>
     </div>
-    <div class="tk-stream-wrap">
-      <!-- iframe src="https://player.twitch.tv/?channel=heyokaytk&parent=okaytk.com" frameborder="0" allowfullscreen scrolling="no"></iframe -->
+    <div class="tk-stream-wrap" style="margin-bottom:52px">
+      <!-- <iframe src="https://player.twitch.tv/?channel=heyokaytk&parent=okaytk.com" frameborder="0" allowfullscreen scrolling="no"></iframe> -->
       <div class="tk-stream-offline">
-        <span>● OKAY TK Live Stream</span>
+        <span>↑ OKAY TK Live Stream</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="tk-clients">
+<section class="tk-clients" id="tk-clients">
   <p class="tk-section-label" style="text-align:center;margin-bottom:8px"></p>
   <h2 class="tk-section-title" style="text-align:center;margin-bottom:48px">Clientele</h2>
   <div class="tk-client-grid">
@@ -379,6 +436,36 @@ footer { background:var(--tk-page-bg); border-top:0.5px solid var(--tk-border); 
     <div class="tk-footer-copy">© 2026 OKAY TK</div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var mixes = [
+    { title: 'Bump &amp; Grind R&amp;B Mix', date: 'January 2026' },
+    { title: 'Bump &amp; Grind R&amp;B Mix', date: 'November 2025' },
+    { title: 'Bump &amp; Grind R&amp;B Mix', date: 'August 2025' }
+  ];
+
+  var slides = document.querySelectorAll('.tk-carousel-slide');
+  var dots = document.querySelectorAll('.tk-carousel-dot');
+  var titleEl = document.getElementById('mixTitle');
+  var dateEl = document.getElementById('mixDate');
+  var current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    titleEl.innerHTML = mixes[current].title;
+    dateEl.textContent = mixes[current].date;
+  }
+
+  document.getElementById('mixPrev').addEventListener('click', function () { goTo(current - 1); });
+  document.getElementById('mixNext').addEventListener('click', function () { goTo(current + 1); });
+  dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); }); });
+}());
+</script>
 
 </body>
 </html>
