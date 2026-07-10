@@ -13,13 +13,13 @@
 <meta property="og:description" content="Award-winning DJ and event curator from Halifax, Nova Scotia. Known for personality, versatility, and reading a room.">
 <meta property="og:url" content="https://okaytk.com">
 <meta property="og:type" content="website">
-<meta property="og:image" content="IMAGES/hero.jpg">
+<meta property="og:image" content="https://okaytk.com/IMAGES/hero.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="OKAY TK — One Of A Kind">
 <meta name="twitter:description" content="Award-winning DJ and event curator from Halifax, Nova Scotia.">
-<meta name="twitter:image" content="IMAGES/hero.jpg">
+<meta name="twitter:image" content="https://okaytk.com/IMAGES/hero.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,67 +122,12 @@ p { text-wrap: pretty; }
 
 /* MIXES */
 .tk-mixes { border-bottom:0.5px solid var(--tk-border); }
-.tk-mix-player-wrap, .tk-mix-carousel-footer { max-width:760px; margin:0 auto; }
-.tk-mix-player-wrap {
-  position: relative;
-  padding-bottom: 42.75%;
-  height: 0;
-  overflow: hidden;
-  background: #e0ddd5;
-}
-.tk-mix-player-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
-
-/* carousel slides fill the player box */
-.tk-carousel-slide { display:none; position:absolute; top:0; left:0; width:100%; height:100%; }
-.tk-carousel-slide.active { display:block; }
-.tk-carousel-slide iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
-
-/* overlay arrows inside the player box */
-.tk-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 36px;
-  height: 36px;
-  background: rgba(245,243,238,0.88);
-  border: 0.5px solid rgba(0,0,0,0.12);
-  color: var(--tk-ink);
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-.tk-carousel-arrow:hover { background: rgba(245,243,238,1); }
-#mixPrev { left: 12px; }
-#mixNext { right: 12px; }
-
-/* title/date + dots below the player */
-.tk-mix-carousel-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0 64px;
-}
-
-.tk-mix-title { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-ink); line-height:1; }
-.tk-mix-date { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); margin-top:4px; }
-
-.tk-carousel-dots { display:flex; gap:10px; }
-.tk-carousel-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.15);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s;
-}
-.tk-carousel-dot.active { background: var(--tk-ink); }
+.tk-mix-list { max-width:760px; margin:0 auto; padding-bottom:64px; }
+.tk-mix-row { display:flex; align-items:center; gap:24px; padding:16px 0; border-top:0.5px solid var(--tk-border); }
+.tk-mix-row:first-child { border-top:none; }
+.tk-mix-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.1em; color:var(--tk-gold-deep); width:140px; flex-shrink:0; }
+.tk-mix-frame { flex:1; height:60px; overflow:hidden; }
+.tk-mix-frame iframe { width:100%; height:100%; border:none; display:block; }
 
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
@@ -243,8 +188,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   .tk-event-date { width:auto; }
   .tk-clients { padding:48px 24px; }
   .tk-client-grid { grid-template-columns:repeat(3,1fr); }
-  .tk-mix-carousel-footer { padding:20px 24px 56px; }
-  .tk-mix-player-wrap { margin:0 24px; width:auto; }
+  .tk-mix-list { margin:0 24px; padding-bottom:48px; }
   .tk-footer { padding:28px 24px; }
 }
 @media (max-width: 600px) {
@@ -254,6 +198,8 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   .tk-stats-grid { grid-template-columns:1fr; }
   .tk-event-row { flex-direction:column; align-items:flex-start; gap:12px; }
   .tk-event-ticket, .tk-event-ticket-dim { width:100%; text-align:center; }
+  .tk-mix-row { flex-direction:column; align-items:flex-start; gap:6px; }
+  .tk-mix-frame { width:100%; }
 }
 </style>
 </head>
@@ -382,29 +328,24 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <a href="https://www.mixcloud.com/heyokaytk/" target="_blank" rel="noopener" class="tk-section-link">All mixes →</a>
   </div>
 
-  <div class="tk-mix-player-wrap" data-reveal>
-    <div class="tk-carousel-slide active">
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/bump-grind-rb-mix-june-2026/" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — June 2026"></iframe>
+  <div class="tk-mix-list">
+    <div class="tk-mix-row" data-reveal>
+      <div class="tk-mix-date">June 2026</div>
+      <div class="tk-mix-frame">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-june-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — June 2026"></iframe>
+      </div>
     </div>
-    <div class="tk-carousel-slide">
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/okay-tk-bump-grind-rb-mix-may-2026/" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — May 2026"></iframe>
+    <div class="tk-mix-row" data-reveal>
+      <div class="tk-mix-date">May 2026</div>
+      <div class="tk-mix-frame">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fokay-tk-bump-grind-rb-mix-may-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — May 2026"></iframe>
+      </div>
     </div>
-    <div class="tk-carousel-slide">
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=/heyokaytk/okay-tk-bump-grind-rb-mix-november-2025/" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — November 2025"></iframe>
-    </div>
-    <button class="tk-carousel-arrow" id="mixPrev" aria-label="Previous mix">&#8249;</button>
-    <button class="tk-carousel-arrow" id="mixNext" aria-label="Next mix">&#8250;</button>
-  </div>
-
-  <div class="tk-mix-carousel-footer">
-    <div>
-      <div class="tk-mix-title" id="mixTitle">Bump &amp; Grind R&amp;B Mix</div>
-      <div class="tk-mix-date" id="mixDate">June 2026</div>
-    </div>
-    <div class="tk-carousel-dots">
-      <button class="tk-carousel-dot active" data-index="0" aria-label="Mix 1"></button>
-      <button class="tk-carousel-dot" data-index="1" aria-label="Mix 2"></button>
-      <button class="tk-carousel-dot" data-index="2" aria-label="Mix 3"></button>
+    <div class="tk-mix-row" data-reveal>
+      <div class="tk-mix-date">November 2025</div>
+      <div class="tk-mix-frame">
+        <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fokay-tk-bump-grind-rb-mix-november-2025%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — November 2025"></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -412,11 +353,11 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-clients" id="tk-clients">
   <h2 class="tk-section-title" style="text-align:center;margin-bottom:48px" data-reveal>Clientele</h2>
   <div class="tk-client-grid" data-reveal>
-    <div class="tk-client-tile">HFX WANDERERS</div>
     <div class="tk-client-tile">FIFA</div>
+    <div class="tk-client-tile">HFX WANDERERS</div>
     <div class="tk-client-tile">NIKE</div>
-    <div class="tk-client-tile">REEBOK</div>
     <div class="tk-client-tile">RED BULL</div>
+    <div class="tk-client-tile">REEBOK</div>
     <div class="tk-client-tile">THE JUNOS</div>
   </div>
 </section>
@@ -484,35 +425,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     });
   }());
 
-  // Mixes carousel
-  (function () {
-    var mixes = [
-      { title: 'Bump &amp; Grind R&amp;B Mix', date: 'June 2026' },
-      { title: 'Bump &amp; Grind R&amp;B Mix', date: 'May 2026' },
-      { title: 'Bump &amp; Grind R&amp;B Mix', date: 'November 2025' }
-    ];
-
-    var slides = document.querySelectorAll('.tk-carousel-slide');
-    var dots = document.querySelectorAll('.tk-carousel-dot');
-    var titleEl = document.getElementById('mixTitle');
-    var dateEl = document.getElementById('mixDate');
-    var current = 0;
-
-    function goTo(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-      titleEl.innerHTML = mixes[current].title;
-      dateEl.textContent = mixes[current].date;
-    }
-
-    document.getElementById('mixPrev').addEventListener('click', function () { goTo(current - 1); });
-    document.getElementById('mixNext').addEventListener('click', function () { goTo(current + 1); });
-    dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); }); });
-  }());
-
   // Contact form
   (function () {
     var form = document.getElementById('tkForm');
@@ -572,6 +484,3 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 
 </body>
 </html>
-
-
-
