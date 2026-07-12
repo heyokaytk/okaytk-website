@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OKAY TK — One Of A Kind</title>
+<title>OKAY TK — DJ & Event Curator, Halifax NS</title>
 <meta name="description" content="OKAY TK is an award-winning DJ and event curator based in Halifax, Nova Scotia, available for corporate events, club nights, and special engagements.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="favicon.ico">
@@ -29,7 +29,7 @@
   --tk-bg: #f5f3ee;
   --tk-ink: #0d0d0d;
   --tk-dim: #666;
-  --tk-faint: #aaa;
+  --tk-faint: #6b6b6b;
   --tk-gold: #a07830;
   --tk-gold-deep: #7c5c22;
   --tk-border: rgba(8,8,8,0.1);
@@ -37,29 +37,35 @@
   --tk-ease: cubic-bezier(.16,1,.3,1);
   --tk-font-display: 'Bebas Neue', sans-serif;
   --tk-font-body: 'DM Sans', sans-serif;
+  --tk-z-nav: 100;
+  --tk-z-mobile-menu: 110;
+  --tk-z-backdrop: 105;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { background: var(--tk-bg); color: var(--tk-ink); font-family: var(--tk-font-body); font-weight: 300; overflow-x: hidden; }
+html.tk-menu-locked, html.tk-menu-locked body { overflow: hidden; height: 100%; }
 h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 :focus-visible { outline: 2px solid var(--tk-gold); outline-offset: 3px; }
 
 /* NAV */
-.tk-nav { display:flex; justify-content:space-between; align-items:center; padding:22px 52px; border-bottom:0.5px solid var(--tk-border); position:sticky; top:0; background:rgba(245,243,238,0.96); backdrop-filter:blur(8px); z-index:100; }
+.tk-nav { display:flex; justify-content:space-between; align-items:center; padding:22px 52px; border-bottom:0.5px solid var(--tk-border); position:sticky; top:0; background:rgba(245,243,238,0.96); backdrop-filter:blur(8px); z-index:var(--tk-z-nav); }
 .tk-nav-logo { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.15em; color:var(--tk-ink); text-decoration:none; }
 .tk-nav-links { display:flex; gap:32px; list-style:none; }
 .tk-nav-links a { color:var(--tk-dim); text-decoration:none; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
 .tk-nav-links a:hover { color:var(--tk-ink); }
 .tk-nav-cta { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
 .tk-nav-cta:hover { background:var(--tk-gold); color:#fff; }
-.tk-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+.tk-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; position:relative; z-index:var(--tk-z-mobile-menu); }
 .tk-hamburger span { width:22px; height:2px; background:var(--tk-ink); border-radius:2px; display:block; transition:all .25s var(--tk-ease); }
 .tk-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
 .tk-hamburger.open span:nth-child(2) { opacity:0; }
 .tk-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-.tk-mobile-menu { display:none; position:fixed; top:65px; left:0; right:0; background:var(--tk-bg); border-bottom:0.5px solid var(--tk-border); padding:8px 24px 20px; flex-direction:column; z-index:99; box-shadow:var(--tk-shadow); }
+.tk-nav-backdrop { display:none; position:fixed; inset:0; background:rgba(13,13,13,0.35); z-index:var(--tk-z-backdrop); }
+.tk-nav-backdrop.open { display:block; }
+.tk-mobile-menu { display:none; position:fixed; top:65px; left:0; right:0; background:var(--tk-bg); border-bottom:0.5px solid var(--tk-border); padding:8px 24px 20px; flex-direction:column; z-index:var(--tk-z-mobile-menu); box-shadow:var(--tk-shadow); }
 .tk-mobile-menu.open { display:flex; }
 .tk-mobile-menu a { font-size:13px; font-weight:500; color:var(--tk-dim); text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; padding:14px 0; border-bottom:1px solid var(--tk-border); }
 .tk-mobile-menu a:last-child { border-bottom:none; }
@@ -68,7 +74,12 @@ p { text-wrap: pretty; }
 
 /* HERO */
 .tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; background-color:#ddd; }
-.tk-hero-overlay { position:absolute; inset:0; background:linear-gradient(to right, rgba(245,243,238,0.93) 0%, rgba(245,243,238,0.72) 55%, rgba(245,243,238,0.05) 100%); }
+.tk-hero-overlay {
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to right, rgba(245,243,238,0.95) 0%, rgba(245,243,238,0.78) 50%, rgba(245,243,238,0.1) 100%),
+    linear-gradient(to top, rgba(245,243,238,0.55) 0%, rgba(245,243,238,0) 45%);
+}
 .tk-hero-content { position:relative; z-index:2; padding:0 52px 72px; max-width:600px; }
 .tk-eyebrow { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--tk-gold-deep); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
 .tk-eyebrow::after { content:''; display:block; width:32px; height:0.5px; background:var(--tk-gold-deep); }
@@ -132,8 +143,7 @@ p { text-wrap: pretty; }
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
 .tk-client-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--tk-border); }
-.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; transition:color 0.25s, background 0.25s; cursor:default; }
-.tk-client-tile:hover { color:var(--tk-ink); background:#e8e5de; }
+.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; cursor:default; }
 
 /* PHOTO BREAK */
 .tk-photo-break { width:100%; height:280px; border-top:0.5px solid var(--tk-border); border-bottom:0.5px solid var(--tk-border); overflow:hidden; background-size:cover; background-position:center; background-repeat:no-repeat; transition:transform .6s var(--tk-ease); }
@@ -143,8 +153,7 @@ p { text-wrap: pretty; }
 .tk-booking-left { padding:64px 52px; border-right:0.5px solid var(--tk-border); display:flex; flex-direction:column; gap:20px; }
 .tk-booking-title { font-family:var(--tk-font-display); font-size:56px; line-height:0.95; letter-spacing:0.04em; color:var(--tk-ink); margin:0; }
 .tk-service-tags { display:flex; gap:6px; flex-wrap:wrap; }
-.tk-tag { padding:6px 14px; border:0.5px solid rgba(0,0,0,0.25); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#333; transition:background 0.2s, color 0.2s, border-color 0.2s; cursor:default; }
-.tk-tag:hover { background:var(--tk-ink); color:var(--tk-bg); border-color:var(--tk-ink); }
+.tk-tag { padding:6px 14px; border:0.5px solid rgba(0,0,0,0.25); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#333; cursor:default; }
 .tk-booking-right { padding:64px 52px; background:var(--tk-bg); }
 .tk-contact-heading { font-family:var(--tk-font-display); font-size:56px; line-height:0.95; letter-spacing:0.04em; color:var(--tk-ink); margin:0 0 32px; font-weight:400; }
 .tk-contact-form { display:flex; flex-direction:column; gap:12px; }
@@ -193,6 +202,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 }
 @media (max-width: 600px) {
   .tk-hero-name { font-size:clamp(56px,16vw,80px); }
+  .tk-hero-overlay { background: linear-gradient(to top, rgba(245,243,238,0.88) 0%, rgba(245,243,238,0.2) 60%, rgba(245,243,238,0.05) 100%); }
   .tk-about-heading, .tk-section-title, .tk-booking-title, .tk-contact-heading { font-size:40px; }
   .tk-client-grid { grid-template-columns:repeat(2,1fr); }
   .tk-stats-grid { grid-template-columns:1fr; }
@@ -214,10 +224,12 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <li><a href="#tk-clients">Clientele</a></li>
   </ul>
   <a href="#booking" class="tk-nav-cta">Book Now</a>
-  <button class="tk-hamburger" id="tkHamburger" aria-label="Open menu">
+  <button class="tk-hamburger" id="tkHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="tkMobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<div class="tk-nav-backdrop" id="tkNavBackdrop"></div>
 
 <div class="tk-mobile-menu" id="tkMobileMenu">
   <a href="#about">About</a>
@@ -342,9 +354,9 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       </div>
     </div>
     <div class="tk-mix-row" data-reveal>
-      <div class="tk-mix-date">November 2025</div>
+      <div class="tk-mix-date">January 2026</div>
       <div class="tk-mix-frame">
-        <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fokay-tk-bump-grind-rb-mix-november-2025%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — November 2025"></iframe>
+        <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-january-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — January 2026"></iframe>
       </div>
     </div>
   </div>
@@ -386,8 +398,8 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <textarea id="tk-message" name="message" placeholder="Your message..." rows="5" required></textarea>
       <input type="hidden" name="_subject" value="New Booking Inquiry — OKAY TK Website">
       <button type="submit" id="tkSubmit">Send Message</button>
-      <div id="tkSuccess">Thanks — I'll get back to you soon.</div>
-      <div id="tkError">Something went wrong. Email me directly at <a href="mailto:okaytkokay@gmail.com" style="color:#991b1b">okaytkokay@gmail.com</a>.</div>
+      <div id="tkSuccess" role="status" aria-live="polite">Thanks — I'll get back to you soon.</div>
+      <div id="tkError" role="alert" aria-live="assertive">Something went wrong. Email me directly at <a href="mailto:okaytkokay@gmail.com" style="color:#991b1b">okaytkokay@gmail.com</a>.</div>
     </form>
   </div>
 </section>
@@ -412,16 +424,26 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   (function () {
     var btn = document.getElementById('tkHamburger');
     var menu = document.getElementById('tkMobileMenu');
-    if (!btn || !menu) return;
+    var backdrop = document.getElementById('tkNavBackdrop');
+    if (!btn || !menu || !backdrop) return;
+
+    var setOpen = function (isOpen) {
+      btn.classList.toggle('open', isOpen);
+      menu.classList.toggle('open', isOpen);
+      backdrop.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+      document.documentElement.classList.toggle('tk-menu-locked', isOpen);
+    };
+
     btn.addEventListener('click', function () {
-      btn.classList.toggle('open');
-      menu.classList.toggle('open');
+      setOpen(!menu.classList.contains('open'));
     });
+    backdrop.addEventListener('click', function () { setOpen(false); });
     menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        btn.classList.remove('open');
-        menu.classList.remove('open');
-      });
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
     });
   }());
 
@@ -443,6 +465,10 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
           document.getElementById('tkSuccess').style.display = 'block';
           document.getElementById('tkError').style.display = 'none';
           btn.textContent = 'Sent!';
+          setTimeout(function () {
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+          }, 3000);
         } else {
           document.getElementById('tkError').style.display = 'block';
           btn.textContent = 'Send Message';
