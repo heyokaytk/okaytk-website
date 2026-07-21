@@ -40,7 +40,7 @@ function nav() {
     <li><a href="/#tk-clients">Clientele</a></li>
     <li><a href="/blog">Blog</a></li>
   </ul>
-  <a href="/#booking" class="tk-nav-cta">Book Now</a>
+  <a href="/#booking" class="tk-nav-cta tk-shimmer">Book Now</a>
 </nav>`;
 }
 

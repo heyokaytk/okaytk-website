@@ -2,8 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://okaytk.com/</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://okaytk.com/blog/</loc>
+  </url>
+  <url>
+    <loc>https://okaytk.com/blog/welcome-to-the-blog/</loc>
+    <lastmod>2026-05-07</lastmod>
   </url>
 </urlset>
