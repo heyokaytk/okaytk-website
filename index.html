@@ -91,6 +91,15 @@ p { text-wrap: pretty; }
 .tk-btn-ghost { color:#111; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.2s; }
 .tk-btn-ghost:hover { opacity:1; }
 
+/* Shimmer: subtle light sweep on hover, shared by primary CTAs */
+.tk-shimmer { position:relative; overflow:hidden; }
+.tk-shimmer::before { content:''; position:absolute; top:0; left:-60%; width:35%; height:100%; background:linear-gradient(115deg, transparent, rgba(255,255,255,0.45), transparent); transform:skewX(-20deg); pointer-events:none; }
+.tk-shimmer:hover::before { animation:tk-shimmer 0.9s var(--tk-ease); }
+@keyframes tk-shimmer { from { left:-60%; } to { left:130%; } }
+@media (prefers-reduced-motion: reduce) {
+  .tk-shimmer:hover::before { animation:none; }
+}
+
 .tk-gold { color:var(--tk-gold) !important; }
 
 /* Scroll reveal — progressive enhancement only; anything visible on load is untouched */
@@ -140,6 +149,7 @@ p { text-wrap: pretty; }
 .tk-mix-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.1em; color:var(--tk-gold-deep); width:140px; flex-shrink:0; }
 .tk-mix-frame { flex:1; height:60px; overflow:hidden; }
 .tk-mix-frame iframe { width:100%; height:100%; border:none; display:block; }
+.tk-mix-row .tk-section-link { flex-shrink:0; }
 
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
@@ -224,7 +234,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <li><a href="#mixes">Mixes</a></li>
     <li><a href="#tk-clients">Clientele</a></li>
   </ul>
-  <a href="#booking" class="tk-nav-cta">Book Now</a>
+  <a href="#booking" class="tk-nav-cta tk-shimmer">Book Now</a>
   <button class="tk-hamburger" id="tkHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="tkMobileMenu">
     <span></span><span></span><span></span>
   </button>
@@ -237,7 +247,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   <a href="#events">Events</a>
   <a href="#mixes">Mixes</a>
   <a href="#tk-clients">Clientele</a>
-  <a href="#booking" class="tk-mobile-cta">Book Now</a>
+  <a href="#booking" class="tk-mobile-cta tk-shimmer">Book Now</a>
 </div>
 
 <section class="tk-hero">
@@ -247,7 +257,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <h1 class="tk-hero-name">OKAY TK</h1>
     <p class="tk-hero-tagline">Known for his personality, versatility, and connecting with listeners, from national television to club floors.</p>
     <div class="tk-hero-actions">
-      <a href="#booking" class="tk-btn-primary">Book Now</a>
+      <a href="#booking" class="tk-btn-primary tk-shimmer">Book Now</a>
       <a href="#mixes" class="tk-btn-ghost">Listen to Mixes →</a>
     </div>
   </div>
@@ -286,7 +296,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Halifax Wanderers</div>
       <div class="tk-event-venue">The Wanderers Grounds Halifax · 7:00 PM</div>
     </div>
-    <a href="https://www.ticketmaster.ca/halifax-wanderers-fc-vs-fc-supra-halifax-nova-scotia-07-24-2026/event/3100643D760B2579" class="tk-event-ticket">Get Tickets</a>
+    <a href="https://www.ticketmaster.ca/halifax-wanderers-fc-vs-fc-supra-halifax-nova-scotia-07-24-2026/event/3100643D760B2579" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Sun. July 26th, 2026</div>
@@ -294,7 +304,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Bump &amp; Grind R&amp;B Patio Day Party</div>
       <div class="tk-event-venue">The Pint Patio · 1575 Argyle Street · Downtown Halifax · 3:00 PM – 7:00 PM</div>
     </div>
-    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/1876?Bump%EF%BC%86GrindR%EF%BC%86BPatioDayParty-July26th" class="tk-event-ticket">Get Tickets</a>
+    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/1876?Bump%EF%BC%86GrindR%EF%BC%86BPatioDayParty-July26th" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Fri. July 31st, 2026</div>
@@ -302,7 +312,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Golden Throwback Party</div>
       <div class="tk-event-venue">Lot Six · 1685 Argyle Street · Downtown Halifax · 9:00 PM – 1:00 AM</div>
     </div>
-    <a href="https://www.showpass.com/goldenpartyjuly/" class="tk-event-ticket">Get Tickets</a>
+    <a href="https://www.showpass.com/goldenpartyjuly/" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-month">August</div>
   <div class="tk-event-row" data-reveal>
@@ -311,7 +321,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Shore Club With Skratch Bastid</div>
       <div class="tk-event-venue">Hubbards Bearch · Nova Scotia · 9:30 PM – 2:00 AM</div>
     </div>
-    <a href="https://www.eventbrite.ca/e/skratch-bastid-live-at-the-shore-club-tickets-1987449589222?aff=oddtdtcreator" class="tk-event-ticket">Get Tickets</a>
+    <a href="https://www.eventbrite.ca/e/skratch-bastid-live-at-the-shore-club-tickets-1987449589222?aff=oddtdtcreator" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Sat. August 22nd, 2026</div>
@@ -319,7 +329,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Bump & Grind Present: R&B At The Marquee With Special Guests</div>
       <div class="tk-event-venue">The Marquee Club · Nova Scotia · 9:00 PM – 1:00 AM</div>
     </div>
-    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/2099?Bump%EF%BC%86Grind-R%EF%BC%86BAtTheMarquee" class="tk-event-ticket">Get Tickets</a>
+    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/2099?Bump%EF%BC%86Grind-R%EF%BC%86BAtTheMarquee" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Sun. August 23rd, 2026</div>
@@ -327,7 +337,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-event-name">Bump &amp; Grind R&amp;B Patio Day Party</div>
       <div class="tk-event-venue">The Pint Patio · 1575 Argyle Street · Downtown Halifax · 3:00 PM – 7:00 PM</div>
     </div>
-    <a href="#" class="tk-event-ticket">Coming Soon!</a>
+    <a href="#" class="tk-event-ticket tk-shimmer">Coming Soon!</a>
   </div>
 </section>
 
@@ -349,18 +359,21 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <div class="tk-mix-frame">
         <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-june-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — June 2026"></iframe>
       </div>
+      <a href="https://www.mixcloud.com/heyokaytk/bump-grind-rb-mix-june-2026/" target="_blank" rel="noopener" class="tk-section-link">Listen →</a>
     </div>
     <div class="tk-mix-row" data-reveal>
       <div class="tk-mix-date">May 2026</div>
       <div class="tk-mix-frame">
         <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fokay-tk-bump-grind-rb-mix-may-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — May 2026"></iframe>
       </div>
+      <a href="https://www.mixcloud.com/heyokaytk/okay-tk-bump-grind-rb-mix-may-2026/" target="_blank" rel="noopener" class="tk-section-link">Listen →</a>
     </div>
     <div class="tk-mix-row" data-reveal>
       <div class="tk-mix-date">January 2026</div>
       <div class="tk-mix-frame">
         <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-january-2026%2F" frameborder="0" allow="autoplay" title="Bump & Grind R&B Mix — January 2026"></iframe>
       </div>
+      <a href="https://www.mixcloud.com/heyokaytk/bump-grind-rb-mix-january-2026/" target="_blank" rel="noopener" class="tk-section-link">Listen →</a>
     </div>
   </div>
 </section>
@@ -404,7 +417,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <label for="tk-message">Your message</label>
       <textarea id="tk-message" name="message" placeholder="Your message..." rows="5" required></textarea>
       <input type="hidden" name="_subject" value="New Booking Inquiry — OKAY TK Website">
-      <button type="submit" id="tkSubmit">Send Message</button>
+      <button type="submit" id="tkSubmit" class="tk-shimmer">Send Message</button>
       <div id="tkSuccess" role="status" aria-live="polite">Thanks — I'll get back to you soon.</div>
       <div id="tkError" role="alert" aria-live="assertive">Something went wrong. Email me directly at <a href="mailto:events@okaytk.com" style="color:#991b1b">events@okaytk.com</a>.</div>
     </form>
