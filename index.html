@@ -130,6 +130,7 @@ p { text-wrap: pretty; }
 .tk-event-ticket { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; flex-shrink:0; transition:background 0.2s, color 0.2s; }
 .tk-event-ticket:hover { background:var(--tk-gold); color:#fff; }
 .tk-event-ticket-dim { background:transparent; color:var(--tk-faint); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; flex-shrink:0; border:0.5px solid var(--tk-border); display:inline-block; }
+.tk-event-month { font-family:var(--tk-font-display); font-size:14px; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); padding:14px 52px; border-top:0.5px solid var(--tk-border); }
 
 /* MIXES */
 .tk-mixes { border-bottom:0.5px solid var(--tk-border); }
@@ -193,7 +194,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   .tk-booking-left { border-right:none; border-bottom:0.5px solid var(--tk-border); padding:48px 24px; }
   .tk-booking-right { padding:48px 24px; }
   .tk-section-header { padding:40px 24px 28px; }
-  .tk-event-row { padding:18px 24px; }
+  .tk-event-row, .tk-event-month { padding:18px 24px; }
   .tk-event-date { width:auto; }
   .tk-clients { padding:48px 24px; }
   .tk-client-grid { grid-template-columns:repeat(3,1fr); }
@@ -278,30 +279,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <h2 class="tk-section-title">UPCOMING EVENTS</h2>
     </div>
   </div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Wed. July 1st, 2026 (Canada Day)</div>
-    <div class="tk-event-info">
-      <div class="tk-event-name">Halifax Wanderers</div>
-      <div class="tk-event-venue">The Wanderers Grounds Halifax · 5:00 PM</div>
-    </div>
-    <a href="https://www.ticketmaster.ca/halifax-wanderers-fc-vs-atletico-ottawa-halifax-nova-scotia-07-01-2026/event/3100643D76062577" class="tk-event-ticket">Get Tickets</a>
-  </div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Sat. July 11th, 2026</div>
-    <div class="tk-event-info">
-      <div class="tk-event-name">Dilly Dally - Mural Festival</div>
-      <div class="tk-event-venue">Dilly Dally · 6100 Quinpool Rd Halifax · 11:00 AM – 2:00 PM</div>
-    </div>
-    <span class="tk-event-ticket-dim">Free Event</span>
-  </div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Sat. July 11th, 2026</div>
-    <div class="tk-event-info">
-      <div class="tk-event-name">Mural Fest After Party At Garrison Brewery</div>
-      <div class="tk-event-venue">Garrison Brewing Company · 1149 Marginal Rd · 10:00 PM – 1:00 AM</div>
-    </div>
-    <span class="tk-event-ticket-dim">Free Event</span>
-  </div>
+  <div class="tk-event-month">July</div>
   <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Fri. July 24th, 2026</div>
     <div class="tk-event-info">
@@ -326,7 +304,8 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     </div>
     <a href="https://www.showpass.com/goldenpartyjuly/" class="tk-event-ticket">Get Tickets</a>
   </div>
-   <div class="tk-event-row" data-reveal>
+  <div class="tk-event-month">August</div>
+  <div class="tk-event-row" data-reveal>
     <div class="tk-event-date">Sat. August 7th, 2026</div>
     <div class="tk-event-info">
       <div class="tk-event-name">Shore Club With Skratch Bastid</div>
