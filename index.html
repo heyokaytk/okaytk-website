@@ -205,7 +205,12 @@ p { text-wrap: pretty; }
 .tk-mobile-cta { background:var(--tk-ink) !important; color:var(--tk-bg) !important; text-align:center; padding:13px 0 !important; margin-top:8px; border-bottom:none !important; }
 
 /* HERO */
-.tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; background-color:#ddd; }
+.tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; background-color:#ddd; }
+.tk-hero-bg { position:absolute; inset:0; background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; animation:tk-kenburns 16s var(--tk-ease) forwards; }
+@keyframes tk-kenburns { from { transform:scale(1); } to { transform:scale(1.06); } }
+@media (prefers-reduced-motion: reduce) {
+  .tk-hero-bg { animation:none; }
+}
 .tk-hero-overlay {
   position:absolute; inset:0;
   background:
@@ -396,6 +401,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 </div>
 
 <section class="tk-hero">
+  <div class="tk-hero-bg"></div>
   <div class="tk-hero-overlay"></div>
   <div class="tk-hero-content">
     <p class="tk-eyebrow">Halifax, Nova Scotia · Award-Winning DJ</p>
