@@ -303,7 +303,12 @@ p { text-wrap: pretty; }
 .tk-blog-teaser-excerpt { font-size:13px; line-height:1.5; color:var(--tk-dim); max-width:60ch; }
 
 /* PHOTO BREAK */
-.tk-photo-break { width:100%; height:280px; border-top:0.5px solid var(--tk-border); border-bottom:0.5px solid var(--tk-border); overflow:hidden; background-size:cover; background-position:center; background-repeat:no-repeat; transition:transform .6s var(--tk-ease); }
+.tk-photo-break { width:100%; height:280px; border-top:0.5px solid var(--tk-border); border-bottom:0.5px solid var(--tk-border); overflow:hidden; position:relative; }
+.tk-photo-break-img { position:absolute; inset:0; background-size:cover; background-position:center; background-repeat:no-repeat; transform:scale(1); transition:transform 12s var(--tk-ease); }
+.tk-photo-break-img.tk-zoom-in { transform:scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  .tk-photo-break-img { transition:none; }
+}
 
 /* BOOKING */
 .tk-booking { display:grid; grid-template-columns:1fr 1fr; border-bottom:0.5px solid var(--tk-border); }
@@ -431,7 +436,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   </div>
 </section>
 
-<div class="tk-photo-break" style="background-image:url('IMAGES/OKAYWEB-2ND-HERO.jpg');" role="img" aria-label="OKAY TK DJing at a live event"></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at a live event"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-2ND-HERO.jpg');"></div></div>
 
 <section class="tk-events" id="events">
   <div class="tk-section-header" data-reveal>
@@ -492,7 +497,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   </div>
 </section>
 
-<div class="tk-photo-break" style="background-image:url('IMAGES/OKAYWEB-3RD-HERO.jpg');" role="img" aria-label="OKAY TK DJing at an outdoor festival"></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at an outdoor festival"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-3RD-HERO.jpg');"></div></div>
 
 <!-- MIXES -->
 <section class="tk-mixes" id="mixes">
@@ -561,7 +566,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   </div>
 </section>
 
-<div class="tk-photo-break" style="background-image:url('IMAGES/OKAYWEB-4TH-HERO.jpg');" role="img" aria-label="OKAY TK behind the decks"></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK behind the decks"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-4TH-HERO.jpg');"></div></div>
 
 <section class="tk-booking" id="booking">
   <div class="tk-booking-left" data-reveal>
@@ -674,27 +679,36 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   }());
 
   // Scroll reveal — progressive enhancement only. Anything visible on load
-  // is left alone; only below-fold sections fade up as they scroll into view.
+  // is left alone; only below-fold sections fade up (or, for [data-zoom]
+  // photo-breaks, zoom in) as they scroll into view.
   (function () {
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion || !('IntersectionObserver' in window)) return;
-    var els = document.querySelectorAll('[data-reveal]');
+    var els = document.querySelectorAll('[data-reveal], [data-zoom]');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('tk-reveal-in');
-          entry.target.classList.remove('tk-reveal-pending');
-          io.unobserve(entry.target);
+          var el = entry.target;
+          if (el.hasAttribute('data-reveal')) {
+            el.classList.add('tk-reveal-in');
+            el.classList.remove('tk-reveal-pending');
+          }
+          if (el.hasAttribute('data-zoom')) {
+            var img = el.querySelector('.tk-photo-break-img');
+            if (img) img.classList.add('tk-zoom-in');
+          }
+          io.unobserve(el);
         }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
     els.forEach(function (el) {
       var rect = el.getBoundingClientRect();
       var alreadyVisible = rect.top < window.innerHeight * 0.92;
-      if (!alreadyVisible) {
+      if (alreadyVisible) return;
+      if (el.hasAttribute('data-reveal')) {
         el.classList.add('tk-reveal-pending');
-        io.observe(el);
       }
+      io.observe(el);
     });
   }());
 </script>
