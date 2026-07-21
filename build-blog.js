@@ -85,7 +85,7 @@ function postPage(post) {
   return `<!doctype html>
 <html lang="en">
 ${head({
-  title: `${post.title} — OKAY TK`,
+  title: post.title,
   description: post.description,
   canonicalUrl: `${SITE_URL}/blog/${post.slug}/`,
   type: 'article',

@@ -1,11 +1,9 @@
 ---
 title: Welcome to the Blog
-date: 2026-05-07
+date: 2026-07-21
 description: After years of letting the music speak for itself, I figured it was time to put some words down too.
 slug: welcome-to-the-blog
 ---
-
-After years of letting the music speak for itself, I figured it was time to put some words down too.
 
 ## What This Is
 
@@ -24,4 +22,4 @@ Not every post will be a long read. Some will be short. All of them will be hone
 
 ---
 
-Stay tuned. First real post drops soon.
+Stay tuned.
