@@ -3,7 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
 
-const SITE_URL = 'https://okaytk.com';
+const SITE_URL = 'https://www.okaytk.com';
 const POSTS_DIR = path.join(__dirname, 'posts');
 const BLOG_DIR = path.join(__dirname, 'blog');
 
