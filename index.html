@@ -311,6 +311,7 @@ p { text-wrap: pretty; }
 .tk-mix-row { border:0.5px solid var(--tk-border); transition:border-color 0.2s; }
 .tk-mix-row:hover { border-color:var(--tk-gold); }
 .tk-mix-art { display:block; position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--tk-bg); }
+.tk-mix-badge { position:absolute; top:14px; left:14px; z-index:2; background:var(--tk-gold-deep); color:#fff; font-size:10px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; box-shadow:0 8px 20px -8px rgba(13,13,13,0.55); }
 .tk-mix-art img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s var(--tk-ease); }
 .tk-mix-row:hover .tk-mix-art img { transform:scale(1.05); }
 .tk-mix-art-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,13,13,0) 45%, rgba(13,13,13,0.7) 100%); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
@@ -330,7 +331,8 @@ p { text-wrap: pretty; }
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
 .tk-client-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--tk-border); }
-.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; cursor:default; }
+.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; cursor:default; transition:color 0.25s ease; }
+.tk-client-tile:hover { color:var(--tk-gold-deep); }
 
 /* BLOG TEASER */
 .tk-blog-teaser { border-bottom:0.5px solid var(--tk-border); }
@@ -541,6 +543,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   <div class="tk-mix-list">
     <div class="tk-mix-row" data-reveal>
       <a class="tk-mix-art" href="https://www.mixcloud.com/heyokaytk/bump-grind-rb-mix-july-2026/" target="_blank" rel="noopener" aria-label="Open the July 2026 mix on Mixcloud">
+        <span class="tk-mix-badge">Newest Mix</span>
         <img src="https://thumbnailer.mixcloud.com/unsafe/640x640/extaudio/e/b/d/1/548e-c686-45de-bcec-f3300799858e" alt="Cover art for the Bump &amp; Grind R&amp;B Mix, July 2026" loading="lazy" decoding="async">
         <span class="tk-mix-art-overlay"><span class="tk-mix-art-play"><svg viewBox="0 0 10 12"><path d="M1 1l8 5-8 5z"/></svg></span></span>
       </a>
