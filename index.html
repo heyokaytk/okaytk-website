@@ -71,8 +71,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Bump & Grind Present: R&B At The Marquee With Special Guests",
-    "description": "OKAY TK headlines Bump & Grind's R&B night at The Marquee Club with special guests.",
+    "name": "Bump & Grind Present: R&B At The Marquee With Jester & Baby Yu",
+    "description": "OKAY TK headlines Bump & Grind's R&B night at The Marquee Club with Jester & Baby Yu.",
     "image": "https://www.okaytk.com/IMAGES/hero.jpg",
     "startDate": "2026-08-22T21:00:00-03:00",
     "endDate": "2026-08-23T01:00:00-03:00",
@@ -105,7 +105,12 @@
       "name": "The Pint Patio",
       "address": { "@type": "PostalAddress", "streetAddress": "1575 Argyle Street", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
     },
-    "performer": { "@type": "Person", "name": "OKAY TK" }
+    "performer": { "@type": "Person", "name": "OKAY TK" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://bump-grind-r-b-party.bloomtickets.ca/event/2483?Bump%EF%BC%86GrindR%EF%BC%86BPatioDayParty-August23rd",
+      "availability": "https://schema.org/InStock"
+    }
   }
 ]
 </script>
@@ -254,6 +259,8 @@ p { text-wrap: pretty; }
 .tk-event-row { display:flex; align-items:center; padding:20px 52px; border-top:0.5px solid var(--tk-border); gap:32px; transition:background 0.15s; flex-wrap:wrap; }
 .tk-event-row:hover { background:rgba(0,0,0,0.03); }
 .tk-event-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.1em; color:var(--tk-gold-deep); width:220px; flex-shrink:0; }
+.tk-event-countdown { display:block; font-family:var(--tk-font-body); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--tk-gold); margin-top:4px; }
+.tk-event-countdown:empty { display:none; }
 .tk-event-name { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
 .tk-event-venue { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); }
 .tk-event-info { flex:1; min-width:200px; }
@@ -443,8 +450,8 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     </div>
   </div>
   <div class="tk-event-month">July</div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Fri. July 31st, 2026</div>
+  <div class="tk-event-row" data-reveal data-event-date="2026-07-31">
+    <div class="tk-event-date">Fri. July 31st, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
       <div class="tk-event-name">Golden Throwback Party</div>
       <div class="tk-event-venue">Lot Six · 1685 Argyle Street · Downtown Halifax · 9:00 PM – 1:00 AM</div>
@@ -452,29 +459,29 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <a href="https://www.showpass.com/goldenpartyjuly/" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
   <div class="tk-event-month">August</div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Sat. August 7th, 2026</div>
+  <div class="tk-event-row" data-reveal data-event-date="2026-08-07">
+    <div class="tk-event-date">Sat. August 7th, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
       <div class="tk-event-name">Shore Club With Skratch Bastid</div>
       <div class="tk-event-venue">Hubbards Bearch · Nova Scotia · 9:30 PM – 2:00 AM</div>
     </div>
     <a href="https://www.eventbrite.ca/e/skratch-bastid-live-at-the-shore-club-tickets-1987449589222?aff=oddtdtcreator" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Sat. August 22nd, 2026</div>
+  <div class="tk-event-row" data-reveal data-event-date="2026-08-22">
+    <div class="tk-event-date">Sat. August 22nd, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Bump & Grind Present: R&B At The Marquee With Special Guests</div>
+      <div class="tk-event-name">Bump & Grind Present: R&B At The Marquee With Jester &amp; Baby Yu</div>
       <div class="tk-event-venue">The Marquee Club · Nova Scotia · 9:00 PM – 1:00 AM</div>
     </div>
     <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/2099?Bump%EF%BC%86Grind-R%EF%BC%86BAtTheMarquee" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
-  <div class="tk-event-row" data-reveal>
-    <div class="tk-event-date">Sun. August 23rd, 2026</div>
+  <div class="tk-event-row" data-reveal data-event-date="2026-08-23">
+    <div class="tk-event-date">Sun. August 23rd, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
       <div class="tk-event-name">Bump &amp; Grind R&amp;B Patio Day Party With Special Guests</div>
       <div class="tk-event-venue">The Pint Patio · 1575 Argyle Street · Downtown Halifax · 3:00 PM – 7:00 PM</div>
     </div>
-    <span class="tk-event-ticket-dim">Coming Soon!</span>
+    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/2483?Bump%EF%BC%86GrindR%EF%BC%86BPatioDayParty-August23rd" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
 </section>
 
@@ -675,6 +682,23 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
         btn.textContent = 'Send Message';
         btn.disabled = false;
       });
+    });
+  }());
+
+  // Event countdowns
+  (function () {
+    var rows = document.querySelectorAll('.tk-event-row[data-event-date]');
+    if (!rows.length) return;
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    rows.forEach(function (row) {
+      var el = row.querySelector('[data-countdown]');
+      if (!el) return;
+      var eventDate = new Date(row.getAttribute('data-event-date') + 'T00:00:00');
+      var days = Math.round((eventDate - today) / 86400000);
+      if (days > 1) el.textContent = 'In ' + days + ' Days';
+      else if (days === 1) el.textContent = 'Tomorrow';
+      else if (days === 0) el.textContent = 'Today';
     });
   }());
 
