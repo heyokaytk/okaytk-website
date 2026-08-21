@@ -23,6 +23,7 @@ function readPosts() {
         date: data.date,
         description: data.description,
         slug: data.slug,
+        image: data.image,
         html: marked(content),
         excerpt: data.description,
       };
@@ -61,7 +62,9 @@ function footer() {
 </footer>`;
 }
 
-function head({ title, description, canonicalUrl, type = 'website' }) {
+function head({ title, description, canonicalUrl, type = 'website', image }) {
+  const imageUrl = image ? `${SITE_URL}${image}` : `${SITE_URL}/IMAGES/hero.jpg`;
+  const cardType = image ? 'summary_large_image' : 'summary';
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -71,9 +74,11 @@ function head({ title, description, canonicalUrl, type = 'website' }) {
 <meta property="og:description" content="${description}">
 <meta property="og:url" content="${canonicalUrl}">
 <meta property="og:type" content="${type}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${imageUrl}">
+<meta name="twitter:card" content="${cardType}">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
+<meta name="twitter:image" content="${imageUrl}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
@@ -89,6 +94,7 @@ ${head({
   description: post.description,
   canonicalUrl: `${SITE_URL}/blog/${post.slug}/`,
   type: 'article',
+  image: post.image,
 })}
 <body>
 ${nav()}
