@@ -366,11 +366,14 @@ p { text-wrap: pretty; }
 .tk-contact-form { display:flex; flex-direction:column; gap:12px; }
 .tk-contact-form label { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 .tk-contact-form input,
+.tk-contact-form select,
 .tk-contact-form textarea { background:#eceae5; border:0.5px solid rgba(0,0,0,0.15); border-radius:0; color:#111; padding:13px 16px; font-family:var(--tk-font-body); font-size:13px; font-weight:300; outline:none; width:100%; box-sizing:border-box; transition:border-color 0.2s, box-shadow .2s; }
 .tk-contact-form input:focus,
+.tk-contact-form select:focus,
 .tk-contact-form textarea:focus { border-color:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
 .tk-contact-form input::placeholder,
 .tk-contact-form textarea::placeholder { color:#aaa; }
+.tk-contact-form select { -webkit-appearance:none; appearance:none; cursor:pointer; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%230d0d0d' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; }
 .tk-contact-form textarea { resize:none; height:120px; }
 .tk-contact-form button { background:var(--tk-ink); color:var(--tk-bg); padding:15px 24px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; width:100%; transition:background 0.2s; }
 .tk-contact-form button:hover:not(:disabled) { background:var(--tk-gold-deep); color:#fff; }
@@ -663,6 +666,19 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <input id="tk-last-name" type="text" name="last_name" placeholder="Last name" required>
       <label for="tk-email">Email address</label>
       <input id="tk-email" type="email" name="_replyto" placeholder="Email address" required>
+      <label for="tk-event-type">Event type</label>
+      <select id="tk-event-type" name="event_type" required>
+        <option value="" disabled selected>Event type</option>
+        <option>Club night</option>
+        <option>Corporate event</option>
+        <option>Private / special event</option>
+        <option>Festival</option>
+        <option>Other</option>
+      </select>
+      <label for="tk-event-date">Event date</label>
+      <input id="tk-event-date" type="text" name="event_date" placeholder="Event date (or approximate)">
+      <label for="tk-location">Location or venue</label>
+      <input id="tk-location" type="text" name="location" placeholder="Location / venue">
       <label for="tk-message">Your message</label>
       <textarea id="tk-message" name="message" placeholder="Your message..." rows="5" required></textarea>
       <input type="hidden" name="_subject" value="New Booking Inquiry — OKAY TK Website">
