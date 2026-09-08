@@ -27,7 +27,7 @@ p { text-wrap: pretty; }
 .tk-nav-links a { color:var(--tk-dim); text-decoration:none; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
 .tk-nav-links a:hover { color:var(--tk-ink); }
 .tk-nav-cta { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
-.tk-nav-cta:hover { background:var(--tk-gold); color:#fff; }
+.tk-nav-cta:hover { background:var(--tk-gold-deep); color:#fff; }
 .tk-gold { color:var(--tk-gold) !important; }
 
 /* Shimmer: subtle light sweep on hover, shared by primary CTAs */

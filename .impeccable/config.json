@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-08T15:51:53.375Z",
+        "reason": "user confirmed: cream ground #f5f3ee is the OKAY TK editorial brand identity; task scoped to keep visual identity"
+      }
+    ]
+  }
+}

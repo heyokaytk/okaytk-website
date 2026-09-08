@@ -27,50 +27,6 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Back to School Party",
-    "description": "OKAY TK DJs the Back to School Party at The Marquee Ballroom in Halifax, Nova Scotia. Free admission.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-09-04",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "The Marquee Ballroom",
-      "address": { "@type": "PostalAddress", "streetAddress": "2037 Gottingen Street", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.okaytk.com/#events",
-      "price": "0",
-      "priceCurrency": "CAD",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Halifax Wanderers vs. Cavalry FC",
-    "description": "OKAY TK DJs Halifax Wanderers FC's match against Cavalry FC at The Wanderers Grounds in Halifax, Nova Scotia.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-09-07T16:00:00-03:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "The Wanderers Grounds",
-      "address": { "@type": "PostalAddress", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.ticketmaster.ca/halifax-wanderers-fc-vs-cavalry-fc-halifax-nova-scotia-09-07-2026/event/3100643D7614258B",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
     "name": "Bump & Grind R&B Patio Day Party: Season Finale",
     "description": "OKAY TK spins classic and current R&B at the Bump & Grind season finale patio day party on The Pint Patio in downtown Halifax.",
     "image": "https://www.okaytk.com/IMAGES/hero.jpg",
@@ -259,7 +215,7 @@ p { text-wrap: pretty; }
 .tk-nav-links a { color:var(--tk-dim); text-decoration:none; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
 .tk-nav-links a:hover { color:var(--tk-ink); }
 .tk-nav-cta { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
-.tk-nav-cta:hover { background:var(--tk-gold); color:#fff; }
+.tk-nav-cta:hover { background:var(--tk-gold-deep); color:#fff; }
 .tk-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; position:relative; z-index:var(--tk-z-mobile-menu); }
 .tk-hamburger span { width:22px; height:2px; background:var(--tk-ink); border-radius:2px; display:block; transition:all .25s var(--tk-ease); }
 .tk-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
@@ -275,8 +231,8 @@ p { text-wrap: pretty; }
 .tk-mobile-cta { background:var(--tk-ink) !important; color:var(--tk-bg) !important; text-align:center; padding:13px 0 !important; margin-top:8px; border-bottom:none !important; }
 
 /* HERO */
-.tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; background-color:#ddd; }
-.tk-hero-bg { position:absolute; inset:0; background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; animation:tk-kenburns 16s var(--tk-ease) forwards; }
+.tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; }
+.tk-hero-bg { position:absolute; inset:0; background-color:var(--tk-bg); background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; animation:tk-kenburns 16s var(--tk-ease) forwards; }
 @keyframes tk-kenburns { from { transform:scale(1); } to { transform:scale(1.06); } }
 @media (prefers-reduced-motion: reduce) {
   .tk-hero-bg { animation:none; }
@@ -287,14 +243,14 @@ p { text-wrap: pretty; }
     linear-gradient(to right, rgba(245,243,238,0.95) 0%, rgba(245,243,238,0.78) 50%, rgba(245,243,238,0.1) 100%),
     linear-gradient(to top, rgba(245,243,238,0.55) 0%, rgba(245,243,238,0) 45%);
 }
-.tk-hero-content { position:relative; z-index:2; padding:0 52px 72px; max-width:600px; }
+.tk-hero-content { position:relative; z-index:2; padding:120px 52px 72px; max-width:600px; }
 .tk-eyebrow { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--tk-gold-deep); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
 .tk-eyebrow::after { content:''; display:block; width:32px; height:0.5px; background:var(--tk-gold-deep); }
 .tk-hero-name { font-family:var(--tk-font-display); font-size:clamp(80px,11vw,128px); line-height:0.9; letter-spacing:0.03em; color:var(--tk-ink); margin:0 0 12px; }
 .tk-hero-tagline { font-size:16px; line-height:1.7; color:#111; max-width:400px; margin:20px 0 36px; font-style:italic; }
 .tk-hero-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
 .tk-btn-primary { background:var(--tk-ink); color:var(--tk-bg); padding:13px 28px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; display:inline-block; border:none; cursor:pointer; transition:background 0.2s, color 0.2s, transform .2s; }
-.tk-btn-primary:hover { background:var(--tk-gold); color:#fff; transform:translateY(-2px); }
+.tk-btn-primary:hover { background:var(--tk-gold-deep); color:#fff; transform:translateY(-2px); }
 .tk-btn-ghost { color:#111; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.2s; }
 .tk-btn-ghost:hover { opacity:1; }
 
@@ -339,14 +295,14 @@ p { text-wrap: pretty; }
 .tk-events { border-bottom:0.5px solid var(--tk-border); }
 .tk-event-row { display:flex; align-items:center; padding:20px 52px; border-top:0.5px solid var(--tk-border); gap:32px; transition:background 0.15s; flex-wrap:wrap; }
 .tk-event-row:hover { background:rgba(0,0,0,0.03); }
-.tk-event-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.1em; color:var(--tk-gold-deep); width:220px; flex-shrink:0; }
+.tk-event-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.04em; color:var(--tk-gold-deep); width:220px; flex-shrink:0; }
 .tk-event-countdown { display:block; font-family:var(--tk-font-body); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--tk-gold); margin-top:4px; }
 .tk-event-countdown:empty { display:none; }
 .tk-event-name { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
-.tk-event-venue { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--tk-dim); }
+.tk-event-venue { font-size:13px; line-height:1.5; letter-spacing:0.01em; color:var(--tk-dim); }
 .tk-event-info { flex:1; min-width:200px; }
 .tk-event-ticket { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; flex-shrink:0; transition:background 0.2s, color 0.2s; }
-.tk-event-ticket:hover { background:var(--tk-gold); color:#fff; }
+.tk-event-ticket:hover { background:var(--tk-gold-deep); color:#fff; }
 .tk-event-ticket-dim { background:transparent; color:var(--tk-faint); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; flex-shrink:0; border:0.5px solid var(--tk-border); display:inline-block; }
 .tk-event-month { font-family:var(--tk-font-display); font-size:14px; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); padding:14px 52px; border-top:0.5px solid var(--tk-border); }
 
@@ -356,7 +312,7 @@ p { text-wrap: pretty; }
 .tk-mix-row { border:0.5px solid var(--tk-border); transition:border-color 0.2s; }
 .tk-mix-row:hover { border-color:var(--tk-gold); }
 .tk-mix-art { display:block; position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--tk-bg); }
-.tk-mix-badge { position:absolute; top:14px; left:14px; z-index:2; background:var(--tk-gold-deep); color:#fff; font-size:10px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; box-shadow:0 8px 20px -8px rgba(13,13,13,0.55); }
+.tk-mix-badge { position:absolute; top:14px; left:14px; z-index:2; background:var(--tk-gold-deep); color:#fff; font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; box-shadow:0 8px 20px -8px rgba(13,13,13,0.55); }
 .tk-mix-art img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s var(--tk-ease); }
 .tk-mix-row:hover .tk-mix-art img { transform:scale(1.05); }
 .tk-mix-art-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,13,13,0) 45%, rgba(13,13,13,0.7) 100%); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
@@ -365,7 +321,7 @@ p { text-wrap: pretty; }
 .tk-mix-row:hover .tk-mix-art-play { transform:scale(1); }
 .tk-mix-art-play svg { width:14px; height:14px; fill:#fff; margin-left:3px; }
 .tk-mix-body { padding:20px 24px 24px; }
-.tk-mix-date { font-family:var(--tk-font-display); font-size:20px; letter-spacing:0.08em; color:var(--tk-gold-deep); margin-bottom:14px; }
+.tk-mix-date { font-family:var(--tk-font-display); font-size:20px; letter-spacing:0.04em; color:var(--tk-gold-deep); margin-bottom:14px; }
 .tk-mix-frame { height:60px; overflow:hidden; margin-bottom:14px; }
 .tk-mix-frame iframe { width:100%; height:100%; border:none; display:block; }
 @media (prefers-reduced-motion: reduce) {
@@ -415,7 +371,7 @@ p { text-wrap: pretty; }
 .tk-contact-form textarea::placeholder { color:#aaa; }
 .tk-contact-form textarea { resize:none; height:120px; }
 .tk-contact-form button { background:var(--tk-ink); color:var(--tk-bg); padding:15px 24px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; width:100%; transition:background 0.2s; }
-.tk-contact-form button:hover:not(:disabled) { background:var(--tk-gold); }
+.tk-contact-form button:hover:not(:disabled) { background:var(--tk-gold-deep); color:#fff; }
 .tk-contact-form button:disabled { cursor:default; opacity:0.7; }
 #tkSuccess, #tkError { font-size:13px; padding:12px 14px; margin-top:4px; display:none; }
 #tkSuccess { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; }
@@ -427,7 +383,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 .tk-footer-links { display:flex; gap:24px; flex-wrap:wrap; }
 .tk-footer-links a { color:var(--tk-dim); text-decoration:none; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; transition:color 0.2s; }
 .tk-footer-links a:hover { color:var(--tk-ink); }
-.tk-footer-copy { font-size:11px; color:var(--tk-faint); letter-spacing:0.08em; }
+.tk-footer-copy { font-size:11px; color:var(--tk-faint); letter-spacing:0.04em; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -530,22 +486,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     </div>
   </div>
   <div class="tk-event-month">September</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-09-04">
-    <div class="tk-event-date">Fri. September 4th, 2026<span class="tk-event-countdown" data-countdown></span></div>
-    <div class="tk-event-info">
-      <div class="tk-event-name">Back to School Party</div>
-      <div class="tk-event-venue">The Marquee · 2037 Gottingen Street · Halifax</div>
-    </div>
-    <span class="tk-event-ticket-dim">Free Entry</span>
-  </div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-09-07">
-    <div class="tk-event-date">Mon. September 7th, 2026 (Labour Day)<span class="tk-event-countdown" data-countdown></span></div>
-    <div class="tk-event-info">
-      <div class="tk-event-name">Halifax Wanderers</div>
-      <div class="tk-event-venue">The Wanderers Grounds · Halifax · 4:00 PM</div>
-    </div>
-    <a href="https://www.ticketmaster.ca/halifax-wanderers-fc-vs-cavalry-fc-halifax-nova-scotia-09-07-2026/event/3100643D7614258B" class="tk-event-ticket tk-shimmer">Get Tickets</a>
-  </div>
   <div class="tk-event-row" data-reveal data-event-date="2026-09-20">
     <div class="tk-event-date">Sun. September 20th, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
