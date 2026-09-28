@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-09-08T15:51:53.375Z",
         "reason": "user confirmed: cream ground #f5f3ee is the OKAY TK editorial brand identity; task scoped to keep visual identity"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-28T18:00:08.665Z",
+        "reason": "user confirmed: explicitly requested a blinking indicator for day-of events; dot only pulses when the event's real date/time matches today, not decorative fake-live"
       }
     ]
   }
