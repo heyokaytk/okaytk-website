@@ -1,0 +1,49 @@
+{
+  "shortBio": "OKAY TK is an award-winning DJ and event curator from Halifax, Nova Scotia, known for his personality, musical range, and an instinct for reading a room.",
+  "longBio": [
+    "OKAY TK is an award-winning DJ and event curator based in Halifax, Nova Scotia. He's known among friends and the DJ community for his personality, skill, and musical versatility, and for making every set feel like it was built for that crowd.",
+    "With 15+ years behind the decks, OKAY TK has been named Stylus DJ of the Year, made the Red Bull 3Style national finals three times, and won Coastal Culture Clash in 2024 and 2025. He's been heard on commercial radio (101.3 The Bounce, Z103.5) and community radio (88.1 CKDU), seen on CBC, CTV, and Eastlink, toured with Snoop Dogg and Chali 2na of Jurassic 5, and shared the stage with artists including Rihanna, Ne-Yo, T-Pain, Jadakiss, and The Alchemist.",
+    "In Halifax he hosts Bump & Grind, a recurring R&B party with a monthly mix series. Whether it's a club night, a festival stage, or a corporate event, OKAY TK brings the right energy to the room."
+  ],
+  "stats": [
+    ["15+", "Years DJing"],
+    ["5×", "Stylus Award Winner"],
+    ["3×", "Red Bull 3Style National Finalist"]
+  ],
+  "highlights": [
+    "Stylus Awards: DJ of the Year, 5× winner",
+    "Red Bull 3Style National Finalist ×3",
+    "Coastal Culture Clash Winner, 2024 & 2025",
+    "Encore DJ Winner ×2",
+    "Show Em What You Got Finalist"
+  ],
+  "media": [
+    ["Radio", "101.3 The Bounce · Z103.5 FM · 88.1 CKDU"],
+    ["Television", "CBC · CTV · Eastlink"],
+    ["Tours", "Snoop Dogg · Chali 2na (Jurassic 5)"]
+  ],
+  "sharedStage": ["Snoop Dogg", "Rihanna", "Ne-Yo", "T-Pain", "Jadakiss", "Danny Brown", "EarthGang", "The Alchemist"],
+  "clients": ["Corona", "Coors", "Dash Hudson", "FIFA", "Ford", "Halifax Wanderers", "Honda", "Hopscotch Festival", "The JUNOS", "Levi's", "MotionBall", "Nike", "Red Bull", "Reebok", "TD", "Walmart"],
+  "venues": [
+    ["Inn Cahoots", "Austin, TX"],
+    ["The Commodore", "Vancouver, BC"],
+    ["Stackt Market", "Toronto, ON"],
+    ["AM PM", "Toronto, ON"],
+    ["Grand Parade", "Halifax, NS"],
+    ["Light House Centre", "Halifax, NS"]
+  ],
+  "services": ["Club Nights", "Concerts & Festivals", "Corporate Events", "Private & Special Events", "Radio"],
+  "skills": ["Reading the Crowd", "Song Selection", "Seamless Mixing", "Scratching", "Beat Juggling"],
+  "rider": [
+    ["Turntables", "2× Technics SL-1200 or Pioneer PLX-1000"],
+    ["Mixer", "1× Pioneer DJM-S11"],
+    ["Microphone", "1× microphone"],
+    ["Monitors", "2× stage monitors"]
+  ],
+  "photos": [
+    ["/IMAGES/okaytk-press-1.jpg", "/IMAGES/okaytk-press-1-preview.webp", "OKAY TK in sunglasses and a black beanie, black-and-white portrait", "Portrait · B&W"],
+    ["/IMAGES/okaytk-press-2.jpg", "/IMAGES/okaytk-press-2-preview.webp", "OKAY TK smiling in a denim jacket, studio portrait", "Portrait · Colour"],
+    ["/IMAGES/okaytk-press-3.jpg", "/IMAGES/okaytk-press-3-preview.webp", "OKAY TK posing in a denim jacket, studio portrait", "Portrait · Colour"],
+    ["/IMAGES/hero.jpg", "/IMAGES/hero-preview.webp", "OKAY TK DJing at a live event", "Live · Landscape"]
+  ]
+}

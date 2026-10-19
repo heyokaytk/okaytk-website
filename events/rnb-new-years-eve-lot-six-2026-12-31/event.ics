@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OKAY TK//okaytk.com//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rnb-new-years-eve-lot-six-2026-12-31@okaytk.com
+DTSTAMP:20270101T010000Z
+DTSTART:20270101T010000Z
+DTEND:20270101T050000Z
+SUMMARY:R&B New Year's Eve at Lot Six
+LOCATION:Lot Six\, 1685 Argyle Street\, Downtown Halifax\, NS
+DESCRIPTION:OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax.
+URL:https://www.okaytk.com/events/rnb-new-years-eve-lot-six-2026-12-31/
+END:VEVENT
+END:VCALENDAR

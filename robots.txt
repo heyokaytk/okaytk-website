@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
+# AI crawlers are welcome. Search/answer bots (OAI-SearchBot, ChatGPT-User,
+# Claude-SearchBot, PerplexityBot) let assistants recommend OKAY TK with live
+# info; training crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended) let models
+# learn the name in the first place. Note: Cloudflare's "Block AI bots" setting
+# overrides this file at the edge and must be off for training crawlers to get in.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.okaytk.com/sitemap.xml

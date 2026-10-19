@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OKAY TK//okaytk.com//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:halifax-wanderers-fc-supra-2026-10-25@okaytk.com
+DTSTAMP:20261025T200000Z
+DTSTART:20261025T200000Z
+DTEND:20261025T230000Z
+SUMMARY:Halifax Wanderers vs. FC Supra
+LOCATION:The Wanderers Grounds\, Halifax\, NS
+DESCRIPTION:OKAY TK DJs Halifax Wanderers FC's match against FC Supra at The Wanderers Grounds in Halifax\, Nova Scotia.
+URL:https://www.okaytk.com/events/halifax-wanderers-fc-supra-2026-10-25/
+END:VEVENT
+END:VCALENDAR

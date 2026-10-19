@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OKAY TK//okaytk.com//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:charlies-halloween-costume-party-2026-10-31@okaytk.com
+DTSTAMP:20261101T000000Z
+DTSTART:20261101T000000Z
+DTEND:20261101T040000Z
+SUMMARY:Charlie's Halloween Costume Party
+LOCATION:Charlie's Club\, 5580 Cunard Street\, Halifax\, NS
+DESCRIPTION:OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax.
+URL:https://www.okaytk.com/events/charlies-halloween-costume-party-2026-10-31/
+END:VEVENT
+END:VCALENDAR

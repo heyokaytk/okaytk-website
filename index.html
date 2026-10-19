@@ -8,8 +8,15 @@
 <meta name="robots" content="index, follow">
 <meta name="msvalidate.01" content="29EF5156D1D968F016CE1E724BE3BCCF" />
 <link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f5f3ee">
+<link rel="preload" as="image" href="IMAGES/hero.webp" type="image/webp" media="(min-width: 601px)" fetchpriority="high">
+<link rel="preload" as="image" href="IMAGES/hero-mobile.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
 
 <!-- Open Graph (social sharing) -->
+<meta property="og:locale" content="en_CA">
+<meta property="og:site_name" content="OKAY TK">
 <meta property="og:title" content="OKAY TK — One Of A Kind">
 <meta property="og:description" content="Award-winning DJ and event curator from Halifax, Nova Scotia. Known for personality, versatility, and reading a room.">
 <meta property="og:url" content="https://www.okaytk.com">
@@ -23,118 +30,211 @@
 <meta name="twitter:description" content="Award-winning DJ and event curator from Halifax, Nova Scotia.">
 <meta name="twitter:image" content="https://www.okaytk.com/IMAGES/hero.jpg">
 
+<!-- build:events-schema -->
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Garrison Grand Re-Opening Party",
-    "description": "OKAY TK DJs the Garrison Grand re-opening party in Halifax, Nova Scotia.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-10-23T17:00:00-03:00",
-    "endDate": "2026-10-23T19:00:00-03:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Garrison Grand",
-      "address": { "@type": "PostalAddress", "streetAddress": "1149 Marginal Road", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "isAccessibleForFree": true
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Halifax Wanderers vs. FC Supra",
-    "description": "OKAY TK DJs Halifax Wanderers FC's match against FC Supra at The Wanderers Grounds in Halifax, Nova Scotia.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-10-25T17:00:00-03:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "The Wanderers Grounds",
-      "address": { "@type": "PostalAddress", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.ticketmaster.ca/halifax-wanderers-fc-vs-fc-supra-halifax-nova-scotia-10-25-2026/event/3100643D762A25A5",
-      "availability": "https://schema.org/InStock"
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://www.okaytk.com/events/garrison-grand-reopening-2026-10-23/#event",
+  "name": "Garrison Grand Re-Opening Party",
+  "description": "OKAY TK DJs the Garrison Grand re-opening party in Halifax, Nova Scotia.",
+  "url": "https://www.okaytk.com/events/garrison-grand-reopening-2026-10-23/",
+  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "startDate": "2026-10-23T17:00:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Garrison Grand",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1149 Marginal Road",
+      "addressLocality": "Halifax",
+      "addressRegion": "NS",
+      "addressCountry": "CA"
     }
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Charlie's Halloween Costume Party",
-    "description": "OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-10-31T21:00:00-03:00",
-    "endDate": "2026-11-01T01:00:00-03:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Charlie's Club",
-      "address": { "@type": "PostalAddress", "streetAddress": "5580 Cunard Street", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "isAccessibleForFree": true
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.okaytk.com/#person",
+    "name": "OKAY TK",
+    "url": "https://www.okaytk.com/"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Bump & Grind R&B Party at The Marquee",
-    "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-11-20T21:00:00-04:00",
-    "endDate": "2026-11-21T01:00:00-04:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "The Marquee Club",
-      "address": { "@type": "PostalAddress", "streetAddress": "2037 Gottingen Street", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://bump-grind-r-b-party.bloomtickets.ca/event/3339",
-      "price": "20",
-      "priceCurrency": "CAD",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "R&B New Year's Eve at Lot Six",
-    "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax.",
-    "image": "https://www.okaytk.com/IMAGES/hero.jpg",
-    "startDate": "2026-12-31T21:00:00-04:00",
-    "endDate": "2027-01-01T01:00:00-04:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Lot Six",
-      "address": { "@type": "PostalAddress", "streetAddress": "1685 Argyle Street", "addressLocality": "Halifax", "addressRegion": "NS", "addressCountry": "CA" }
-    },
-    "performer": { "@type": "Person", "name": "OKAY TK" }
+  "endDate": "2026-10-23T19:00:00-03:00",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.okaytk.com/events/garrison-grand-reopening-2026-10-23/",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock"
   }
-]
+}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://www.okaytk.com/events/halifax-wanderers-fc-supra-2026-10-25/#event",
+  "name": "Halifax Wanderers vs. FC Supra",
+  "description": "OKAY TK DJs Halifax Wanderers FC's match against FC Supra at The Wanderers Grounds in Halifax, Nova Scotia.",
+  "url": "https://www.okaytk.com/events/halifax-wanderers-fc-supra-2026-10-25/",
+  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "startDate": "2026-10-25T17:00:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "The Wanderers Grounds",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Halifax",
+      "addressRegion": "NS",
+      "addressCountry": "CA"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.okaytk.com/#person",
+    "name": "OKAY TK",
+    "url": "https://www.okaytk.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.ticketmaster.ca/halifax-wanderers-fc-vs-fc-supra-halifax-nova-scotia-10-25-2026/event/3100643D762A25A5",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://www.okaytk.com/events/charlies-halloween-costume-party-2026-10-31/#event",
+  "name": "Charlie's Halloween Costume Party",
+  "description": "OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax.",
+  "url": "https://www.okaytk.com/events/charlies-halloween-costume-party-2026-10-31/",
+  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "startDate": "2026-10-31T21:00:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Charlie's Club",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5580 Cunard Street",
+      "addressLocality": "Halifax",
+      "addressRegion": "NS",
+      "addressCountry": "CA"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.okaytk.com/#person",
+    "name": "OKAY TK",
+    "url": "https://www.okaytk.com/"
+  },
+  "endDate": "2026-11-01T01:00:00-03:00",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.okaytk.com/events/charlies-halloween-costume-party-2026-10-31/",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://www.okaytk.com/events/bump-grind-rnb-party-2026-11-20/#event",
+  "name": "Bump & Grind R&B Party",
+  "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax.",
+  "url": "https://www.okaytk.com/events/bump-grind-rnb-party-2026-11-20/",
+  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "startDate": "2026-11-20T21:00:00-04:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "The Marquee Club",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2037 Gottingen Street",
+      "addressLocality": "Halifax",
+      "addressRegion": "NS",
+      "addressCountry": "CA"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.okaytk.com/#person",
+    "name": "OKAY TK",
+    "url": "https://www.okaytk.com/"
+  },
+  "endDate": "2026-11-21T01:00:00-04:00",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://bump-grind-r-b-party.bloomtickets.ca/event/3339",
+    "price": "20",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": "https://www.okaytk.com/events/rnb-new-years-eve-lot-six-2026-12-31/#event",
+  "name": "R&B New Year's Eve at Lot Six",
+  "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax.",
+  "url": "https://www.okaytk.com/events/rnb-new-years-eve-lot-six-2026-12-31/",
+  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "startDate": "2026-12-31T21:00:00-04:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Lot Six",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1685 Argyle Street",
+      "addressLocality": "Halifax",
+      "addressRegion": "NS",
+      "addressCountry": "CA"
+    }
+  },
+  "performer": {
+    "@type": "Person",
+    "@id": "https://www.okaytk.com/#person",
+    "name": "OKAY TK",
+    "url": "https://www.okaytk.com/"
+  },
+  "endDate": "2027-01-01T01:00:00-04:00"
+}
+</script>
+<!-- /build:events-schema -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.okaytk.com/#person",
   "name": "OKAY TK",
-  "url": "https://www.okaytk.com",
+  "url": "https://www.okaytk.com/",
   "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "email": "mailto:events@okaytk.com",
   "jobTitle": "DJ & Event Curator",
   "description": "Award-winning DJ and event curator based in Halifax, Nova Scotia, available for corporate events, club nights, and special engagements.",
+  "knowsAbout": ["DJing", "R&B", "Event curation", "Corporate event entertainment", "Club nights"],
+  "areaServed": [
+    { "@type": "City", "name": "Halifax" },
+    { "@type": "State", "name": "Nova Scotia" }
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Halifax",
@@ -146,6 +246,7 @@
     "https://www.instagram.com/heyokaytk",
     "https://www.mixcloud.com/heyokaytk",
     "https://soundcloud.com/heyokaytk",
+    "https://www.tiktok.com/@heyokaytk",
     "https://www.twitch.tv/heyokaytk",
     "https://twitter.com/heyokaytk",
     "https://www.youtube.com/@OKAYTK"
@@ -206,7 +307,7 @@ p { text-wrap: pretty; }
 
 /* HERO */
 .tk-hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; }
-.tk-hero-bg { position:absolute; inset:0; background-color:var(--tk-bg); background-image:url('IMAGES/hero.jpg'); background-size:cover; background-position:center top; animation:tk-kenburns 16s var(--tk-ease) forwards; }
+.tk-hero-bg { position:absolute; inset:0; background-color:var(--tk-bg); background-image:url('IMAGES/hero.jpg'); background-image:image-set(url('IMAGES/hero.webp') type('image/webp'), url('IMAGES/hero.jpg') type('image/jpeg')); background-size:cover; background-position:center top; animation:tk-kenburns 16s var(--tk-ease) forwards; }
 @keyframes tk-kenburns { from { transform:scale(1); } to { transform:scale(1.06); } }
 @media (prefers-reduced-motion: reduce) {
   .tk-hero-bg { animation:none; }
@@ -221,6 +322,15 @@ p { text-wrap: pretty; }
 .tk-eyebrow { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--tk-gold-deep); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
 .tk-eyebrow::after { content:''; display:block; width:32px; height:0.5px; background:var(--tk-gold-deep); }
 .tk-hero-name { font-family:var(--tk-font-display); font-size:clamp(80px,11vw,128px); line-height:0.9; letter-spacing:0.03em; color:var(--tk-ink); margin:0 0 12px; }
+.tk-next-up { display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px 12px; margin-bottom:22px; padding:8px 8px 8px 14px; background:rgba(245,243,238,0.85); border:0.5px solid var(--tk-gold-deep); color:var(--tk-ink); text-decoration:none; font-size:12px; letter-spacing:0.08em; line-height:1.4; transition:background 0.2s, border-color 0.2s; }
+.tk-next-up:hover { background:var(--tk-bg); border-color:var(--tk-ink); }
+.tk-next-up-label { font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); }
+.tk-next-up-text { font-weight:400; letter-spacing:0.01em; }
+.tk-next-up-when { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; background:var(--tk-ink); color:var(--tk-bg); padding:3px 10px; }
+.tk-next-up-when:empty { display:none; }
+.tk-next-up-live .tk-next-up-when { display:inline-flex; align-items:center; gap:6px; background:var(--tk-gold); color:var(--tk-ink); }
+.tk-next-up-live .tk-next-up-when::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--tk-ink); animation:tk-live-pulse 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .tk-next-up-live .tk-next-up-when::before { animation:none; } }
 .tk-hero-tagline { font-size:16px; line-height:1.7; color:#111; max-width:400px; margin:20px 0 36px; font-style:italic; }
 .tk-hero-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
 .tk-btn-primary { background:var(--tk-ink); color:var(--tk-bg); padding:13px 28px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; display:inline-block; border:none; cursor:pointer; transition:background 0.2s, color 0.2s, transform .2s; }
@@ -276,7 +386,28 @@ p { text-wrap: pretty; }
 .tk-event-countdown.tk-event-live::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--tk-ink); flex-shrink:0; animation:tk-live-pulse 1.6s ease-in-out infinite; }
 @keyframes tk-live-pulse { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
 @media (prefers-reduced-motion: reduce) { .tk-event-countdown.tk-event-live::before { animation:none; } }
-.tk-event-name { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
+.tk-event-name { font-family:var(--tk-font-display); font-size:22px; font-weight:400; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
+.tk-event-name a { color:inherit; text-decoration:none; transition:color 0.2s; }
+.tk-event-name a:hover { color:var(--tk-gold-deep); }
+.tk-events-empty { padding:20px 52px; border-top:0.5px solid var(--tk-border); font-size:15px; color:var(--tk-dim); }
+
+/* NEWSLETTER SIGNUP */
+.tk-signup { display:flex; align-items:flex-end; justify-content:space-between; gap:24px 48px; flex-wrap:wrap; padding:32px 52px 40px; border-top:0.5px solid var(--tk-border); background:#eceae5; }
+.tk-signup-copy { flex:1 1 320px; }
+.tk-signup-title { font-family:var(--tk-font-display); font-size:28px; letter-spacing:0.05em; line-height:1; color:var(--tk-ink); margin:0 0 8px; }
+.tk-signup-sub { font-size:13px; line-height:1.5; color:var(--tk-dim); max-width:46ch; }
+.tk-signup-form { flex:1 1 360px; max-width:480px; }
+.tk-signup-fields { display:flex; }
+.tk-signup-fields input { flex:1; min-width:0; background:var(--tk-bg); border:0.5px solid rgba(0,0,0,0.25); border-right:none; border-radius:0; color:#111; padding:13px 16px; font-family:var(--tk-font-body); font-size:14px; font-weight:300; outline:none; transition:border-color 0.2s, box-shadow .2s; }
+.tk-signup-fields input::placeholder { color:#6b6b6b; }
+.tk-signup-fields input:focus { border-color:rgba(0,0,0,0.5); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
+.tk-signup-fields button { background:var(--tk-ink); color:var(--tk-bg); padding:13px 22px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; white-space:nowrap; transition:background 0.2s; }
+.tk-signup-fields button:hover:not(:disabled) { background:var(--tk-gold-deep); color:#fff; }
+.tk-signup-fields button:disabled { cursor:default; opacity:0.7; }
+.tk-signup-status { font-size:13px; color:var(--tk-gold-deep); margin-top:10px; }
+.tk-signup-status:empty { display:none; }
+.tk-sr { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+[hidden] { display:none !important; }
 .tk-event-venue { font-size:13px; line-height:1.5; letter-spacing:0.01em; color:var(--tk-dim); }
 .tk-event-info { flex:1; min-width:200px; }
 .tk-event-ticket { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; flex-shrink:0; transition:background 0.2s, color 0.2s; }
@@ -311,7 +442,7 @@ p { text-wrap: pretty; }
 
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
-.tk-client-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--tk-border); }
+.tk-client-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--tk-border); }
 .tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; cursor:default; transition:color 0.25s ease; }
 .tk-client-tile:hover { color:var(--tk-gold-deep); }
 
@@ -350,7 +481,7 @@ p { text-wrap: pretty; }
 .tk-contact-form select:focus,
 .tk-contact-form textarea:focus { border-color:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
 .tk-contact-form input::placeholder,
-.tk-contact-form textarea::placeholder { color:#aaa; }
+.tk-contact-form textarea::placeholder { color:#666; }
 .tk-contact-form select { -webkit-appearance:none; appearance:none; cursor:pointer; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%230d0d0d' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; }
 .tk-contact-form textarea { resize:none; height:120px; }
 .tk-contact-form button { background:var(--tk-ink); color:var(--tk-bg); padding:15px 24px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; width:100%; transition:background 0.2s; }
@@ -381,10 +512,10 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   .tk-booking-left { border-right:none; border-bottom:0.5px solid var(--tk-border); padding:48px 24px; }
   .tk-booking-right { padding:48px 24px; }
   .tk-section-header { padding:40px 24px 28px; }
-  .tk-event-row, .tk-event-month { padding:18px 24px; }
+  .tk-event-row, .tk-event-month, .tk-events-empty { padding:18px 24px; }
+  .tk-signup { padding:28px 24px 32px; }
   .tk-event-date { width:auto; }
   .tk-clients { padding:48px 24px; }
-  .tk-client-grid { grid-template-columns:repeat(3,1fr); }
   .tk-mix-list { grid-template-columns:1fr; padding:0 24px 48px; }
   .tk-blog-teaser-list { margin:0 24px; padding-bottom:48px; }
   .tk-footer { padding:28px 24px; }
@@ -392,6 +523,9 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 @media (max-width: 600px) {
   .tk-hero-name { font-size:clamp(56px,16vw,80px); }
   .tk-hero-overlay { background: linear-gradient(to top, rgba(245,243,238,0.88) 0%, rgba(245,243,238,0.2) 60%, rgba(245,243,238,0.05) 100%); }
+  .tk-hero-bg { background-image:image-set(url('IMAGES/hero-mobile.webp') type('image/webp'), url('IMAGES/hero.jpg') type('image/jpeg')); }
+  .tk-signup-fields { flex-direction:column; gap:8px; }
+  .tk-signup-fields input { border-right:0.5px solid rgba(0,0,0,0.25); }
   .tk-about-heading, .tk-section-title, .tk-booking-title, .tk-contact-heading { font-size:40px; }
   .tk-client-grid { grid-template-columns:repeat(2,1fr); }
   .tk-stats-grid { grid-template-columns:1fr; }
@@ -433,6 +567,13 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   <div class="tk-hero-bg"></div>
   <div class="tk-hero-overlay"></div>
   <div class="tk-hero-content">
+    <!-- build:next-up -->
+<a class="tk-next-up" href="/events/garrison-grand-reopening-2026-10-23/" data-next-up>
+      <span class="tk-next-up-label">Next up</span>
+      <span class="tk-next-up-text" data-next-up-text>Fri. Oct 23 · Garrison Grand Re-Opening Party</span>
+      <span class="tk-next-up-when" data-next-up-when></span>
+    </a>
+<!-- /build:next-up -->
     <h1 class="tk-hero-name">OKAY TK</h1>
     <p class="tk-hero-tagline">Known for his personality, versatility, and connecting with listeners, from national television to club floors.</p>
     <div class="tk-hero-actions">
@@ -459,7 +600,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   </div>
 </section>
 
-<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at a live event"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-2ND-HERO.jpg');"></div></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at a live event"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-2ND-HERO.jpg');background-image:image-set(url('IMAGES/OKAYWEB-2ND-HERO.webp') type('image/webp'), url('IMAGES/OKAYWEB-2ND-HERO.jpg') type('image/jpeg'));"></div></div>
 
 <section class="tk-events" id="events">
   <div class="tk-section-header" data-reveal>
@@ -467,53 +608,82 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <p class="tk-section-pre">don't miss the next</p>
       <h2 class="tk-section-title">UPCOMING EVENTS</h2>
     </div>
+    <a href="/events/" class="tk-section-link">All events →</a>
   </div>
+<!-- build:events -->
+<div class="tk-event-group">
   <div class="tk-event-month">October</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-10-23" data-event-start="17:00">
+  <div class="tk-event-row" data-reveal data-event-date="2026-10-23" data-event-start="17:00" data-event-end="2026-10-23T22:00:00.000Z" data-event-url="/events/garrison-grand-reopening-2026-10-23/" data-event-short="Fri. Oct 23 · Garrison Grand Re-Opening Party">
     <div class="tk-event-date">Fri. October 23rd, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Garrison Grand Re-Opening Party</div>
+      <h3 class="tk-event-name"><a href="/events/garrison-grand-reopening-2026-10-23/">Garrison Grand Re-Opening Party</a></h3>
       <div class="tk-event-venue">Garrison Grand · 1149 Marginal Road · Halifax · 5:00 PM – 7:00 PM</div>
     </div>
     <span class="tk-event-ticket-dim">Free Entry</span>
   </div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-10-25" data-event-start="17:00">
+  <div class="tk-event-row" data-reveal data-event-date="2026-10-25" data-event-start="17:00" data-event-end="2026-10-25T23:00:00.000Z" data-event-url="/events/halifax-wanderers-fc-supra-2026-10-25/" data-event-short="Sun. Oct 25 · Halifax Wanderers vs. FC Supra">
     <div class="tk-event-date">Sun. October 25th, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Halifax Wanderers</div>
+      <h3 class="tk-event-name"><a href="/events/halifax-wanderers-fc-supra-2026-10-25/">Halifax Wanderers vs. FC Supra</a></h3>
       <div class="tk-event-venue">The Wanderers Grounds · Halifax · 5:00 PM</div>
     </div>
     <a href="https://www.ticketmaster.ca/halifax-wanderers-fc-vs-fc-supra-halifax-nova-scotia-10-25-2026/event/3100643D762A25A5" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-10-31" data-event-start="21:00">
+  <div class="tk-event-row" data-reveal data-event-date="2026-10-31" data-event-start="21:00" data-event-end="2026-11-01T04:00:00.000Z" data-event-url="/events/charlies-halloween-costume-party-2026-10-31/" data-event-short="Sat. Oct 31 · Charlie's Halloween Costume Party">
     <div class="tk-event-date">Sat. October 31st, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Charlie's Halloween Costume Party</div>
+      <h3 class="tk-event-name"><a href="/events/charlies-halloween-costume-party-2026-10-31/">Charlie's Halloween Costume Party</a></h3>
       <div class="tk-event-venue">Charlie's Club · 5580 Cunard Street · Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <span class="tk-event-ticket-dim">Free Entry</span>
   </div>
+</div>
+<div class="tk-event-group">
   <div class="tk-event-month">November</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-11-20" data-event-start="21:00">
+  <div class="tk-event-row" data-reveal data-event-date="2026-11-20" data-event-start="21:00" data-event-end="2026-11-21T05:00:00.000Z" data-event-url="/events/bump-grind-rnb-party-2026-11-20/" data-event-short="Fri. Nov 20 · Bump &amp; Grind R&amp;B Party">
     <div class="tk-event-date">Fri. November 20th, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">Bump &amp; Grind R&amp;B Party</div>
+      <h3 class="tk-event-name"><a href="/events/bump-grind-rnb-party-2026-11-20/">Bump &amp; Grind R&amp;B Party</a></h3>
       <div class="tk-event-venue">The Marquee Club · 2037 Gottingen Street · Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/3339" class="tk-event-ticket tk-shimmer">Get Tickets</a>
   </div>
+</div>
+<div class="tk-event-group">
   <div class="tk-event-month">December</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-12-31" data-event-start="21:00">
+  <div class="tk-event-row" data-reveal data-event-date="2026-12-31" data-event-start="21:00" data-event-end="2027-01-01T05:00:00.000Z" data-event-url="/events/rnb-new-years-eve-lot-six-2026-12-31/" data-event-short="Thu. Dec 31 · R&amp;B New Year's Eve at Lot Six">
     <div class="tk-event-date">Thu. December 31st, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <div class="tk-event-name">R&amp;B New Year's Eve at Lot Six</div>
+      <h3 class="tk-event-name"><a href="/events/rnb-new-years-eve-lot-six-2026-12-31/">R&amp;B New Year's Eve at Lot Six</a></h3>
       <div class="tk-event-venue">Lot Six · 1685 Argyle Street · Downtown Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <span class="tk-event-ticket-dim">Tickets Coming Soon</span>
   </div>
+</div>
+<!-- /build:events -->
+<!-- build:signup -->
+<div class="tk-signup" id="newsletter">
+  <div class="tk-signup-copy">
+    <p class="tk-section-pre">never miss the next one</p>
+    <p class="tk-signup-title">NEW DATES &amp; MIXES, FIRST</p>
+    <p class="tk-signup-sub">An email when there's a new party or a new mix. No spam, unsubscribe anytime.</p>
+  </div>
+  <form class="tk-signup-form" action="https://formspree.io/f/xkodbdwz" method="POST" data-signup>
+    <label for="tk-signup-email-homepage" class="tk-sr">Email address</label>
+    <div class="tk-signup-fields">
+      <input id="tk-signup-email-homepage" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+      <button type="submit" class="tk-shimmer">Sign Me Up</button>
+    </div>
+    <input type="hidden" name="_subject" value="Newsletter signup — okaytk.com">
+    <input type="hidden" name="signup_source" value="homepage">
+    <input type="text" name="_gotcha" class="tk-sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="tk-signup-status" role="status" aria-live="polite" data-signup-status></p>
+  </form>
+</div>
+<!-- /build:signup -->
 </section>
 
-<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at an outdoor festival"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-3RD-HERO.jpg');"></div></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK DJing at an outdoor festival"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-3RD-HERO.jpg');background-image:image-set(url('IMAGES/OKAYWEB-3RD-HERO.webp') type('image/webp'), url('IMAGES/OKAYWEB-3RD-HERO.jpg') type('image/jpeg'));"></div></div>
 
 <!-- MIXES -->
 <section class="tk-mixes" id="mixes">
@@ -584,12 +754,24 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-clients" id="tk-clients">
   <h2 class="tk-section-title" style="text-align:center;margin-bottom:48px" data-reveal>Clientele</h2>
   <div class="tk-client-grid" data-reveal>
+<!-- build:clients -->
+    <div class="tk-client-tile">CORONA</div>
+    <div class="tk-client-tile">COORS</div>
+    <div class="tk-client-tile">DASH HUDSON</div>
     <div class="tk-client-tile">FIFA</div>
-    <div class="tk-client-tile">HFX WANDERERS</div>
+    <div class="tk-client-tile">FORD</div>
+    <div class="tk-client-tile">HALIFAX WANDERERS</div>
+    <div class="tk-client-tile">HONDA</div>
+    <div class="tk-client-tile">HOPSCOTCH FESTIVAL</div>
+    <div class="tk-client-tile">THE JUNOS</div>
+    <div class="tk-client-tile">LEVI'S</div>
+    <div class="tk-client-tile">MOTIONBALL</div>
     <div class="tk-client-tile">NIKE</div>
     <div class="tk-client-tile">RED BULL</div>
     <div class="tk-client-tile">REEBOK</div>
-    <div class="tk-client-tile">THE JUNOS</div>
+    <div class="tk-client-tile">TD</div>
+    <div class="tk-client-tile">WALMART</div>
+<!-- /build:clients -->
   </div>
 </section>
 
@@ -602,6 +784,15 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <a href="/blog" class="tk-section-link">All posts →</a>
   </div>
   <div class="tk-blog-teaser-list">
+<!-- build:blog-teaser -->
+    <div class="tk-blog-teaser-row" data-reveal>
+      <div class="tk-blog-teaser-date">August 21, 2026</div>
+      <div class="tk-blog-teaser-info">
+        <div class="tk-blog-teaser-title">Bringing Baby Yu & Jester Into the August Mix</div>
+        <div class="tk-blog-teaser-excerpt">Why this month's mix turned into a 3-way collab with Baby Yu & Jester, and how we split the time.</div>
+      </div>
+      <a href="/blog/mix-collaboration-baby-yu-jester/" class="tk-section-link">Read →</a>
+    </div>
     <div class="tk-blog-teaser-row" data-reveal>
       <div class="tk-blog-teaser-date">July 21, 2026</div>
       <div class="tk-blog-teaser-info">
@@ -610,10 +801,11 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       </div>
       <a href="/blog/welcome-to-the-blog/" class="tk-section-link">Read →</a>
     </div>
+<!-- /build:blog-teaser -->
   </div>
 </section>
 
-<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK behind the decks"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-4TH-HERO.jpg');"></div></div>
+<div class="tk-photo-break" data-zoom role="img" aria-label="OKAY TK behind the decks"><div class="tk-photo-break-img" style="background-image:url('IMAGES/OKAYWEB-4TH-HERO.jpg');background-image:image-set(url('IMAGES/OKAYWEB-4TH-HERO.webp') type('image/webp'), url('IMAGES/OKAYWEB-4TH-HERO.jpg') type('image/jpeg'));"></div></div>
 
 <section class="tk-booking" id="booking">
   <div class="tk-booking-left" data-reveal>
@@ -626,6 +818,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <span class="tk-tag">Club Nights</span>
       <span class="tk-tag">Special Events</span>
     </div>
+    <a href="/press/" class="tk-section-link" style="align-self:flex-start">Planners: see the press kit →</a>
   </div>
   <div class="tk-booking-right" data-reveal>
     <p class="tk-section-pre">get in</p>
@@ -667,11 +860,12 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <a href="https://www.instagram.com/heyokaytk" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.mixcloud.com/heyokaytk" target="_blank" rel="noopener">MixCloud</a>
       <a href="https://soundcloud.com/heyokaytk" target="_blank" rel="noopener">SoundCloud</a>
+      <a href="https://www.tiktok.com/@heyokaytk" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.twitch.tv/heyokaytk" target="_blank" rel="noopener">Twitch</a>
       <a href="https://twitter.com/heyokaytk" target="_blank" rel="noopener">Twitter</a>
       <a href="https://www.youtube.com/@OKAYTK" target="_blank" rel="noopener">YouTube</a>
     </div>
-    <div class="tk-footer-copy">© 2026 OKAY TK</div>
+    <div class="tk-footer-copy"><a href="/press/" style="color:inherit">Press Kit</a> · © 2026 OKAY TK</div>
   </div>
 </footer>
 
@@ -738,29 +932,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     });
   }());
 
-  // Event countdowns
-  (function () {
-    var rows = document.querySelectorAll('.tk-event-row[data-event-date]');
-    if (!rows.length) return;
-    var now = new Date();
-    var today = new Date();
-    today.setHours(0, 0, 0, 0);
-    rows.forEach(function (row) {
-      var el = row.querySelector('[data-countdown]');
-      if (!el) return;
-      var eventDate = new Date(row.getAttribute('data-event-date') + 'T00:00:00');
-      var days = Math.round((eventDate - today) / 86400000);
-      if (days > 1) { el.textContent = 'In ' + days + ' Days'; return; }
-      if (days === 1) { el.textContent = 'Tomorrow'; return; }
-      if (days !== 0) return;
-      var startAttr = row.getAttribute('data-event-start');
-      var startHour = startAttr ? parseInt(startAttr.split(':')[0], 10) : now.getHours();
-      var label = startHour < 12 ? 'Happening This Morning' : startHour < 18 ? 'Happening This Afternoon' : 'Happening Tonight';
-      el.textContent = label;
-      el.classList.add('tk-event-live');
-    });
-  }());
-
   // Scroll reveal — progressive enhancement only. Anything visible on load
   // is left alone; only below-fold sections fade up (or, for [data-zoom]
   // photo-breaks, zoom in) as they scroll into view.
@@ -795,6 +966,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     });
   }());
 </script>
+<script src="/site.js" defer></script>
 
 </body>
 </html>

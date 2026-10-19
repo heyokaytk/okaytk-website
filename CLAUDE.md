@@ -13,7 +13,12 @@ Hosting: Cloudflare Workers, deployed via GitHub Actions (`.github/workflows/dep
 ## Stack
 
 Static HTML/CSS (`index.html`, `styles.css`), no frontend framework.
-Blog: Markdown posts in `posts/`, built to static pages via `build-blog.js` (`gray-matter` + `marked`) — run `npm run build` before committing if blog content changed, and audit the generated output, not just the source Markdown.
+Build: `npm run build` (`build.js`) generates everything below. Run it before committing whenever events, posts, or the build itself change, and audit the generated output, not just the source. CI does NOT build; generated files are committed.
+- Press kit: edit `press.json` (renders `/press/`; its `clients` list also fills the homepage Clientele grid).
+- Events: edit `events.json` only (times are Halifax local, e.g. `"2026-10-23T17:00"`; `admission` is `free` | `tickets` (+ `ticketUrl`, optional `price`) | `soon`). Never hand-edit event rows or Event schema in `index.html`.
+- Build outputs: `/events/<slug>/` pages + `event.ics`, `/events/` index (upcoming + past), blog pages from `posts/`, `sitemap.xml`, `llms.txt`, and the homepage regions between `<!-- build:NAME -->` markers (events schema, hero "Next up" badge, events list, newsletter signup, blog teaser).
+- `site.js`: countdown badges, hides events that ended since the last build, hero "Next up", newsletter form submit (Formspree, same endpoint as booking, tagged `_subject: Newsletter signup`).
+- `.assetsignore` keeps source/internal files (CLAUDE.md, build.js, events.json, posts/, docs/) from being served.
 Deploy config: `wrangler.jsonc` (Cloudflare Workers). CI runs `cloudflare/wrangler-action` on push to `main`.
 SEO files: `sitemap.xml`, `robots.txt`, Google Search Console verification file at root.
 

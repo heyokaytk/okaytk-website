@@ -2,3 +2,14 @@ node_modules/
 .git/
 .github/
 .wrangler/
+.impeccable/
+.superpowers/
+docs/
+posts/
+CLAUDE.md
+build.js
+events.json
+package.json
+package-lock.json
+wrangler.jsonc
+press.json
