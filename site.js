@@ -47,6 +47,8 @@
     } else {
       badge.href = next.getAttribute('data-event-url');
       badge.querySelector('[data-next-up-text]').textContent = next.getAttribute('data-event-short');
+      var icon = badge.querySelector('[data-next-up-icon]');
+      if (icon) icon.textContent = next.getAttribute('data-event-icon') || '';
       var label = countdownLabel(next);
       var when = badge.querySelector('[data-next-up-when]');
       if (label) {

@@ -214,7 +214,7 @@ function eventDataAttrs(e) {
 
 function eventRow(e) {
   const venueLine = [e.venue, e.street, e.area, timeRange(e)].filter(Boolean).map(esc).join(' · ');
-  return `  <div class="tk-event-row" data-reveal ${eventDataAttrs(e)} data-event-url="/events/${e.slug}/" data-event-short="${esc(`${shortDate(e.start)} · ${e.name}`)}">
+  return `  <div class="tk-event-row" data-reveal ${eventDataAttrs(e)} data-event-url="/events/${e.slug}/" data-event-short="${esc(`${shortDate(e.start)} · ${e.name}`)}"${e.icon ? ` data-event-icon="${esc(e.icon)}"` : ''}>
     <div class="tk-event-date">${longDate(e.start)}<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
       <h3 class="tk-event-name"><a href="/events/${e.slug}/">${esc(e.name)}</a></h3>
@@ -247,6 +247,7 @@ function nextUp(events) {
       <span class="tk-next-up-label">Next up</span>
       <span class="tk-next-up-text" data-next-up-text>${esc(`${shortDate(e.start)} · ${e.name}`)}</span>
       <span class="tk-next-up-when" data-next-up-when></span>
+      <span class="tk-next-up-icon" data-next-up-icon aria-hidden="true">${e.icon ? esc(e.icon) : ''}</span>
     </a>`;
 }
 
