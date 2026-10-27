@@ -217,7 +217,7 @@ function eventRow(e) {
   return `  <div class="tk-event-row" data-reveal ${eventDataAttrs(e)} data-event-url="/events/${e.slug}/" data-event-short="${esc(`${shortDate(e.start)} · ${e.name}`)}"${e.icon ? ` data-event-icon="${esc(e.icon)}"` : ''}>
     <div class="tk-event-date">${longDate(e.start)}<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/${e.slug}/">${esc(e.name)}</a></h3>
+      <h3 class="tk-event-name"><a href="/events/${e.slug}/">${esc(e.name)}</a>${e.icon ? `<span class="tk-event-icon" aria-hidden="true">${esc(e.icon)}</span>` : ''}</h3>
       <div class="tk-event-venue">${venueLine}</div>
     </div>
     ${eventCta(e)}

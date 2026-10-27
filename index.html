@@ -326,6 +326,8 @@ p { text-wrap: pretty; }
 .tk-event-name { font-family:var(--tk-font-display); font-size:22px; font-weight:400; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
 .tk-event-name a { color:inherit; text-decoration:none; transition:color 0.2s; }
 .tk-event-name a:hover { color:var(--tk-gold-deep); }
+.tk-event-icon { display:inline-block; margin-left:10px; font-size:20px; line-height:1; vertical-align:middle; animation:tk-icon-float 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .tk-event-icon { animation:none; transform:rotate(-8deg); } }
 .tk-events-empty { padding:20px 52px; border-top:0.5px solid var(--tk-border); font-size:15px; color:var(--tk-dim); }
 
 /* NEWSLETTER SIGNUP */
@@ -554,7 +556,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   <div class="tk-event-row" data-reveal data-event-date="2026-10-31" data-event-start="21:00" data-event-end="2026-11-01T04:00:00.000Z" data-event-url="/events/charlies-halloween-costume-party-2026-10-31/" data-event-short="Sat. Oct 31 · Charlie's Halloween Costume Party" data-event-icon="👻">
     <div class="tk-event-date">Sat. October 31st, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/charlies-halloween-costume-party-2026-10-31/">Charlie's Halloween Costume Party</a></h3>
+      <h3 class="tk-event-name"><a href="/events/charlies-halloween-costume-party-2026-10-31/">Charlie's Halloween Costume Party</a><span class="tk-event-icon" aria-hidden="true">👻</span></h3>
       <div class="tk-event-venue">Charlie's Club · 5580 Cunard Street · Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <span class="tk-event-ticket-dim">Free Entry</span>
@@ -562,10 +564,10 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 </div>
 <div class="tk-event-group">
   <div class="tk-event-month">November</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-11-20" data-event-start="21:00" data-event-end="2026-11-21T05:00:00.000Z" data-event-url="/events/bump-grind-rnb-party-2026-11-20/" data-event-short="Fri. Nov 20 · Bump &amp; Grind Presents R&amp;B at The Marquee">
+  <div class="tk-event-row" data-reveal data-event-date="2026-11-20" data-event-start="21:00" data-event-end="2026-11-21T05:00:00.000Z" data-event-url="/events/bump-grind-rnb-party-2026-11-20/" data-event-short="Fri. Nov 20 · Bump &amp; Grind Presents R&amp;B at The Marquee" data-event-icon="❤️">
     <div class="tk-event-date">Fri. November 20th, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/bump-grind-rnb-party-2026-11-20/">Bump &amp; Grind Presents R&amp;B at The Marquee</a></h3>
+      <h3 class="tk-event-name"><a href="/events/bump-grind-rnb-party-2026-11-20/">Bump &amp; Grind Presents R&amp;B at The Marquee</a><span class="tk-event-icon" aria-hidden="true">❤️</span></h3>
       <div class="tk-event-venue">The Marquee Club · 2037 Gottingen Street · Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/3339" class="tk-event-ticket tk-shimmer">Get Tickets</a>
@@ -573,10 +575,10 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 </div>
 <div class="tk-event-group">
   <div class="tk-event-month">December</div>
-  <div class="tk-event-row" data-reveal data-event-date="2026-12-31" data-event-start="21:00" data-event-end="2027-01-01T05:00:00.000Z" data-event-url="/events/rnb-new-years-eve-lot-six-2026-12-31/" data-event-short="Thu. Dec 31 · Bump &amp; Grind Presents New Year's Eve at Lot Six">
+  <div class="tk-event-row" data-reveal data-event-date="2026-12-31" data-event-start="21:00" data-event-end="2027-01-01T05:00:00.000Z" data-event-url="/events/rnb-new-years-eve-lot-six-2026-12-31/" data-event-short="Thu. Dec 31 · Bump &amp; Grind Presents New Year's Eve at Lot Six" data-event-icon="🪩">
     <div class="tk-event-date">Thu. December 31st, 2026<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/rnb-new-years-eve-lot-six-2026-12-31/">Bump &amp; Grind Presents New Year's Eve at Lot Six</a></h3>
+      <h3 class="tk-event-name"><a href="/events/rnb-new-years-eve-lot-six-2026-12-31/">Bump &amp; Grind Presents New Year's Eve at Lot Six</a><span class="tk-event-icon" aria-hidden="true">🪩</span></h3>
       <div class="tk-event-venue">Lot Six · 1685 Argyle Street · Downtown Halifax · 9:00 PM – 1:00 AM</div>
     </div>
     <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/4303" class="tk-event-ticket tk-shimmer">Get Tickets</a>

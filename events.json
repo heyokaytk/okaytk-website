@@ -43,6 +43,7 @@
     "admission": "tickets",
     "ticketUrl": "https://bump-grind-r-b-party.bloomtickets.ca/event/3339",
     "price": 20,
+    "icon": "❤️",
     "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax."
   },
   {
@@ -56,6 +57,7 @@
     "admission": "tickets",
     "ticketUrl": "https://bump-grind-r-b-party.bloomtickets.ca/event/4303",
     "price": 100,
+    "icon": "🪩",
     "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax."
   }
 ]

@@ -100,6 +100,9 @@ p { text-wrap: pretty; }
 .tk-event-name { font-family:var(--tk-font-display); font-size:22px; font-weight:400; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
 .tk-event-name a { color:inherit; text-decoration:none; transition:color 0.2s; }
 .tk-event-name a:hover { color:var(--tk-gold-deep); }
+.tk-event-icon { display:inline-block; margin-left:10px; font-size:20px; line-height:1; vertical-align:middle; animation:tk-icon-float 3s ease-in-out infinite; }
+@keyframes tk-icon-float { 0%,100% { transform:translateY(0) rotate(-8deg); } 50% { transform:translateY(-5px) rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) { .tk-event-icon { animation:none; transform:rotate(-8deg); } }
 .tk-event-venue { font-size:13px; line-height:1.5; letter-spacing:0.01em; color:var(--tk-dim); }
 .tk-event-ticket { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; flex-shrink:0; display:inline-block; transition:background 0.2s, color 0.2s; }
 .tk-event-ticket:hover { background:var(--tk-gold-deep); color:#fff; }
