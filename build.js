@@ -108,6 +108,19 @@ function eventUrl(e) {
   return `${SITE_URL}/events/${e.slug}/`;
 }
 
+// Private events are listed but get no page, calendar file, schema, or shown time.
+function isPrivate(e) {
+  return e.admission === 'private';
+}
+
+function eventHref(e) {
+  return isPrivate(e) ? '/#events' : `/events/${e.slug}/`;
+}
+
+function eventTitle(e) {
+  return isPrivate(e) ? esc(e.name) : `<a href="${eventHref(e)}">${esc(e.name)}</a>`;
+}
+
 function fullAddress(e) {
   return [e.venue, e.street, e.area, 'NS'].filter(Boolean).join(', ');
 }
@@ -203,6 +216,7 @@ function jsonLd(data) {
 function eventCta(e) {
   if (e.admission === 'tickets') return `<a href="${esc(e.ticketUrl)}" class="tk-event-ticket tk-shimmer">Get Tickets</a>`;
   if (e.admission === 'free') return '<span class="tk-event-ticket-dim">Free Entry</span>';
+  if (isPrivate(e)) return '<span class="tk-event-ticket-dim">Private Event</span>';
   return '<span class="tk-event-ticket-dim">Tickets Coming Soon</span>';
 }
 
@@ -213,11 +227,11 @@ function eventDataAttrs(e) {
 }
 
 function eventRow(e) {
-  const venueLine = [e.venue, e.street, e.area, timeRange(e)].filter(Boolean).map(esc).join(' · ');
-  return `  <div class="tk-event-row" data-reveal ${eventDataAttrs(e)} data-event-url="/events/${e.slug}/" data-event-short="${esc(`${shortDate(e.start)} · ${e.name}`)}"${e.icon ? ` data-event-icon="${esc(e.icon)}"` : ''}>
+  const venueLine = [e.venue, e.street, e.area, !isPrivate(e) && timeRange(e)].filter(Boolean).map(esc).join(' · ');
+  return `  <div class="tk-event-row" data-reveal ${eventDataAttrs(e)} data-event-url="${eventHref(e)}" data-event-short="${esc(`${shortDate(e.start)} · ${e.name}`)}"${e.icon ? ` data-event-icon="${esc(e.icon)}"` : ''}>
     <div class="tk-event-date">${longDate(e.start)}<span class="tk-event-countdown" data-countdown></span></div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/${e.slug}/">${esc(e.name)}</a>${e.icon ? `<span class="tk-event-icon" aria-hidden="true">${esc(e.icon)}</span>` : ''}</h3>
+      <h3 class="tk-event-name">${eventTitle(e)}${e.icon ? `<span class="tk-event-icon" aria-hidden="true">${esc(e.icon)}</span>` : ''}</h3>
       <div class="tk-event-venue">${venueLine}</div>
     </div>
     ${eventCta(e)}
@@ -243,7 +257,7 @@ ${g.events.map(eventRow).join('\n')}
 function nextUp(events) {
   const e = events[0];
   if (!e) return '';
-  return `<a class="tk-next-up" href="/events/${e.slug}/" data-next-up>
+  return `<a class="tk-next-up" href="${eventHref(e)}" data-next-up>
       <span class="tk-next-up-label">Next up</span>
       <span class="tk-next-up-text" data-next-up-text>${esc(`${shortDate(e.start)} · ${e.name}`)}</span>
       <span class="tk-next-up-when" data-next-up-when></span>
@@ -516,7 +530,7 @@ function eventsIndex(upcoming, past) {
   const pastRows = past.slice().reverse().map(e => `  <div class="tk-event-row tk-event-row-past">
     <div class="tk-event-date">${longDate(e.start)}</div>
     <div class="tk-event-info">
-      <h3 class="tk-event-name"><a href="/events/${e.slug}/">${esc(e.name)}</a></h3>
+      <h3 class="tk-event-name">${eventTitle(e)}</h3>
       <div class="tk-event-venue">${[e.venue, e.area].filter(Boolean).map(esc).join(' · ')}</div>
     </div>
   </div>`).join('\n');
@@ -532,7 +546,7 @@ ${head({
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      itemListElement: upcoming.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: eventUrl(e) })),
+      itemListElement: upcoming.filter(e => !isPrivate(e)).map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: eventUrl(e) })),
     },
   ],
 })}
@@ -708,7 +722,7 @@ function sitemap(posts, events) {
     <lastmod>${lastmod}</lastmod>` : ''}
   </url>`;
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${url(`${SITE_URL}/`)}${url(`${SITE_URL}/press/`)}${url(`${SITE_URL}/events/`)}${events.map(e => url(eventUrl(e))).join('')}${url(`${SITE_URL}/blog/`)}${posts.map(p => url(`${SITE_URL}/blog/${p.slug}/`, new Date(p.date).toISOString().split('T')[0])).join('')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${url(`${SITE_URL}/`)}${url(`${SITE_URL}/press/`)}${url(`${SITE_URL}/events/`)}${events.filter(e => !isPrivate(e)).map(e => url(eventUrl(e))).join('')}${url(`${SITE_URL}/blog/`)}${posts.map(p => url(`${SITE_URL}/blog/${p.slug}/`, new Date(p.date).toISOString().split('T')[0])).join('')}
 </urlset>
 `;
 }
@@ -717,7 +731,7 @@ function sitemap(posts, events) {
 // Regenerated each build so the event list never goes stale.
 function llmsTxt(posts, upcoming, press) {
   const eventLines = upcoming.length
-    ? upcoming.map(e => `- [${e.name}](${eventUrl(e)}): ${longDate(e.start)}, ${timeRange(e)}, ${[e.venue, e.area].filter(Boolean).join(', ')}`).join('\n')
+    ? upcoming.filter(e => !isPrivate(e)).map(e => `- [${e.name}](${eventUrl(e)}): ${longDate(e.start)}, ${timeRange(e)}, ${[e.venue, e.area].filter(Boolean).join(', ')}`).join('\n')
     : '- New dates coming soon. See https://www.okaytk.com/events/';
   return `# OKAY TK
 
@@ -784,7 +798,7 @@ fs.writeFileSync(path.join(BLOG_DIR, 'index.html'), blogIndex(posts));
 console.log('  ✓ /blog/');
 
 resetDir(EVENTS_DIR);
-events.forEach(e => {
+events.filter(e => !isPrivate(e)).forEach(e => {
   const dir = path.join(EVENTS_DIR, e.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), eventPage(e, past.includes(e)));
@@ -800,7 +814,7 @@ fs.writeFileSync(path.join(__dirname, 'press', 'index.html'), pressPage(press));
 console.log('  ✓ /press/');
 
 let index = fs.readFileSync(INDEX_FILE, 'utf8');
-index = inject(index, 'events-schema', upcoming.map(eventSchema).map(jsonLd).join('\n'));
+index = inject(index, 'events-schema', upcoming.filter(e => !isPrivate(e)).map(eventSchema).map(jsonLd).join('\n'));
 index = inject(index, 'next-up', nextUp(upcoming));
 index = inject(index, 'events', upcoming.length ? eventList(upcoming) : '  <p class="tk-events-empty">New dates are on the way. Sign up below to hear first.</p>');
 index = inject(index, 'signup', signup('homepage'));
