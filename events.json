@@ -30,7 +30,8 @@
     "area": "Halifax",
     "admission": "free",
     "icon": "👻",
-    "description": "OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax."
+    "description": "OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax.",
+    "flyer": "/IMAGES/flyers/charlies-halloween-costume-party-2026-10-31.jpg"
   },
   {
     "slug": "private-wrap-party-2026-11-14",
@@ -53,7 +54,8 @@
     "ticketUrl": "https://bump-grind-r-b-party.bloomtickets.ca/event/3339",
     "price": 20,
     "icon": "❤️",
-    "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax."
+    "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax.",
+    "flyer": "/IMAGES/flyers/bump-grind-rnb-party-2026-11-20.jpg"
   },
   {
     "slug": "rnb-new-years-eve-lot-six-2026-12-31",
@@ -67,6 +69,7 @@
     "ticketUrl": "https://bump-grind-r-b-party.bloomtickets.ca/event/4303",
     "price": 100,
     "icon": "🪩",
-    "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax."
+    "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax.",
+    "flyer": "/IMAGES/flyers/rnb-new-years-eve-lot-six-2026-12-31.jpg"
   }
 ]

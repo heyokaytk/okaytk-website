@@ -39,7 +39,7 @@
   "name": "Charlie's Halloween Costume Party",
   "description": "OKAY TK DJs Charlie's Halloween costume party at Charlie's Club in Halifax.",
   "url": "https://www.okaytk.com/events/charlies-halloween-costume-party-2026-10-31/",
-  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "image": "https://www.okaytk.com/IMAGES/flyers/charlies-halloween-costume-party-2026-10-31.jpg",
   "startDate": "2026-10-31T21:00:00-03:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -79,7 +79,7 @@
   "name": "Bump & Grind Presents R&B at The Marquee",
   "description": "OKAY TK spins classic and current R&B at the Bump & Grind party at The Marquee Club in Halifax.",
   "url": "https://www.okaytk.com/events/bump-grind-rnb-party-2026-11-20/",
-  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "image": "https://www.okaytk.com/IMAGES/flyers/bump-grind-rnb-party-2026-11-20.jpg",
   "startDate": "2026-11-20T21:00:00-04:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -118,7 +118,7 @@
   "name": "Bump & Grind Presents New Year's Eve at Lot Six",
   "description": "OKAY TK spins an R&B New Year's Eve party at Lot Six in downtown Halifax.",
   "url": "https://www.okaytk.com/events/rnb-new-years-eve-lot-six-2026-12-31/",
-  "image": "https://www.okaytk.com/IMAGES/hero.jpg",
+  "image": "https://www.okaytk.com/IMAGES/flyers/rnb-new-years-eve-lot-six-2026-12-31.jpg",
   "startDate": "2026-12-31T21:00:00-04:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -328,6 +328,19 @@ p { text-wrap: pretty; }
 .tk-event-name a:hover { color:var(--tk-gold-deep); }
 .tk-event-icon { display:inline-block; margin-left:10px; font-size:20px; line-height:1; vertical-align:middle; animation:tk-icon-float 3s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .tk-event-icon { animation:none; transform:rotate(-8deg); } }
+.tk-flyer-wall { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; padding:28px 52px 36px; border-top:0.5px solid var(--tk-border); }
+.tk-flyer { display:flex; flex-direction:column; gap:10px; color:inherit; text-decoration:none; }
+.tk-flyer-art { display:block; aspect-ratio:4/5; overflow:hidden; background:#eceae5; border:0.5px solid var(--tk-border); transition:transform .5s var(--tk-ease), box-shadow .5s var(--tk-ease); }
+.tk-flyer-art img { width:100%; height:100%; object-fit:cover; display:block; }
+a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk-shadow); }
+.tk-flyer-blank { height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:14%; }
+.tk-flyer-blank-icon { font-size:36px; line-height:1; }
+.tk-flyer-blank-name { font-family:var(--tk-font-display); font-size:clamp(22px,2.4vw,30px); line-height:.95; letter-spacing:.04em; color:var(--tk-ink); text-wrap:balance; }
+.tk-flyer-cap { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+.tk-flyer-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:.04em; color:var(--tk-gold-deep); }
+.tk-flyer-cta { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--tk-faint); }
+@media (max-width: 900px) { .tk-flyer-wall { grid-template-columns:repeat(2,minmax(0,1fr)); padding:24px; gap:16px; } }
+@media (prefers-reduced-motion: reduce) { .tk-flyer-art { transition:none; } a.tk-flyer:hover .tk-flyer-art { transform:none; } }
 .tk-events-empty { padding:20px 52px; border-top:0.5px solid var(--tk-border); font-size:15px; color:var(--tk-dim); }
 
 /* NEWSLETTER SIGNUP */
@@ -551,6 +564,24 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     <a href="/events/" class="tk-section-link">All events →</a>
   </div>
 <!-- build:events -->
+<div class="tk-flyer-wall" data-reveal>
+  <a class="tk-flyer" href="/events/charlies-halloween-costume-party-2026-10-31/" data-event-end="2026-11-01T04:00:00.000Z">
+    <span class="tk-flyer-art"><img src="/IMAGES/flyers/charlies-halloween-costume-party-2026-10-31.jpg" alt="Flyer for Charlie's Halloween Costume Party" loading="lazy" decoding="async"></span>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Sat. Oct 31</span><span class="tk-flyer-cta">Free Entry</span></span>
+  </a>
+  <div class="tk-flyer" data-event-end="2026-11-15T04:00:00.000Z">
+    <span class="tk-flyer-art"><span class="tk-flyer-blank"><span class="tk-flyer-blank-icon" aria-hidden="true">🎬</span><span class="tk-flyer-blank-name">Private Wrap Party: TV Series, Season 5</span></span></span>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Sat. Nov 14</span><span class="tk-flyer-cta">Private Event</span></span>
+  </div>
+  <a class="tk-flyer" href="/events/bump-grind-rnb-party-2026-11-20/" data-event-end="2026-11-21T05:00:00.000Z">
+    <span class="tk-flyer-art"><img src="/IMAGES/flyers/bump-grind-rnb-party-2026-11-20.jpg" alt="Flyer for Bump &amp; Grind Presents R&amp;B at The Marquee" loading="lazy" decoding="async"></span>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Fri. Nov 20</span><span class="tk-flyer-cta">Tickets</span></span>
+  </a>
+  <a class="tk-flyer" href="/events/rnb-new-years-eve-lot-six-2026-12-31/" data-event-end="2027-01-01T05:00:00.000Z">
+    <span class="tk-flyer-art"><img src="/IMAGES/flyers/rnb-new-years-eve-lot-six-2026-12-31.jpg" alt="Flyer for Bump &amp; Grind Presents New Year's Eve at Lot Six" loading="lazy" decoding="async"></span>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Thu. Dec 31</span><span class="tk-flyer-cta">Tickets</span></span>
+  </a>
+</div>
 <div class="tk-event-group">
   <div class="tk-event-month">October</div>
   <div class="tk-event-row" data-reveal data-event-date="2026-10-31" data-event-start="21:00" data-event-end="2026-11-01T04:00:00.000Z" data-event-url="/events/charlies-halloween-costume-party-2026-10-31/" data-event-short="Sat. Oct 31 · Charlie's Halloween Costume Party" data-event-icon="👻">

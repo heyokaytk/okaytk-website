@@ -176,7 +176,7 @@ function eventSchema(e) {
     name: e.name,
     description: e.description,
     url: eventUrl(e),
-    image: `${SITE_URL}${e.image || DEFAULT_IMAGE}`,
+    image: `${SITE_URL}${e.image || e.flyer || DEFAULT_IMAGE}`,
     startDate: isoWithOffset(e.start),
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
@@ -252,6 +252,29 @@ function eventList(events) {
   <div class="tk-event-month">${g.month}</div>
 ${g.events.map(eventRow).join('\n')}
 </div>`).join('\n');
+}
+
+// Poster wall above the homepage list. Shows the next four events, but only
+// once at least one has a flyer; the rest get a type-only card.
+function flyerCard(e) {
+  const art = e.flyer
+    ? `<img src="${esc(e.flyer)}" alt="Flyer for ${esc(e.name)}" loading="lazy" decoding="async">`
+    : `<span class="tk-flyer-blank"><span class="tk-flyer-blank-icon" aria-hidden="true">${e.icon ? esc(e.icon) : ''}</span><span class="tk-flyer-blank-name">${esc(e.name)}</span></span>`;
+  const cta = e.admission === 'tickets' ? 'Tickets' : e.admission === 'free' ? 'Free Entry' : isPrivate(e) ? 'Private Event' : 'Coming Soon';
+  const tag = isPrivate(e) ? 'div' : 'a';
+  return `  <${tag} class="tk-flyer"${isPrivate(e) ? '' : ` href="${eventHref(e)}"`} data-event-end="${endInstant(e).toISOString()}">
+    <span class="tk-flyer-art">${art}</span>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">${shortDate(e.start)}</span><span class="tk-flyer-cta">${cta}</span></span>
+  </${tag}>`;
+}
+
+function flyerWall(events) {
+  const next = events.slice(0, 4);
+  if (!next.some(e => e.flyer)) return '';
+  return `<div class="tk-flyer-wall" data-reveal>
+${next.map(flyerCard).join('\n')}
+</div>
+`;
 }
 
 function nextUp(events) {
@@ -476,7 +499,7 @@ ${head({
   title: `${e.name} — ${shortDate(e.start).replace('.', ',')} · OKAY TK`,
   description: `${e.description} ${longDate(e.start)}, ${timeRange(e)}.`,
   canonicalUrl: eventUrl(e),
-  image: e.image,
+  image: e.image || e.flyer,
   schema: [
     eventSchema(e),
     breadcrumbs([['Home', `${SITE_URL}/`], ['Events', `${SITE_URL}/events/`], [e.name, eventUrl(e)]]),
@@ -484,7 +507,7 @@ ${head({
 })}
 <body>
 ${nav()}
-<article class="tk-event-page${isPast ? ' tk-event-past' : ''}" ${eventDataAttrs(e)}>
+<article class="tk-event-page${isPast ? ' tk-event-past' : ''}${e.flyer ? ' tk-event-page-has-flyer' : ''}" ${eventDataAttrs(e)}>
   <a href="/events/" class="tk-back-link">← All events</a>
   <p class="tk-event-past-note" data-past-note>This event has passed. <a href="/events/">See what's coming up →</a></p>
   <header class="tk-event-page-header">
@@ -492,6 +515,7 @@ ${nav()}
     <h1 class="tk-post-title">${esc(e.name)}</h1>
     <p class="tk-event-page-when">${longDate(e.start)} · ${timeRange(e)}<span class="tk-event-countdown" data-countdown></span></p>
   </header>
+  ${e.flyer ? `<a href="${esc(e.flyer)}" class="tk-event-page-flyer" target="_blank" rel="noopener"><img src="${esc(e.flyer)}" alt="Flyer for ${esc(e.name)}"></a>` : ''}
   <div class="tk-event-page-grid">
     <div class="tk-event-page-detail">
       <p class="tk-section-label">Where</p>
@@ -816,7 +840,7 @@ console.log('  ✓ /press/');
 let index = fs.readFileSync(INDEX_FILE, 'utf8');
 index = inject(index, 'events-schema', upcoming.filter(e => !isPrivate(e)).map(eventSchema).map(jsonLd).join('\n'));
 index = inject(index, 'next-up', nextUp(upcoming));
-index = inject(index, 'events', upcoming.length ? eventList(upcoming) : '  <p class="tk-events-empty">New dates are on the way. Sign up below to hear first.</p>');
+index = inject(index, 'events', upcoming.length ? flyerWall(upcoming) + eventList(upcoming) : '  <p class="tk-events-empty">New dates are on the way. Sign up below to hear first.</p>');
 index = inject(index, 'signup', signup('homepage'));
 index = inject(index, 'blog-teaser', blogTeaser(posts));
 index = inject(index, 'clients', press.clients.map(c => `    <div class="tk-client-tile">${esc(c.toUpperCase())}</div>`).join('\n'));

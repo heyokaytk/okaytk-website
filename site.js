@@ -35,6 +35,9 @@
     el.textContent = label.text;
     if (label.live) el.classList.add('tk-event-live');
   });
+  document.querySelectorAll('.tk-flyer[data-event-end]').forEach(function (card) {
+    if (hasEnded(card)) card.hidden = true;
+  });
   document.querySelectorAll('.tk-event-group').forEach(function (group) {
     if (!group.querySelector('.tk-event-row:not([hidden])')) group.hidden = true;
   });
