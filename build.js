@@ -292,7 +292,6 @@ function signup(source) {
   const id = `tk-signup-email-${source}`;
   return `<div class="tk-signup" id="newsletter">
   <div class="tk-signup-copy">
-    <p class="tk-section-pre">never miss the next one</p>
     <p class="tk-signup-title">NEW DATES &amp; MIXES, FIRST</p>
     <p class="tk-signup-sub">An email when there's a new party or a new mix. No spam, unsubscribe anytime.</p>
   </div>
@@ -422,7 +421,7 @@ ${head({
 ${nav()}
 <article class="tk-post">
   <header class="tk-post-header">
-    <p class="tk-eyebrow">Blog</p>
+    <a href="/blog" class="tk-back-link">← All posts</a>
     <h1 class="tk-post-title">${post.title}</h1>
     <p class="tk-post-meta">${formatDate(post.date)}</p>
     <p class="tk-post-desc">${post.description}</p>
@@ -462,7 +461,6 @@ ${nav()}
 <section class="tk-blog-index">
   <div class="tk-section-header">
     <div>
-      <p class="tk-eyebrow" style="margin-bottom:0">Writing</p>
       <h1 class="tk-section-title">THE BLOG</h1>
     </div>
   </div>
@@ -511,7 +509,6 @@ ${nav()}
   <a href="/events/" class="tk-back-link">← All events</a>
   <p class="tk-event-past-note" data-past-note>This event has passed. <a href="/events/">See what's coming up →</a></p>
   <header class="tk-event-page-header">
-    <p class="tk-eyebrow">OKAY TK Live</p>
     <h1 class="tk-post-title">${esc(e.name)}</h1>
     <p class="tk-event-page-when">${longDate(e.start)} · ${timeRange(e)}<span class="tk-event-countdown" data-countdown></span></p>
   </header>
@@ -537,8 +534,7 @@ ${nav()}
     <p>${esc(e.description)}</p>
   </div>
   <aside class="tk-event-page-book">
-    <p class="tk-section-pre">planning something of your own?</p>
-    <p class="tk-signup-title">BOOK OKAY TK FOR YOUR EVENT</p>
+    <p class="tk-signup-title">PLANNING YOUR OWN EVENT? BOOK OKAY TK</p>
     <a href="/#booking" class="tk-event-ticket tk-shimmer">Book Now</a>
   </aside>
 </article>
@@ -579,7 +575,6 @@ ${nav()}
 <section class="tk-events-index">
   <div class="tk-section-header">
     <div>
-      <p class="tk-section-pre">don't miss the next</p>
       <h1 class="tk-section-title">UPCOMING EVENTS</h1>
     </div>
   </div>
@@ -587,7 +582,6 @@ ${upcoming.length ? eventList(upcoming) : '  <p class="tk-events-empty">New date
 ${signup('events')}
 ${past.length ? `  <div class="tk-section-header">
     <div>
-      <p class="tk-section-pre">where I've been</p>
       <h2 class="tk-section-title">PAST EVENTS</h2>
     </div>
   </div>
@@ -615,8 +609,7 @@ ${head({
 ${nav()}
 <article class="tk-press">
   <header class="tk-press-header">
-    <p class="tk-eyebrow">Press Kit</p>
-    <h1 class="tk-post-title">OKAY TK</h1>
+    <h1 class="tk-post-title">OKAY TK Press Kit</h1>
     <p class="tk-post-desc">${esc(p.shortBio)}</p>
     <div class="tk-press-actions">
       <a href="mailto:${BOOKING_EMAIL}" class="tk-event-ticket tk-shimmer">Booking Inquiries</a>
@@ -658,8 +651,7 @@ ${nav()}
   </section>
 
   <section class="tk-press-section">
-    <p class="tk-section-pre">recently, as of 2026</p>
-    <h2 class="tk-press-h2">Shared the Stage With</h2>
+    <h2 class="tk-press-h2">Recently Shared the Stage With</h2>
     <ul class="tk-press-clients">
         ${list(p.sharedStage)}
     </ul>

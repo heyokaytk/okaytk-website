@@ -24,6 +24,23 @@ SEO files: `sitemap.xml`, `robots.txt`, Google Search Console verification file 
 
 ---
 
+## Design System
+
+`styles.css` holds the tokens and every component shared between pages; every page links it, the homepage included. The homepage's inline `<style>` holds only homepage sections (hero, about, flyer wall, mixes, clientele, booking form, mobile menu). Generated pages get their markup from `build.js` and their styles from `styles.css` only.
+
+**Rules**
+- No raw hex/rgba colours, font stacks or z-indexes in CSS or `build.js` templates. Use the `--tk-*` tokens; add a new token to `:root` in `styles.css` if one is genuinely missing.
+- Don't redefine a `styles.css` rule in the homepage `<style>` block. Put the shared version in `styles.css`; only add a homepage override when the homepage really needs something different, and keep it to the property that differs.
+- Reuse before inventing: `.tk-section-label`, `.tk-section-title`, `.tk-event-ticket` (square black button), `.tk-nav-cta` + `.tk-shimmer` for the primary CTA, `.tk-signup`, `data-reveal` for scroll reveals.
+
+**Palette**: warm paper (`--tk-bg`) with near-black ink and one gold accent. `--tk-gold` for large type and icons only; `--tk-gold-deep` for any small gold text (AA contrast). `--tk-surface` is the one tone step for inputs and bands. Borders are 0.5px `--tk-border`.
+
+**Type**: Bebas Neue (`--tk-font-display`) for headings, the name and big numbers; DM Sans 300 (`--tk-font-body`) for everything read in sentences. Small labels are 11–12px uppercase, tracked.
+
+**Shape**: square corners everywhere (buttons, inputs, flyers). The primary action is a solid black square button; there is one per view, and it points at `/#booking` (or the ticket link on event pages).
+
+---
+
 ## Pre-Commit / Pre-Push Audit
 
 Before every `git commit` + `git push` on this site, run this audit on the diff being shipped. Act as a Principal Web Developer, UX/UI Expert, and Technical SEO Strategist. Give a rigorous, customized audit based on the actual code, copy, and architecture changed — not generic advice.

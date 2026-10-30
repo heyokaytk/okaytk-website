@@ -189,42 +189,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <style>
-:root {
-  --tk-bg: #f5f3ee;
-  --tk-ink: #0d0d0d;
-  --tk-dim: #666;
-  --tk-faint: #6b6b6b;
-  --tk-gold: #a07830;
-  --tk-gold-deep: #7c5c22;
-  --tk-border: rgba(8,8,8,0.1);
-  --tk-shadow: 0 20px 50px -24px rgba(13,13,13,0.35);
-  --tk-ease: cubic-bezier(.16,1,.3,1);
-  --tk-font-display: 'Bebas Neue', sans-serif;
-  --tk-font-body: 'DM Sans', sans-serif;
-  --tk-z-nav: 100;
-  --tk-z-mobile-menu: 110;
-  --tk-z-backdrop: 105;
-}
+/* Homepage-only styles. Tokens and shared components come from /styles.css. */
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--tk-bg); color: var(--tk-ink); font-family: var(--tk-font-body); font-weight: 300; overflow-x: hidden; }
+/* MOBILE MENU */
 html.tk-menu-locked, html.tk-menu-locked body { overflow: hidden; height: 100%; }
-h1, h2, h3 { text-wrap: balance; }
-p { text-wrap: pretty; }
-:focus-visible { outline: 2px solid var(--tk-gold); outline-offset: 3px; }
 
-/* NAV */
-.tk-nav { display:flex; justify-content:space-between; align-items:center; padding:22px 52px; border-bottom:0.5px solid var(--tk-border); position:sticky; top:0; background:rgba(245,243,238,0.96); backdrop-filter:blur(8px); z-index:var(--tk-z-nav); }
-.tk-nav-logo { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.15em; color:var(--tk-ink); text-decoration:none; }
-.tk-nav-links { display:flex; gap:32px; list-style:none; }
-.tk-nav-links a { color:var(--tk-dim); text-decoration:none; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
-.tk-nav-links a:hover { color:var(--tk-ink); }
-.tk-nav-cta { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
-.tk-nav-cta:hover { background:var(--tk-gold-deep); color:#fff; }
 .tk-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; position:relative; z-index:var(--tk-z-mobile-menu); }
-.tk-hamburger span { width:22px; height:2px; background:var(--tk-ink); border-radius:2px; display:block; transition:all .25s var(--tk-ease); }
+.tk-hamburger span { width:22px; height:2px; background:var(--tk-ink); border-radius:2px; display:block; transition:transform .25s var(--tk-ease), opacity .25s var(--tk-ease); }
 .tk-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
 .tk-hamburger.open span:nth-child(2) { opacity:0; }
 .tk-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
@@ -251,40 +224,30 @@ p { text-wrap: pretty; }
     linear-gradient(to top, rgba(245,243,238,0.55) 0%, rgba(245,243,238,0) 45%);
 }
 .tk-hero-content { position:relative; z-index:2; padding:120px 52px 72px; max-width:600px; }
-.tk-eyebrow { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--tk-gold-deep); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
-.tk-eyebrow::after { content:''; display:block; width:32px; height:0.5px; background:var(--tk-gold-deep); }
+
 .tk-hero-name { font-family:var(--tk-font-display); font-size:clamp(80px,11vw,128px); line-height:0.9; letter-spacing:0.03em; color:var(--tk-ink); margin:0 0 12px; }
+/* Plain-words line under the name: says what TK does before anything else */
+.tk-hero-role { display:block; margin-top:16px; font-family:var(--tk-font-body); font-size:clamp(19px,2vw,24px); font-weight:500; line-height:1.3; letter-spacing:0; color:var(--tk-ink); max-width:30ch; }
 .tk-next-up { display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px 12px; margin-bottom:22px; padding:8px 8px 8px 14px; background:rgba(245,243,238,0.85); border:0.5px solid var(--tk-gold-deep); color:var(--tk-ink); text-decoration:none; font-size:12px; letter-spacing:0.08em; line-height:1.4; transition:background 0.2s, border-color 0.2s; }
 .tk-next-up:hover { background:var(--tk-bg); border-color:var(--tk-ink); }
 .tk-next-up { position:relative; }
 .tk-next-up-icon { position:absolute; top:-16px; right:-14px; font-size:24px; line-height:1; pointer-events:none; transform-origin:50% 100%; animation:tk-icon-float 3s ease-in-out infinite; }
 .tk-next-up-icon:empty { display:none; }
-@keyframes tk-icon-float { 0%,100% { transform:translateY(0) rotate(-8deg); } 50% { transform:translateY(-5px) rotate(8deg); } }
+
 @media (prefers-reduced-motion: reduce) { .tk-next-up-icon { animation:none; transform:rotate(-8deg); } }
-.tk-next-up-label { font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); }
+.tk-next-up-label { font-size:12px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); }
 .tk-next-up-text { font-weight:400; letter-spacing:0.01em; }
-.tk-next-up-when { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; background:var(--tk-ink); color:var(--tk-bg); padding:3px 10px; }
+.tk-next-up-when { font-size:12px; letter-spacing:0.12em; text-transform:uppercase; background:var(--tk-ink); color:var(--tk-bg); padding:3px 10px; }
 .tk-next-up-when:empty { display:none; }
 .tk-next-up-live .tk-next-up-when { display:inline-flex; align-items:center; gap:6px; background:var(--tk-gold); color:var(--tk-ink); }
 .tk-next-up-live .tk-next-up-when::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--tk-ink); animation:tk-live-pulse 1.6s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .tk-next-up-live .tk-next-up-when::before { animation:none; } }
-.tk-hero-tagline { font-size:16px; line-height:1.7; color:#111; max-width:400px; margin:20px 0 36px; font-style:italic; }
+.tk-hero-tagline { font-size:16px; line-height:1.7; color:var(--tk-text); max-width:400px; margin:20px 0 36px; font-style:italic; }
 .tk-hero-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
 .tk-btn-primary { background:var(--tk-ink); color:var(--tk-bg); padding:13px 28px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; display:inline-block; border:none; cursor:pointer; transition:background 0.2s, color 0.2s, transform .2s; }
-.tk-btn-primary:hover { background:var(--tk-gold-deep); color:#fff; transform:translateY(-2px); }
-.tk-btn-ghost { color:#111; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.2s; }
+.tk-btn-primary:hover { background:var(--tk-gold-deep); color:var(--tk-white); transform:translateY(-2px); }
+.tk-btn-ghost { color:var(--tk-text); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.2s; }
 .tk-btn-ghost:hover { opacity:1; }
-
-/* Shimmer: subtle light sweep on hover, shared by primary CTAs */
-.tk-shimmer { position:relative; overflow:hidden; }
-.tk-shimmer::before { content:''; position:absolute; top:0; left:-60%; width:35%; height:100%; background:linear-gradient(115deg, transparent, rgba(255,255,255,0.45), transparent); transform:skewX(-20deg); pointer-events:none; }
-.tk-shimmer:hover::before { animation:tk-shimmer 0.9s var(--tk-ease); }
-@keyframes tk-shimmer { from { left:-60%; } to { left:130%; } }
-@media (prefers-reduced-motion: reduce) {
-  .tk-shimmer:hover::before { animation:none; }
-}
-
-.tk-gold { color:var(--tk-gold) !important; }
 
 /* Scroll reveal — progressive enhancement only; anything visible on load is untouched */
 [data-reveal].tk-reveal-pending { opacity:0; transform:translateY(22px); transition:opacity .7s var(--tk-ease), transform .7s var(--tk-ease); }
@@ -296,41 +259,22 @@ p { text-wrap: pretty; }
 /* ABOUT */
 .tk-about { display:grid; grid-template-columns:1fr 2fr; border-bottom:0.5px solid var(--tk-border); }
 .tk-about-left { padding:64px 52px; border-right:0.5px solid var(--tk-border); display:flex; flex-direction:column; justify-content:flex-start; gap:16px; }
-.tk-section-label { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--tk-dim); margin:0; }
-.tk-section-pre { font-family:var(--tk-font-body); font-size:13px; font-style:italic; font-weight:300; color:var(--tk-dim); letter-spacing:0.02em; line-height:1.2; margin:0 0 2px; }
+.tk-section-label { margin:0; }
+
 .tk-about-heading { font-family:var(--tk-font-display); font-size:56px; line-height:0.95; letter-spacing:0.04em; color:var(--tk-ink); margin:0; }
 .tk-about-right { padding:64px 52px; }
-.tk-about-text { font-size:16px; line-height:1.75; color:#111; max-width:580px; }
+.tk-about-text { font-size:16px; line-height:1.75; color:var(--tk-text); max-width:580px; }
 .tk-stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--tk-border); margin-top:48px; }
 .tk-stat { background:var(--tk-bg); padding:24px; text-align:center; }
 .tk-stat-num { font-family:var(--tk-font-display); font-size:38px; letter-spacing:0.04em; color:var(--tk-ink); display:block; }
-.tk-stat-label { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--tk-dim); display:block; margin-top:4px; }
-
-/* SECTION SHARED */
-.tk-section-header { display:flex; justify-content:space-between; align-items:baseline; padding:48px 52px 32px; gap:16px; flex-wrap:wrap; }
-.tk-section-title { font-family:var(--tk-font-display); font-size:56px; letter-spacing:0.04em; color:var(--tk-ink); margin:0; }
-.tk-section-link { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--tk-dim); text-decoration:none; border-bottom:0.5px solid var(--tk-dim); padding-bottom:2px; transition:color 0.2s, border-color 0.2s; white-space:nowrap; }
-.tk-section-link:hover { color:var(--tk-ink); border-color:var(--tk-ink); }
+.tk-stat-label { font-size:14px; letter-spacing:0.02em; color:var(--tk-text-2); display:block; margin-top:4px; }
 
 /* EVENTS */
 .tk-events { border-bottom:0.5px solid var(--tk-border); }
-.tk-event-row { display:flex; align-items:center; padding:20px 52px; border-top:0.5px solid var(--tk-border); gap:32px; transition:background 0.15s; flex-wrap:wrap; }
-.tk-event-row:hover { background:rgba(0,0,0,0.03); }
-.tk-event-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.04em; color:var(--tk-gold-deep); width:220px; flex-shrink:0; }
-.tk-event-countdown { display:block; font-family:var(--tk-font-body); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--tk-gold); margin-top:4px; }
-.tk-event-countdown:empty { display:none; }
-.tk-event-countdown.tk-event-live { display:inline-flex; align-items:center; gap:6px; color:var(--tk-ink); background:var(--tk-gold); padding:3px 10px 3px 8px; border-radius:999px; margin-top:6px; }
-.tk-event-countdown.tk-event-live::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--tk-ink); flex-shrink:0; animation:tk-live-pulse 1.6s ease-in-out infinite; }
-@keyframes tk-live-pulse { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
-@media (prefers-reduced-motion: reduce) { .tk-event-countdown.tk-event-live::before { animation:none; } }
-.tk-event-name { font-family:var(--tk-font-display); font-size:22px; font-weight:400; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
-.tk-event-name a { color:inherit; text-decoration:none; transition:color 0.2s; }
-.tk-event-name a:hover { color:var(--tk-gold-deep); }
-.tk-event-icon { display:inline-block; margin-left:10px; font-size:20px; line-height:1; vertical-align:middle; animation:tk-icon-float 3s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce) { .tk-event-icon { animation:none; transform:rotate(-8deg); } }
+
 .tk-flyer-wall { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; padding:28px 52px 36px; border-top:0.5px solid var(--tk-border); }
 .tk-flyer { display:flex; flex-direction:column; gap:10px; color:inherit; text-decoration:none; }
-.tk-flyer-art { display:block; aspect-ratio:4/5; overflow:hidden; background:#eceae5; border:0.5px solid var(--tk-border); transition:transform .5s var(--tk-ease), box-shadow .5s var(--tk-ease); }
+.tk-flyer-art { display:block; aspect-ratio:4/5; overflow:hidden; background:var(--tk-surface); border:0.5px solid var(--tk-border); transition:transform .5s var(--tk-ease), box-shadow .5s var(--tk-ease); }
 .tk-flyer-art img { width:100%; height:100%; object-fit:cover; display:block; }
 a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk-shadow); }
 .tk-flyer-blank { height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:14%; }
@@ -338,34 +282,9 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-flyer-blank-name { font-family:var(--tk-font-display); font-size:clamp(22px,2.4vw,30px); line-height:.95; letter-spacing:.04em; color:var(--tk-ink); text-wrap:balance; }
 .tk-flyer-cap { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
 .tk-flyer-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:.04em; color:var(--tk-gold-deep); }
-.tk-flyer-cta { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--tk-faint); }
+.tk-flyer-cta { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--tk-faint); }
 @media (max-width: 900px) { .tk-flyer-wall { grid-template-columns:repeat(2,minmax(0,1fr)); padding:24px; gap:16px; } }
 @media (prefers-reduced-motion: reduce) { .tk-flyer-art { transition:none; } a.tk-flyer:hover .tk-flyer-art { transform:none; } }
-.tk-events-empty { padding:20px 52px; border-top:0.5px solid var(--tk-border); font-size:15px; color:var(--tk-dim); }
-
-/* NEWSLETTER SIGNUP */
-.tk-signup { display:flex; align-items:flex-end; justify-content:space-between; gap:24px 48px; flex-wrap:wrap; padding:32px 52px 40px; border-top:0.5px solid var(--tk-border); background:#eceae5; }
-.tk-signup-copy { flex:1 1 320px; }
-.tk-signup-title { font-family:var(--tk-font-display); font-size:28px; letter-spacing:0.05em; line-height:1; color:var(--tk-ink); margin:0 0 8px; }
-.tk-signup-sub { font-size:13px; line-height:1.5; color:var(--tk-dim); max-width:46ch; }
-.tk-signup-form { flex:1 1 360px; max-width:480px; }
-.tk-signup-fields { display:flex; }
-.tk-signup-fields input { flex:1; min-width:0; background:var(--tk-bg); border:0.5px solid rgba(0,0,0,0.25); border-right:none; border-radius:0; color:#111; padding:13px 16px; font-family:var(--tk-font-body); font-size:14px; font-weight:300; outline:none; transition:border-color 0.2s, box-shadow .2s; }
-.tk-signup-fields input::placeholder { color:#6b6b6b; }
-.tk-signup-fields input:focus { border-color:rgba(0,0,0,0.5); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
-.tk-signup-fields button { background:var(--tk-ink); color:var(--tk-bg); padding:13px 22px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; white-space:nowrap; transition:background 0.2s; }
-.tk-signup-fields button:hover:not(:disabled) { background:var(--tk-gold-deep); color:#fff; }
-.tk-signup-fields button:disabled { cursor:default; opacity:0.7; }
-.tk-signup-status { font-size:13px; color:var(--tk-gold-deep); margin-top:10px; }
-.tk-signup-status:empty { display:none; }
-.tk-sr { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
-[hidden] { display:none !important; }
-.tk-event-venue { font-size:13px; line-height:1.5; letter-spacing:0.01em; color:var(--tk-dim); }
-.tk-event-info { flex:1; min-width:200px; }
-.tk-event-ticket { background:var(--tk-ink); color:var(--tk-bg); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; flex-shrink:0; transition:background 0.2s, color 0.2s; }
-.tk-event-ticket:hover { background:var(--tk-gold-deep); color:#fff; }
-.tk-event-ticket-dim { background:transparent; color:var(--tk-faint); padding:9px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; flex-shrink:0; border:0.5px solid var(--tk-border); display:inline-block; }
-.tk-event-month { font-family:var(--tk-font-display); font-size:14px; letter-spacing:0.2em; text-transform:uppercase; color:var(--tk-gold-deep); padding:14px 52px; border-top:0.5px solid var(--tk-border); }
 
 /* MIXES */
 .tk-mixes { border-bottom:0.5px solid var(--tk-border); }
@@ -373,18 +292,16 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-mix-row { border:0.5px solid var(--tk-border); transition:border-color 0.2s; }
 .tk-mix-row:hover { border-color:var(--tk-gold); }
 .tk-mix-art { display:block; position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--tk-bg); }
-.tk-mix-badge { position:absolute; top:14px; left:14px; z-index:2; background:var(--tk-gold-deep); color:#fff; font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; box-shadow:0 8px 20px -8px rgba(13,13,13,0.55); }
+.tk-mix-badge { position:absolute; top:14px; left:14px; z-index:2; background:var(--tk-gold-deep); color:var(--tk-white); font-size:12px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; }
 .tk-mix-art img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s var(--tk-ease); }
 .tk-mix-row:hover .tk-mix-art img { transform:scale(1.05); }
 .tk-mix-art-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,13,13,0) 45%, rgba(13,13,13,0.7) 100%); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
 .tk-mix-row:hover .tk-mix-art-overlay { opacity:1; }
 .tk-mix-art-play { width:48px; height:48px; border-radius:50%; background:var(--tk-gold-deep); display:flex; align-items:center; justify-content:center; transform:scale(0.85); transition:transform 0.3s; }
 .tk-mix-row:hover .tk-mix-art-play { transform:scale(1); }
-.tk-mix-art-play svg { width:14px; height:14px; fill:#fff; margin-left:3px; }
+.tk-mix-art-play svg { width:14px; height:14px; fill:var(--tk-white); margin-left:3px; }
 .tk-mix-body { padding:20px 24px 24px; }
-.tk-mix-date { font-family:var(--tk-font-display); font-size:20px; letter-spacing:0.04em; color:var(--tk-gold-deep); margin-bottom:10px; }
-.tk-mix-tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; }
-.tk-mix-tag { padding:5px 12px; border:0.5px solid rgba(0,0,0,0.25); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#333; white-space:nowrap; }
+.tk-mix-date { font-family:var(--tk-font-display); font-size:20px; letter-spacing:0.04em; color:var(--tk-gold-deep); margin-bottom:14px; }
 .tk-mix-frame { height:60px; overflow:hidden; margin-bottom:14px; }
 .tk-mix-frame iframe { width:100%; height:100%; border:none; display:block; }
 @media (prefers-reduced-motion: reduce) {
@@ -395,7 +312,7 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 /* CLIENTS */
 .tk-clients { border-bottom:0.5px solid var(--tk-border); padding:64px 52px; }
 .tk-client-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--tk-border); }
-.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.12em; color:var(--tk-faint); text-align:center; cursor:default; transition:color 0.25s ease; }
+.tk-client-tile { background:var(--tk-bg); padding:32px 16px; display:flex; align-items:center; justify-content:center; font-family:var(--tk-font-display); font-size:18px; letter-spacing:0.12em; color:var(--tk-text-2); text-align:center; cursor:default; transition:color 0.25s ease; }
 .tk-client-tile:hover { color:var(--tk-gold-deep); }
 
 /* BLOG TEASER */
@@ -405,7 +322,7 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-blog-teaser-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:0.1em; color:var(--tk-gold-deep); width:140px; flex-shrink:0; }
 .tk-blog-teaser-info { flex:1; min-width:200px; }
 .tk-blog-teaser-title { font-family:var(--tk-font-display); font-size:22px; letter-spacing:0.05em; color:var(--tk-ink); margin-bottom:4px; }
-.tk-blog-teaser-excerpt { font-size:13px; line-height:1.5; color:var(--tk-dim); max-width:60ch; }
+.tk-blog-teaser-excerpt { font-size:16px; line-height:1.55; color:var(--tk-text-2); max-width:60ch; }
 
 /* PHOTO BREAK */
 .tk-photo-break { width:100%; height:280px; border-top:0.5px solid var(--tk-border); border-bottom:0.5px solid var(--tk-border); overflow:hidden; position:relative; }
@@ -419,42 +336,29 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-booking { display:grid; grid-template-columns:1fr 1fr; border-bottom:0.5px solid var(--tk-border); }
 .tk-booking-left { padding:64px 52px; border-right:0.5px solid var(--tk-border); display:flex; flex-direction:column; gap:20px; }
 .tk-booking-title { font-family:var(--tk-font-display); font-size:56px; line-height:0.95; letter-spacing:0.04em; color:var(--tk-ink); margin:0; }
-.tk-service-tags { display:flex; gap:6px; flex-wrap:wrap; }
-.tk-tag { padding:6px 14px; border:0.5px solid rgba(0,0,0,0.25); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#333; cursor:default; transition:color 0.2s, border-color 0.2s; }
-.tk-tag:hover { color:var(--tk-gold-deep); border-color:var(--tk-gold-deep); }
+.tk-booking-sub { font-size:16px; line-height:1.6; color:var(--tk-text); max-width:42ch; }
 .tk-booking-right { padding:64px 52px; background:var(--tk-bg); }
-.tk-contact-heading { font-family:var(--tk-font-display); font-size:56px; line-height:0.95; letter-spacing:0.04em; color:var(--tk-ink); margin:0 0 32px; font-weight:400; }
 .tk-contact-form { display:flex; flex-direction:column; gap:12px; }
 .tk-contact-form label { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 .tk-contact-form input,
 .tk-contact-form select,
-.tk-contact-form textarea { background:#eceae5; border:0.5px solid rgba(0,0,0,0.15); border-radius:0; color:#111; padding:13px 16px; font-family:var(--tk-font-body); font-size:13px; font-weight:300; outline:none; width:100%; box-sizing:border-box; transition:border-color 0.2s, box-shadow .2s; }
+.tk-contact-form textarea { background:var(--tk-surface); border:0.5px solid var(--tk-border-input); border-radius:0; color:var(--tk-text); padding:13px 16px; font-family:var(--tk-font-body); font-size:16px; font-weight:300; outline:none; width:100%; box-sizing:border-box; transition:border-color 0.2s, box-shadow .2s; }
 .tk-contact-form input:focus,
 .tk-contact-form select:focus,
 .tk-contact-form textarea:focus { border-color:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
 .tk-contact-form input::placeholder,
-.tk-contact-form textarea::placeholder { color:#666; }
+.tk-contact-form textarea::placeholder { color:var(--tk-dim); }
 .tk-contact-form select { -webkit-appearance:none; appearance:none; cursor:pointer; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%230d0d0d' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; }
 .tk-contact-form textarea { resize:none; height:120px; }
 .tk-contact-form button { background:var(--tk-ink); color:var(--tk-bg); padding:15px 24px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; width:100%; transition:background 0.2s; }
-.tk-contact-form button:hover:not(:disabled) { background:var(--tk-gold-deep); color:#fff; }
+.tk-contact-form button:hover:not(:disabled) { background:var(--tk-gold-deep); color:var(--tk-white); }
 .tk-contact-form button:disabled { cursor:default; opacity:0.7; }
-#tkSuccess, #tkError { font-size:13px; padding:12px 14px; margin-top:4px; display:none; }
-#tkSuccess { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; }
-#tkError { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; }
-
-/* FOOTER */
-footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
-.tk-footer { padding:32px 52px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-.tk-footer-links { display:flex; gap:24px; flex-wrap:wrap; }
-.tk-footer-links a { color:var(--tk-dim); text-decoration:none; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; transition:color 0.2s; }
-.tk-footer-links a:hover { color:var(--tk-ink); }
-.tk-footer-copy { font-size:11px; color:var(--tk-faint); letter-spacing:0.04em; }
+#tkSuccess, #tkError { font-size:15px; padding:12px 14px; margin-top:4px; display:none; }
+#tkSuccess { background:var(--tk-success-bg); border:1px solid var(--tk-success-line); color:var(--tk-success-text); }
+#tkError { background:var(--tk-error-bg); border:1px solid var(--tk-error-line); color:var(--tk-error-text); }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .tk-nav { padding:18px 24px; }
-  .tk-nav-links { display:none; }
   .tk-hamburger { display:flex; }
   .tk-nav-cta { display:none; }
   .tk-hero-content { padding:0 24px 56px; }
@@ -463,25 +367,17 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
   .tk-about-right { padding:48px 24px; }
   .tk-booking-left { border-right:none; border-bottom:0.5px solid var(--tk-border); padding:48px 24px; }
   .tk-booking-right { padding:48px 24px; }
-  .tk-section-header { padding:40px 24px 28px; }
-  .tk-event-row, .tk-event-month, .tk-events-empty { padding:18px 24px; }
-  .tk-signup { padding:28px 24px 32px; }
-  .tk-event-date { width:auto; }
   .tk-clients { padding:48px 24px; }
   .tk-mix-list { grid-template-columns:1fr; padding:0 24px 48px; }
   .tk-blog-teaser-list { margin:0 24px; padding-bottom:48px; }
-  .tk-footer { padding:28px 24px; }
 }
 @media (max-width: 600px) {
   .tk-hero-name { font-size:clamp(56px,16vw,80px); }
   .tk-hero-overlay { background: linear-gradient(to top, rgba(245,243,238,0.88) 0%, rgba(245,243,238,0.2) 60%, rgba(245,243,238,0.05) 100%); }
   .tk-hero-bg { background-image:image-set(url('IMAGES/hero-mobile.webp') type('image/webp'), url('IMAGES/hero.jpg') type('image/jpeg')); }
-  .tk-signup-fields { flex-direction:column; gap:8px; }
-  .tk-signup-fields input { border-right:0.5px solid rgba(0,0,0,0.25); }
-  .tk-about-heading, .tk-section-title, .tk-booking-title, .tk-contact-heading { font-size:40px; }
+  .tk-about-heading, .tk-section-title, .tk-booking-title { font-size:40px; }
   .tk-client-grid { grid-template-columns:repeat(2,1fr); }
   .tk-stats-grid { grid-template-columns:1fr; }
-  .tk-event-row { flex-direction:column; align-items:flex-start; gap:12px; }
   .tk-event-ticket, .tk-event-ticket-dim { width:100%; text-align:center; }
   .tk-blog-teaser-row { flex-direction:column; align-items:flex-start; gap:6px; }
 }
@@ -527,7 +423,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <span class="tk-next-up-icon" data-next-up-icon aria-hidden="true">👻</span>
     </a>
 <!-- /build:next-up -->
-    <h1 class="tk-hero-name">OKAY TK</h1>
+    <h1 class="tk-hero-name">OKAY TK<span class="tk-hero-role">DJ for corporate events, club nights &amp; private events</span></h1>
     <p class="tk-hero-tagline">Known for his personality, versatility, and connecting with listeners, from national television to club floors.</p>
     <div class="tk-hero-actions">
       <a href="#booking" class="tk-btn-primary tk-shimmer">Book Now</a>
@@ -539,7 +435,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-about" id="about">
   <div class="tk-about-left" data-reveal>
     <div>
-      <p class="tk-section-pre">let's talk</p>
       <h2 class="tk-about-heading">ABOUT TK</h2>
     </div>
   </div>
@@ -558,7 +453,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-events" id="events">
   <div class="tk-section-header" data-reveal>
     <div>
-      <p class="tk-section-pre">don't miss the next</p>
       <h2 class="tk-section-title">UPCOMING EVENTS</h2>
     </div>
     <a href="/events/" class="tk-section-link">All events →</a>
@@ -627,7 +521,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <!-- build:signup -->
 <div class="tk-signup" id="newsletter">
   <div class="tk-signup-copy">
-    <p class="tk-section-pre">never miss the next one</p>
     <p class="tk-signup-title">NEW DATES &amp; MIXES, FIRST</p>
     <p class="tk-signup-sub">An email when there's a new party or a new mix. No spam, unsubscribe anytime.</p>
   </div>
@@ -652,7 +545,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-mixes" id="mixes">
   <div class="tk-section-header" data-reveal>
     <div>
-      <p class="tk-section-pre">listen to my</p>
       <h2 class="tk-section-title">LATEST MIXES</h2>
     </div>
     <a href="https://www.mixcloud.com/heyokaytk/" target="_blank" rel="noopener" class="tk-section-link">All mixes →</a>
@@ -667,10 +559,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       </a>
       <div class="tk-mix-body">
         <div class="tk-mix-date">August 2026 - w/ Baby Yu &amp; Jester</div>
-        <div class="tk-mix-tags">
-          <span class="tk-mix-tag">R&amp;B</span>
-          <span class="tk-mix-tag">Bump &amp; Grind</span>
-        </div>
         <div class="tk-mix-frame">
           <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-august-2026-okay-tk-x-baby-yu-x-jester%2F" frameborder="0" allow="autoplay" loading="lazy" title="Bump & Grind R&B Mix — August 2026"></iframe>
         </div>
@@ -684,10 +572,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       </a>
       <div class="tk-mix-body">
         <div class="tk-mix-date">July 2026</div>
-        <div class="tk-mix-tags">
-          <span class="tk-mix-tag">R&amp;B</span>
-          <span class="tk-mix-tag">Bump &amp; Grind</span>
-        </div>
         <div class="tk-mix-frame">
           <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-july-2026%2F" frameborder="0" allow="autoplay" loading="lazy" title="Bump & Grind R&B Mix — July 2026"></iframe>
         </div>
@@ -701,10 +585,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       </a>
       <div class="tk-mix-body">
         <div class="tk-mix-date">June 2026</div>
-        <div class="tk-mix-tags">
-          <span class="tk-mix-tag">R&amp;B</span>
-          <span class="tk-mix-tag">Bump &amp; Grind</span>
-        </div>
         <div class="tk-mix-frame">
           <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;light=1&amp;feed=%2Fheyokaytk%2Fbump-grind-rb-mix-june-2026%2F" frameborder="0" allow="autoplay" loading="lazy" title="Bump & Grind R&B Mix — June 2026"></iframe>
         </div>
@@ -741,7 +621,6 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-blog-teaser">
   <div class="tk-section-header" data-reveal>
     <div>
-      <p class="tk-section-pre">in my own words</p>
       <h2 class="tk-section-title">FROM THE BLOG</h2>
     </div>
     <a href="/blog" class="tk-section-link">All posts →</a>
@@ -773,26 +652,19 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
 <section class="tk-booking" id="booking">
   <div class="tk-booking-left" data-reveal>
     <div>
-      <p class="tk-section-pre">when you're ready,</p>
       <h2 class="tk-booking-title">LET'S WORK TOGETHER</h2>
     </div>
-    <div class="tk-service-tags">
-      <span class="tk-tag">Corporate Events</span>
-      <span class="tk-tag">Club Nights</span>
-      <span class="tk-tag">Special Events</span>
-    </div>
+    <p class="tk-booking-sub">Corporate events, club nights and private events across Halifax and Nova Scotia. Tell me about the night and I'll get back to you with availability.</p>
     <a href="/press/" class="tk-section-link" style="align-self:flex-start">Event planners: see the press kit →</a>
   </div>
   <div class="tk-booking-right" data-reveal>
-    <p class="tk-section-pre">get in</p>
-    <h2 class="tk-contact-heading">CONTACT</h2>
-    <form class="tk-contact-form" id="tkForm" action="https://formspree.io/f/xkodbdwz" method="POST">
+        <form class="tk-contact-form" id="tkForm" action="https://formspree.io/f/xkodbdwz" method="POST">
       <label for="tk-first-name">First name</label>
-      <input id="tk-first-name" type="text" name="first_name" placeholder="First name" required>
+      <input id="tk-first-name" type="text" name="first_name" placeholder="First name" autocomplete="given-name" required>
       <label for="tk-last-name">Last name</label>
-      <input id="tk-last-name" type="text" name="last_name" placeholder="Last name" required>
+      <input id="tk-last-name" type="text" name="last_name" placeholder="Last name" autocomplete="family-name" required>
       <label for="tk-email">Email address</label>
-      <input id="tk-email" type="email" name="_replyto" placeholder="Email address" required>
+      <input id="tk-email" type="email" name="_replyto" placeholder="Email address" autocomplete="email" spellcheck="false" required>
       <label for="tk-event-type">Event type</label>
       <select id="tk-event-type" name="event_type" required>
         <option value="" disabled selected>Event type</option>
@@ -807,11 +679,11 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
       <label for="tk-location">Location or venue</label>
       <input id="tk-location" type="text" name="location" placeholder="Location / venue">
       <label for="tk-message">Your message</label>
-      <textarea id="tk-message" name="message" placeholder="Your message..." rows="5" required></textarea>
+      <textarea id="tk-message" name="message" placeholder="Your message…" rows="5" required></textarea>
       <input type="hidden" name="_subject" value="New Booking Inquiry — OKAY TK Website">
       <button type="submit" id="tkSubmit" class="tk-shimmer">Send Message</button>
       <div id="tkSuccess" role="status" aria-live="polite">Thanks — I'll get back to you soon.</div>
-      <div id="tkError" role="alert" aria-live="assertive">Something went wrong. Email me directly at <a href="mailto:events@okaytk.com" style="color:#991b1b">events@okaytk.com</a>.</div>
+      <div id="tkError" role="alert" aria-live="assertive">Something went wrong. Email me directly at <a href="mailto:events@okaytk.com" style="color:var(--tk-error-text)">events@okaytk.com</a>.</div>
     </form>
   </div>
 </section>
@@ -867,7 +739,7 @@ footer { background:var(--tk-bg); border-top:0.5px solid var(--tk-border); }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = document.getElementById('tkSubmit');
-      btn.textContent = 'Sending...';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
       var data = new FormData(form);
       fetch(form.action, {
