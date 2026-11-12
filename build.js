@@ -319,7 +319,7 @@ function nav() {
     <li><a href="/events/">Events</a></li>
     <li><a href="/#mixes">Mixes</a></li>
     <li><a href="/#tk-clients">Clientele</a></li>
-    <li><a href="/blog">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
   </ul>
   <a href="/#booking" class="tk-nav-cta tk-shimmer">Book Now</a>
 </nav>`;
@@ -421,7 +421,7 @@ ${head({
 ${nav()}
 <article class="tk-post">
   <header class="tk-post-header">
-    <a href="/blog" class="tk-back-link">← All posts</a>
+    <a href="/blog/" class="tk-back-link">← All posts</a>
     <h1 class="tk-post-title">${post.title}</h1>
     <p class="tk-post-meta">${formatDate(post.date)}</p>
     <p class="tk-post-desc">${post.description}</p>

@@ -1,0 +1,3 @@
+# Calendar downloads are for people, not search results.
+/events/*/event.ics
+  X-Robots-Tag: noindex
