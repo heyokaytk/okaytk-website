@@ -62,13 +62,15 @@
     "name": "Too Old For This Ish: A Boxing Day Dance Party",
     "start": "2026-12-26T20:00",
     "end": "2026-12-27T00:00",
-    "venue": "Chain Yard",
+    "venue": "Chain Yard Urban Cidery & Taproom",
     "street": "2606 Agricola Street",
     "area": "Halifax",
-    "admission": "soon",
+    "admission": "tickets",
     "icon": "🎁",
-    "description": "A Boxing Day dance party at Chain Yard on Agricola Street. Vinyl and more with DJs OKAY TK & Double A, 8pm to midnight.",
-    "flyer": "/IMAGES/flyers/too-old-for-this-ish-boxing-day-2026-12-26.jpg"
+    "description": "You've done the dinners, opened the presents, and answered enough questions from relatives. It's time for a dance! Join OKAY TK, Double A & friends at Chain Yard on Boxing Day for a little holiday escape: old favourites, unexpected gems, and everything in between. Limited capacity, tickets online only, no tickets at the door.",
+    "flyer": "/IMAGES/flyers/too-old-for-this-ish-boxing-day-2026-12-26.jpg",
+    "ticketUrl": "https://www.bloomtickets.ca/event/5192",
+    "price": 10
   },
   {
     "slug": "rnb-new-years-eve-lot-six-2026-12-31",
