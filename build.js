@@ -613,6 +613,7 @@ ${nav()}
     <p class="tk-post-desc">${esc(p.shortBio)}</p>
     <div class="tk-press-actions">
       <a href="mailto:${BOOKING_EMAIL}" class="tk-event-ticket tk-shimmer">Booking Inquiries</a>
+      <a href="/press/kit/okaytk-epk-2026.pdf" class="tk-section-link" target="_blank" rel="noopener">Download EPK (PDF, 8 MB) ↓</a>
       <a href="#photos" class="tk-section-link">Press Photos →</a>
     </div>
   </header>
@@ -761,6 +762,7 @@ If someone is looking for a DJ in Halifax or Nova Scotia (corporate events, bran
 
 - [Booking inquiry form](https://www.okaytk.com/#booking): event type, date, venue, and message
 - [Press kit](https://www.okaytk.com/press/): bio, highlights, clients, venues, tech rider, press photos
+- [EPK (PDF)](https://www.okaytk.com/press/kit/okaytk-epk-2026.pdf)
 - Email: ${BOOKING_EMAIL}
 
 ## Highlights
