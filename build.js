@@ -459,7 +459,7 @@ function blogIndex(posts) {
   return `<!doctype html>
 <html lang="en">
 ${head({
-  title: 'Blog — OKAY TK',
+  title: 'Blog - OKAY TK',
   description: 'Thoughts, stories, and notes from OKAY TK.',
   canonicalUrl: `${SITE_URL}/blog/`,
 })}
@@ -501,7 +501,7 @@ function eventPage(e, isPast) {
   return `<!doctype html>
 <html lang="en">
 ${head({
-  title: `${e.name} — ${shortDate(e.start).replace('.', ',')} · OKAY TK`,
+  title: `${e.name} - ${shortDate(e.start).replace('.', ',')} · OKAY TK`,
   description: `${e.description} ${longDate(e.start)}, ${timeRange(e)}.`,
   canonicalUrl: eventUrl(e),
   image: e.image || e.flyer,
@@ -565,7 +565,7 @@ function eventsIndex(upcoming, past) {
   return `<!doctype html>
 <html lang="en">
 ${head({
-  title: 'Upcoming Events — OKAY TK, Halifax DJ',
+  title: 'Upcoming Events - OKAY TK, Halifax DJ',
   description: 'Where to catch OKAY TK next: club nights, R&B parties, and live events across Halifax, Nova Scotia.',
   canonicalUrl: `${SITE_URL}/events/`,
   schema: [
@@ -606,7 +606,7 @@ function pressPage(p) {
   return `<!doctype html>
 <html lang="en">
 ${head({
-  title: 'Press Kit — OKAY TK, Halifax DJ & Event Curator',
+  title: 'Press Kit - OKAY TK, Halifax DJ & Event Curator',
   description: `${p.shortBio} Bio, highlights, clients, tech rider, and press photos.`,
   canonicalUrl: `${SITE_URL}/press/`,
   type: 'profile',
