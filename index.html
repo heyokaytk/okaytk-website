@@ -236,7 +236,8 @@ html.tk-menu-locked, html.tk-menu-locked body { overflow: hidden; height: 100%; 
 .tk-flyer { display:flex; flex-direction:column; gap:10px; color:inherit; text-decoration:none; }
 .tk-flyer-art { display:block; aspect-ratio:4/5; overflow:hidden; background:var(--tk-surface); border:0.5px solid var(--tk-border); transition:transform .5s var(--tk-ease), box-shadow .5s var(--tk-ease); }
 .tk-flyer-art img { width:100%; height:100%; object-fit:cover; display:block; }
-a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk-shadow); }
+a.tk-flyer:hover .tk-flyer-art, a.tk-flyer-art:hover { transform:translateY(-4px); box-shadow:var(--tk-shadow); }
+.tk-flyer-ticket { text-align:center; }
 .tk-flyer-blank { height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:14%; }
 .tk-flyer-blank-icon { font-size:36px; line-height:1; }
 .tk-flyer-blank-name { font-family:var(--tk-font-display); font-size:clamp(22px,2.4vw,30px); line-height:.95; letter-spacing:.04em; color:var(--tk-ink); text-wrap:balance; }
@@ -244,7 +245,7 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-flyer-date { font-family:var(--tk-font-display); font-size:15px; letter-spacing:.04em; color:var(--tk-gold-deep); }
 .tk-flyer-cta { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--tk-faint); }
 @media (max-width: 900px) { .tk-flyer-wall { grid-template-columns:repeat(2,minmax(0,1fr)); padding:24px; gap:16px; } }
-@media (prefers-reduced-motion: reduce) { .tk-flyer-art { transition:none; } a.tk-flyer:hover .tk-flyer-art { transform:none; } }
+@media (prefers-reduced-motion: reduce) { .tk-flyer-art { transition:none; } a.tk-flyer:hover .tk-flyer-art, a.tk-flyer-art:hover { transform:none; } }
 
 /* MIXES */
 .tk-mixes { border-bottom:0.5px solid var(--tk-border); }
@@ -308,6 +309,7 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
 .tk-contact-form textarea:focus { border-color:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(160,120,48,0.14); }
 .tk-contact-form input::placeholder,
 .tk-contact-form textarea::placeholder { color:var(--tk-dim); }
+.tk-form-note { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--tk-faint); margin:0; }
 .tk-contact-form select { -webkit-appearance:none; appearance:none; cursor:pointer; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%230d0d0d' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; }
 .tk-contact-form textarea { resize:none; height:120px; }
 .tk-contact-form button { background:var(--tk-ink); color:var(--tk-bg); padding:15px 24px; font-family:var(--tk-font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border:none; cursor:pointer; width:100%; transition:background 0.2s; }
@@ -419,14 +421,16 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
   </div>
 <!-- build:events -->
 <div class="tk-flyer-wall" data-reveal>
-  <a class="tk-flyer" href="/events/too-old-for-this-ish-boxing-day-2026-12-26/" data-event-end="2026-12-27T04:00:00.000Z">
-    <span class="tk-flyer-art"><img src="/IMAGES/flyers/too-old-for-this-ish-boxing-day-2026-12-26.jpg" alt="Flyer for Too Old For This Ish: A Boxing Day Dance Party" loading="lazy" decoding="async"></span>
-    <span class="tk-flyer-cap"><span class="tk-flyer-date">Sat. Dec 26</span><span class="tk-flyer-cta">Tickets</span></span>
-  </a>
-  <a class="tk-flyer" href="/events/rnb-new-years-eve-lot-six-2026-12-31/" data-event-end="2027-01-01T05:30:00.000Z">
-    <span class="tk-flyer-art"><img src="/IMAGES/flyers/rnb-new-years-eve-lot-six-2026-12-31.jpg" alt="Flyer for Bump &amp; Grind Presents New Year's Eve at Lot Six" loading="lazy" decoding="async"></span>
-    <span class="tk-flyer-cap"><span class="tk-flyer-date">Thu. Dec 31</span><span class="tk-flyer-cta">Tickets</span></span>
-  </a>
+  <div class="tk-flyer" data-event-end="2026-12-27T04:00:00.000Z">
+    <a class="tk-flyer-art" href="/events/too-old-for-this-ish-boxing-day-2026-12-26/"><img src="/IMAGES/flyers/too-old-for-this-ish-boxing-day-2026-12-26.jpg" alt="Flyer for Too Old For This Ish: A Boxing Day Dance Party" loading="lazy" decoding="async"></a>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Sat. Dec 26</span></span>
+    <a href="https://www.bloomtickets.ca/event/5192" class="tk-event-ticket tk-flyer-ticket" aria-label="Get tickets: Too Old For This Ish: A Boxing Day Dance Party">Get Tickets</a>
+  </div>
+  <div class="tk-flyer" data-event-end="2027-01-01T05:30:00.000Z">
+    <a class="tk-flyer-art" href="/events/rnb-new-years-eve-lot-six-2026-12-31/"><img src="/IMAGES/flyers/rnb-new-years-eve-lot-six-2026-12-31.jpg" alt="Flyer for Bump &amp; Grind Presents New Year's Eve at Lot Six" loading="lazy" decoding="async"></a>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">Thu. Dec 31</span></span>
+    <a href="https://bump-grind-r-b-party.bloomtickets.ca/event/4303" class="tk-event-ticket tk-flyer-ticket" aria-label="Get tickets: Bump &amp; Grind Presents New Year's Eve at Lot Six">Get Tickets</a>
+  </div>
 </div>
 <div class="tk-event-group">
   <div class="tk-event-month">December</div>
@@ -591,14 +595,14 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
   <div class="tk-booking-right" data-reveal>
         <form class="tk-contact-form" id="tkForm" action="https://formspree.io/f/xkodbdwz" method="POST">
       <label for="tk-first-name">First name</label>
-      <input id="tk-first-name" type="text" name="first_name" placeholder="First name" autocomplete="given-name" required>
+      <input id="tk-first-name" type="text" name="first_name" placeholder="First name *" autocomplete="given-name" pattern=".*\S.*" required>
       <label for="tk-last-name">Last name</label>
-      <input id="tk-last-name" type="text" name="last_name" placeholder="Last name" autocomplete="family-name" required>
+      <input id="tk-last-name" type="text" name="last_name" placeholder="Last name *" autocomplete="family-name" pattern=".*\S.*" required>
       <label for="tk-email">Email address</label>
-      <input id="tk-email" type="email" name="_replyto" placeholder="Email address" autocomplete="email" spellcheck="false" required>
+      <input id="tk-email" type="email" name="_replyto" placeholder="Email address *" autocomplete="email" spellcheck="false" required>
       <label for="tk-event-type">Event type</label>
       <select id="tk-event-type" name="event_type" required>
-        <option value="" disabled selected>Event type</option>
+        <option value="" disabled selected>Event type *</option>
         <option>Club night</option>
         <option>Corporate event</option>
         <option>Private / special event</option>
@@ -610,8 +614,9 @@ a.tk-flyer:hover .tk-flyer-art { transform:translateY(-4px); box-shadow:var(--tk
       <label for="tk-location">Location or venue</label>
       <input id="tk-location" type="text" name="location" placeholder="Location / venue">
       <label for="tk-message">Your message</label>
-      <textarea id="tk-message" name="message" placeholder="Your message…" rows="5" required></textarea>
+      <textarea id="tk-message" name="message" placeholder="Your message *" rows="5" required></textarea>
       <input type="hidden" name="_subject" value="New Booking Inquiry — OKAY TK Website">
+      <p class="tk-form-note">* Required</p>
       <button type="submit" id="tkSubmit" class="tk-shimmer">Send Message</button>
       <div id="tkSuccess" role="status" aria-live="polite">Thanks — I'll get back to you soon.</div>
       <div id="tkError" role="alert" aria-live="assertive">Something went wrong. Email me directly at <a href="mailto:events@okaytk.com" style="color:var(--tk-error-text)">events@okaytk.com</a>.</div>

@@ -260,7 +260,15 @@ function flyerCard(e) {
   const art = e.flyer
     ? `<img src="${esc(e.flyer)}" alt="Flyer for ${esc(e.name)}" loading="lazy" decoding="async">`
     : `<span class="tk-flyer-blank"><span class="tk-flyer-blank-icon" aria-hidden="true">${e.icon ? esc(e.icon) : ''}</span><span class="tk-flyer-blank-name">${esc(e.name)}</span></span>`;
-  const cta = e.admission === 'tickets' ? 'Tickets' : e.admission === 'free' ? 'Free Entry' : isPrivate(e) ? 'Private Event' : 'Coming Soon';
+  if (e.admission === 'tickets') {
+    // Ticketed: the flyer opens the event page, the button goes straight to checkout.
+    return `  <div class="tk-flyer" data-event-end="${endInstant(e).toISOString()}">
+    <a class="tk-flyer-art" href="${eventHref(e)}">${art}</a>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">${shortDate(e.start)}</span></span>
+    <a href="${esc(e.ticketUrl)}" class="tk-event-ticket tk-flyer-ticket" aria-label="Get tickets: ${esc(e.name)}">Get Tickets</a>
+  </div>`;
+  }
+  const cta = e.admission === 'free' ? 'Free Entry' : isPrivate(e) ? 'Private Event' : 'Coming Soon';
   const tag = isPrivate(e) ? 'div' : 'a';
   return `  <${tag} class="tk-flyer"${isPrivate(e) ? '' : ` href="${eventHref(e)}"`} data-event-end="${endInstant(e).toISOString()}">
     <span class="tk-flyer-art">${art}</span>
