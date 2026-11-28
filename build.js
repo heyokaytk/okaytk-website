@@ -264,8 +264,7 @@ function flyerCard(e) {
     // Ticketed: the flyer opens the event page, the button goes straight to checkout.
     return `  <div class="tk-flyer" data-event-end="${endInstant(e).toISOString()}">
     <a class="tk-flyer-art" href="${eventHref(e)}">${art}</a>
-    <span class="tk-flyer-cap"><span class="tk-flyer-date">${shortDate(e.start)}</span></span>
-    <a href="${esc(e.ticketUrl)}" class="tk-event-ticket tk-flyer-ticket" aria-label="Get tickets: ${esc(e.name)}">Get Tickets</a>
+    <span class="tk-flyer-cap"><span class="tk-flyer-date">${shortDate(e.start)}</span><a href="${esc(e.ticketUrl)}" class="tk-event-ticket tk-flyer-ticket" aria-label="Get tickets: ${esc(e.name)}">Tickets</a></span>
   </div>`;
   }
   const cta = e.admission === 'free' ? 'Free Entry' : isPrivate(e) ? 'Private Event' : 'Coming Soon';
